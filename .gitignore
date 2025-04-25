@@ -1,0 +1,8 @@
+.python-version
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+build/
+.ruff_cache/
+html/ 

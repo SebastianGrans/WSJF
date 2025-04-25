@@ -1,0 +1,70 @@
+[project]
+name = "WSJF"
+version = "0.1.0"
+description = "Library for generating WATS Standard Json Format (WSJF) files"
+readme = "README.md"
+authors = [
+    { name = "Sebastian Grans", email = "sebastian.grans@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pytest",
+    "pytest-check",
+    "pydantic",
+    "requests",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra --log-cli-level=INFO --capture=sys"
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+exclude = [
+    "examples",
+]
+line-length = 120
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "N815", # The model field names need to match the schema. So we need to accept camelCase
+    "D4",
+    "TRY",
+    "G004", # f-strings in log statements are okay, as long as they don't contain heavy computation
+    "ANN204", # We don't need to annotate the return type of __init__ methods
+    "PLR",
+    "DTZ",
+    "D203",
+    "D213",
+    "D301", # We need backslashes in the docstrings for math
+    "TD", # Maybe enforce the use of the Github issue tracker later
+    "FIX",
+    "ERA",
+    "N999", # WSJF is not a valid PEP 8 module name... 
+]
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ANN", "D", "S", "FBT", "INP", "B"]
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pyright]
+include = ["src", "tests", "examples"]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pyright>=1.1.400",
+    "ruff>=0.11.7",
+]
