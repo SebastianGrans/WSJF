@@ -1,11 +1,30 @@
-# WATS Standard Json UUT Report Generator - With pytest plugin
+# WATS Standard Json UUT Report Generator
 
-This is a library for generating WATS reports, and it also comes with a `pytest` plugin that
-generates and uploads a WATS report.
+This is a library for generating WATS UUT reports, and it also comes with a `pytest` plugin that
+generates and upload the report to WATS.
 
-## Virinco documentation on the format
+**Note:** This is a very young project and is not a complete implementation.
 
-<https://support.virinco.com/hc/en-us/articles/360015705199-WATS-Standard-JSON-Format-WSJF>
+Contributions are much appreciated!
+
+## About this project
+
+This project came about because the "unofficial" Python library that Virinco [provides](https://github.com/Virinco/Python-WATS-API/) is pretty old and clunky. And it doesn't even
+implement the standard in the correct way.
+
+The initial framework for this project was created using the
+[`datamodel-code-generator`](https://docs.pydantic.dev/latest/integrations/datamodel_code_generator/)
+python library.
+
+Virinco provides a JSON Schema that you can access at:
+<https://your-wats-server.com/WSJFReport.schema.json>
+
+```bash
+datamodel-codegen --input WSJFReport.schema.json \ 
+    --input-file-type jsonschema \
+    --output wsjf.py \
+    --output-model-type pydantic_v2.BaseModel
+```
 
 ## Usage as pytest plugin
 
@@ -39,16 +58,6 @@ All the tests in `tests/` will run, and upload a report to WATS using the REST A
 
 Check out `examples/basic_example.py`
 
-## Status
+## Virinco documentation on the format
 
-* ✅ SequenceCall
-* ✅ NumericLimit
-* ✅ StringValue
-  * Note: Only the equal and not equal comparison works.
-  * The documentation say that other should work, but it doesn't.
-* ✅ PassFail
-* ✅ Attachment
-* ✅ Chart
-* ❌ CallExe
-* ❌ MessagePopup
-* ❌ Action
+<https://support.virinco.com/hc/en-us/articles/360015705199-WATS-Standard-JSON-Format-WSJF>

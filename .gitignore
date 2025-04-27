@@ -1,8 +1,9 @@
-.python-version
-.venv/
 __pycache__/
 .pytest_cache/
+.python-version
+.ruff_cache/
+.venv/
+.vscode/
 *.egg-info/
 build/
-.ruff_cache/
 html/ 
