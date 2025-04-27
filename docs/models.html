@@ -1,0 +1,2739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>WSJF.models API documentation</title>
+<meta name="description" content="The main models for the WATS report.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>WSJF.models</code></h1>
+</header>
+<section id="section-intro">
+<p>The main models for the WATS report.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="WSJF.models.AttachmentStep"><code class="flex name class">
+<span>class <span class="ident">AttachmentStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = Attachment,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AttachmentStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type Attachment.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.ATTACHMENT,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+        frozen=True,
+    )</code></pre>
+</details>
+<div class="desc"><p>A step of type Attachment.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.ChartStep"><code class="flex name class">
+<span>class <span class="ident">ChartStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = Chart,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ChartStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type Chart.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.CHART,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+        frozen=True,
+    )</code></pre>
+</details>
+<div class="desc"><p>A step of type Chart.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.MultipleBooleanLimitStep"><code class="flex name class">
+<span>class <span class="ident">MultipleBooleanLimitStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = ET_MPFT,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None,<br>booleanMeas: list[<a title="WSJF.sub_models.BooleanMeasurement" href="sub_models.html#WSJF.sub_models.BooleanMeasurement">BooleanMeasurement</a>] = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MultipleBooleanLimitStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type MultipleBooleanLimit.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.BOOLEAN_VALUE_MULTIPLE,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+        frozen=True,
+    )
+    booleanMeas: list[BooleanMeasurement] = Field(
+        default_factory=list,
+        description=&#34;A list of boolean measurements belonging to this step.&#34;,
+    )
+
+    @property
+    def data(self) -&gt; list[BooleanMeasurement]:
+        &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+        return self.booleanMeas
+
+    def add_result(self, name: str, *, result: bool) -&gt; bool:
+        &#34;&#34;&#34;Add a measurement to the step.&#34;&#34;&#34;
+        _measurement_assertions(self, name=name)
+        status = MeasurementStatusCode.PASSED if result else MeasurementStatusCode.FAILED
+        measurement = BooleanMeasurement(name=name, status=status)
+        self.booleanMeas.append(measurement)
+
+        self.set_status(StepStatusCode(status))
+        check.is_true(result)
+        return result</code></pre>
+</details>
+<div class="desc"><p>A step of type MultipleBooleanLimit.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.MultipleBooleanLimitStep.booleanMeas"><code class="name">var <span class="ident">booleanMeas</span> : list[<a title="WSJF.sub_models.BooleanMeasurement" href="sub_models.html#WSJF.sub_models.BooleanMeasurement">BooleanMeasurement</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="WSJF.models.MultipleBooleanLimitStep.data"><code class="name">prop <span class="ident">data</span> : list[BooleanMeasurement]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self) -&gt; list[BooleanMeasurement]:
+    &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+    return self.booleanMeas</code></pre>
+</details>
+<div class="desc"><p>Return the data of the step.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.MultipleBooleanLimitStep.add_result"><code class="name flex">
+<span>def <span class="ident">add_result</span></span>(<span>self, name: str, *, result: bool) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_result(self, name: str, *, result: bool) -&gt; bool:
+    &#34;&#34;&#34;Add a measurement to the step.&#34;&#34;&#34;
+    _measurement_assertions(self, name=name)
+    status = MeasurementStatusCode.PASSED if result else MeasurementStatusCode.FAILED
+    measurement = BooleanMeasurement(name=name, status=status)
+    self.booleanMeas.append(measurement)
+
+    self.set_status(StepStatusCode(status))
+    check.is_true(result)
+    return result</code></pre>
+</details>
+<div class="desc"><p>Add a measurement to the step.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.MultipleNumericLimitStep"><code class="flex name class">
+<span>class <span class="ident">MultipleNumericLimitStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = ET_MNLT,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None,<br>numericMeas: list[<a title="WSJF.sub_models.NumericMeasurement" href="sub_models.html#WSJF.sub_models.NumericMeasurement">NumericMeasurement</a>] = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MultipleNumericLimitStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type MultipleNumericLimit.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.NUMERIC_LIMIT_MULTIPLE,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+        frozen=True,
+    )
+    numericMeas: list[NumericMeasurement] = Field(
+        default_factory=list,
+        description=&#34;A list of numeric measurements belonging to this step.&#34;,
+    )
+
+    @property
+    def data(self) -&gt; list[NumericMeasurement]:
+        &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+        return self.numericMeas
+
+    def compare_binary(
+        self,
+        name: str,
+        value: float,
+        limit: float,
+        operator: BinaryCompOp,
+        unit: str,
+    ) -&gt; bool:
+        &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+        Adds the measurement to the step and returns the result.
+
+        **Note**: The name must be unique for each measurement in the step.
+        Would raise ValueError error if the name already exists in the step.
+        &#34;&#34;&#34;
+        return _compare_binary_impl(self, value, limit, operator, unit, name=name)
+
+    def compare_ternary(
+        self,
+        name: str,
+        value: float,
+        low_limit: float,
+        high_limit: float,
+        operator: TernaryCompOp,
+        unit: str,
+    ) -&gt; bool:
+        &#34;&#34;&#34;Compare a value against two limits and a given operator.
+
+        Adds the measurement to the step and returns the result.
+
+        **Note**: The name must be unique for each measurement in the step.
+        Would raise ValueError error if the name already exists in the step.
+        &#34;&#34;&#34;
+        return _compare_ternary_impl(self, value, low_limit, high_limit, operator, unit, name=name)
+
+    def log(self, name: str, value: float, unit: str) -&gt; None:
+        &#34;&#34;&#34;Log a measurement to the step.
+
+        **Note**: The name must be unique for each measurement in the step.
+        Would raise ValueError error if the name already exists in the step.
+        &#34;&#34;&#34;
+        _measurement_assertions(self, name=name)
+        measurement = NumericMeasurement(
+            name=name,
+            value=value,
+            compOp=&#34;LOG&#34;,
+            status=MeasurementStatusCode.PASSED,
+            unit=unit,
+        )
+        self.numericMeas.append(measurement)</code></pre>
+</details>
+<div class="desc"><p>A step of type MultipleNumericLimit.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.MultipleNumericLimitStep.numericMeas"><code class="name">var <span class="ident">numericMeas</span> : list[<a title="WSJF.sub_models.NumericMeasurement" href="sub_models.html#WSJF.sub_models.NumericMeasurement">NumericMeasurement</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="WSJF.models.MultipleNumericLimitStep.data"><code class="name">prop <span class="ident">data</span> : list[NumericMeasurement]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self) -&gt; list[NumericMeasurement]:
+    &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+    return self.numericMeas</code></pre>
+</details>
+<div class="desc"><p>Return the data of the step.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.MultipleNumericLimitStep.compare_binary"><code class="name flex">
+<span>def <span class="ident">compare_binary</span></span>(<span>self, name: str, value: float, limit: float, operator: BinaryCompOp, unit: str) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_binary(
+    self,
+    name: str,
+    value: float,
+    limit: float,
+    operator: BinaryCompOp,
+    unit: str,
+) -&gt; bool:
+    &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+    Adds the measurement to the step and returns the result.
+
+    **Note**: The name must be unique for each measurement in the step.
+    Would raise ValueError error if the name already exists in the step.
+    &#34;&#34;&#34;
+    return _compare_binary_impl(self, value, limit, operator, unit, name=name)</code></pre>
+</details>
+<div class="desc"><p>Compare a value against a single limit and a given operator.</p>
+<p>Adds the measurement to the step and returns the result.</p>
+<p><strong>Note</strong>: The name must be unique for each measurement in the step.
+Would raise ValueError error if the name already exists in the step.</p></div>
+</dd>
+<dt id="WSJF.models.MultipleNumericLimitStep.compare_ternary"><code class="name flex">
+<span>def <span class="ident">compare_ternary</span></span>(<span>self,<br>name: str,<br>value: float,<br>low_limit: float,<br>high_limit: float,<br>operator: TernaryCompOp,<br>unit: str) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_ternary(
+    self,
+    name: str,
+    value: float,
+    low_limit: float,
+    high_limit: float,
+    operator: TernaryCompOp,
+    unit: str,
+) -&gt; bool:
+    &#34;&#34;&#34;Compare a value against two limits and a given operator.
+
+    Adds the measurement to the step and returns the result.
+
+    **Note**: The name must be unique for each measurement in the step.
+    Would raise ValueError error if the name already exists in the step.
+    &#34;&#34;&#34;
+    return _compare_ternary_impl(self, value, low_limit, high_limit, operator, unit, name=name)</code></pre>
+</details>
+<div class="desc"><p>Compare a value against two limits and a given operator.</p>
+<p>Adds the measurement to the step and returns the result.</p>
+<p><strong>Note</strong>: The name must be unique for each measurement in the step.
+Would raise ValueError error if the name already exists in the step.</p></div>
+</dd>
+<dt id="WSJF.models.MultipleNumericLimitStep.log"><code class="name flex">
+<span>def <span class="ident">log</span></span>(<span>self, name: str, value: float, unit: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log(self, name: str, value: float, unit: str) -&gt; None:
+    &#34;&#34;&#34;Log a measurement to the step.
+
+    **Note**: The name must be unique for each measurement in the step.
+    Would raise ValueError error if the name already exists in the step.
+    &#34;&#34;&#34;
+    _measurement_assertions(self, name=name)
+    measurement = NumericMeasurement(
+        name=name,
+        value=value,
+        compOp=&#34;LOG&#34;,
+        status=MeasurementStatusCode.PASSED,
+        unit=unit,
+    )
+    self.numericMeas.append(measurement)</code></pre>
+</details>
+<div class="desc"><p>Log a measurement to the step.</p>
+<p><strong>Note</strong>: The name must be unique for each measurement in the step.
+Would raise ValueError error if the name already exists in the step.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.MultipleStringLimitStep"><code class="flex name class">
+<span>class <span class="ident">MultipleStringLimitStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = ET_MSVT,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None,<br>stringMeas: list[<a title="WSJF.sub_models.StringMeasurement" href="sub_models.html#WSJF.sub_models.StringMeasurement">StringMeasurement</a>] = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MultipleStringLimitStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type MultipleStringLimit.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.STRING_VALUE_MULTIPLE,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+        frozen=True,
+    )
+    stringMeas: list[StringMeasurement] = Field(
+        default_factory=list,
+        description=&#34;A list of string measurements belonging to this step.&#34;,
+    )
+
+    @property
+    def data(self) -&gt; list[StringMeasurement]:
+        &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+        return self.stringMeas
+
+    def compare_binary(self, name: str, value: str, limit: str, operator: BinaryCompOp) -&gt; bool:
+        &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+        See `WSJF.compare.compare_binary` for more info.
+
+        **Note**: The name must be unique for each measurement in the step.
+        &#34;&#34;&#34;
+        return _string_compare_binary_impl(self, value, limit, operator, name=name)
+
+    def compare_case(self, name: str, value: str, limit: str, operator: StringCaseOp) -&gt; bool:
+        &#34;&#34;&#34;Compare a string against another string.
+
+        See `WSJF.compare.compare_case` for more info.
+
+        **Note**: The name must be unique for each measurement in the step.
+        &#34;&#34;&#34;
+        return _string_compare_case_impl(self, value, limit, operator, name=name)
+
+    def log(self, value: str, name: str) -&gt; None:
+        &#34;&#34;&#34;Add a string to the step as a log entry.
+
+        **Note**: The name must be unique for each measurement in the step.
+        &#34;&#34;&#34;
+        _string_log_impl(self, value, name=name)</code></pre>
+</details>
+<div class="desc"><p>A step of type MultipleStringLimit.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.MultipleStringLimitStep.stringMeas"><code class="name">var <span class="ident">stringMeas</span> : list[<a title="WSJF.sub_models.StringMeasurement" href="sub_models.html#WSJF.sub_models.StringMeasurement">StringMeasurement</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="WSJF.models.MultipleStringLimitStep.data"><code class="name">prop <span class="ident">data</span> : list[StringMeasurement]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self) -&gt; list[StringMeasurement]:
+    &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+    return self.stringMeas</code></pre>
+</details>
+<div class="desc"><p>Return the data of the step.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.MultipleStringLimitStep.compare_binary"><code class="name flex">
+<span>def <span class="ident">compare_binary</span></span>(<span>self, name: str, value: str, limit: str, operator: BinaryCompOp) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_binary(self, name: str, value: str, limit: str, operator: BinaryCompOp) -&gt; bool:
+    &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+    See `WSJF.compare.compare_binary` for more info.
+
+    **Note**: The name must be unique for each measurement in the step.
+    &#34;&#34;&#34;
+    return _string_compare_binary_impl(self, value, limit, operator, name=name)</code></pre>
+</details>
+<div class="desc"><p>Compare a value against a single limit and a given operator.</p>
+<p>See <code><a title="WSJF.compare.compare_binary" href="compare.html#WSJF.compare.compare_binary">compare_binary()</a></code> for more info.</p>
+<p><strong>Note</strong>: The name must be unique for each measurement in the step.</p></div>
+</dd>
+<dt id="WSJF.models.MultipleStringLimitStep.compare_case"><code class="name flex">
+<span>def <span class="ident">compare_case</span></span>(<span>self, name: str, value: str, limit: str, operator: StringCaseOp) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_case(self, name: str, value: str, limit: str, operator: StringCaseOp) -&gt; bool:
+    &#34;&#34;&#34;Compare a string against another string.
+
+    See `WSJF.compare.compare_case` for more info.
+
+    **Note**: The name must be unique for each measurement in the step.
+    &#34;&#34;&#34;
+    return _string_compare_case_impl(self, value, limit, operator, name=name)</code></pre>
+</details>
+<div class="desc"><p>Compare a string against another string.</p>
+<p>See <code><a title="WSJF.compare.compare_case" href="compare.html#WSJF.compare.compare_case">compare_case()</a></code> for more info.</p>
+<p><strong>Note</strong>: The name must be unique for each measurement in the step.</p></div>
+</dd>
+<dt id="WSJF.models.MultipleStringLimitStep.log"><code class="name flex">
+<span>def <span class="ident">log</span></span>(<span>self, value: str, name: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log(self, value: str, name: str) -&gt; None:
+    &#34;&#34;&#34;Add a string to the step as a log entry.
+
+    **Note**: The name must be unique for each measurement in the step.
+    &#34;&#34;&#34;
+    _string_log_impl(self, value, name=name)</code></pre>
+</details>
+<div class="desc"><p>Add a string to the step as a log entry.</p>
+<p><strong>Note</strong>: The name must be unique for each measurement in the step.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.RootSequenceCallStep"><code class="flex name class">
+<span>class <span class="ident">RootSequenceCallStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)],<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RootSequenceCallStep(Step):
+    &#34;&#34;&#34;The root step of the report.&#34;&#34;&#34;
+
+    _report: WATSReport = PrivateAttr()
+    stepType: StepType = Field(
+        default=StepType.SEQUENCE_CALL,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+    )
+    # NOTE! The order of this union is important!
+    # Or maybe not?
+    # If you put Step first, a serialized SequenceCallStep will be deserialized as a Step
+    steps: list[
+        ChartStep
+        | MultipleBooleanLimitStep
+        | MultipleNumericLimitStep
+        | MultipleStringLimitStep
+        | SequenceCallStep
+        | SingleBooleanLimitStep
+        | SingleNumericLimitStep
+        | SingleStringLimitStep
+    ] = Field(
+        default_factory=list,
+        description=&#34;A list of sub steps for this step. Only for steps of type SequenceCall.&#34;,
+    )
+    seqCall: SequenceCall = Field(
+        description=&#34;The information about the sequence call.&#34;,
+    )
+
+    def add_sequence_call(self, name: str, path: str, version: str) -&gt; SequenceCallStep:
+        &#34;&#34;&#34;Add a sequence call to the step.&#34;&#34;&#34;
+        step = SequenceCallStep(
+            name=name,
+            status=StepStatusCode.PASSED,
+            seqCall=SequenceCall(path=path, name=name, version=version),
+        )
+        # Private attributes in Pydantic aren&#39;t included in the `init` method
+        # so we need to set it manually
+        step._parent = self  # noqa: SLF001
+        self.steps.append(step)
+        return step
+
+    def set_status(self, status: StepStatusCode) -&gt; None:
+        &#34;&#34;&#34;Set the status of the step and if propagate the status if it failed.&#34;&#34;&#34;
+        self.status = status
+        if status == StepStatusCode.FAILED:
+            self._report.set_result(UUTStatusCode.FAILED)
+
+    def add_misc_info(self, description: str, text: str | None = None, numeric: int | None = None) -&gt; None:
+        &#34;&#34;&#34;Add misc info to the report.&#34;&#34;&#34;
+        self._report.add_misc_info(description=description, text=text, numeric=numeric)
+
+    def add_asset(self, asset_sn: str, usage_count: int) -&gt; None:
+        &#34;&#34;&#34;See `WSJF.models.WATSReport.add_asset`&#34;&#34;&#34;
+        self._report.add_asset(asset_sn=asset_sn, usage_count=usage_count)
+
+    def add_subunit(
+        self,
+        part_type: str,
+        part_number: str,
+        revision: str,
+        serial_number: str,
+    ) -&gt; None:
+        &#34;&#34;&#34;See `WSJF.models.WATSReport.add_subunit`&#34;&#34;&#34;
+        self._report.add_subunit(
+            part_type=part_type,
+            part_number=part_number,
+            revision=revision,
+            serial_number=serial_number,
+        )
+
+    def add_comment(self, comment: str) -&gt; None:
+        &#34;&#34;&#34;See `WSJF.models.WATSReport.add_comment`&#34;&#34;&#34;
+        self._report.add_comment(comment=comment)</code></pre>
+</details>
+<div class="desc"><p>The root step of the report.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="WSJF.models.SequenceCallStep" href="#WSJF.models.SequenceCallStep">SequenceCallStep</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.RootSequenceCallStep.seqCall"><code class="name">var <span class="ident">seqCall</span> : <a title="WSJF.sub_models.SequenceCall" href="sub_models.html#WSJF.sub_models.SequenceCall">SequenceCall</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.RootSequenceCallStep.steps"><code class="name">var <span class="ident">steps</span> : list[<a title="WSJF.models.ChartStep" href="#WSJF.models.ChartStep">ChartStep</a> | <a title="WSJF.models.MultipleBooleanLimitStep" href="#WSJF.models.MultipleBooleanLimitStep">MultipleBooleanLimitStep</a> | <a title="WSJF.models.MultipleNumericLimitStep" href="#WSJF.models.MultipleNumericLimitStep">MultipleNumericLimitStep</a> | <a title="WSJF.models.MultipleStringLimitStep" href="#WSJF.models.MultipleStringLimitStep">MultipleStringLimitStep</a> | <a title="WSJF.models.SequenceCallStep" href="#WSJF.models.SequenceCallStep">SequenceCallStep</a> | <a title="WSJF.models.SingleBooleanLimitStep" href="#WSJF.models.SingleBooleanLimitStep">SingleBooleanLimitStep</a> | <a title="WSJF.models.SingleNumericLimitStep" href="#WSJF.models.SingleNumericLimitStep">SingleNumericLimitStep</a> | <a title="WSJF.models.SingleStringLimitStep" href="#WSJF.models.SingleStringLimitStep">SingleStringLimitStep</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.RootSequenceCallStep.add_asset"><code class="name flex">
+<span>def <span class="ident">add_asset</span></span>(<span>self, asset_sn: str, usage_count: int) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_asset(self, asset_sn: str, usage_count: int) -&gt; None:
+    &#34;&#34;&#34;See `WSJF.models.WATSReport.add_asset`&#34;&#34;&#34;
+    self._report.add_asset(asset_sn=asset_sn, usage_count=usage_count)</code></pre>
+</details>
+<div class="desc"><p>See <code><a title="WSJF.models.WATSReport.add_asset" href="#WSJF.models.WATSReport.add_asset">WATSReport.add_asset()</a></code></p></div>
+</dd>
+<dt id="WSJF.models.RootSequenceCallStep.add_comment"><code class="name flex">
+<span>def <span class="ident">add_comment</span></span>(<span>self, comment: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_comment(self, comment: str) -&gt; None:
+    &#34;&#34;&#34;See `WSJF.models.WATSReport.add_comment`&#34;&#34;&#34;
+    self._report.add_comment(comment=comment)</code></pre>
+</details>
+<div class="desc"><p>See <code><a title="WSJF.models.WATSReport.add_comment" href="#WSJF.models.WATSReport.add_comment">WATSReport.add_comment()</a></code></p></div>
+</dd>
+<dt id="WSJF.models.RootSequenceCallStep.add_misc_info"><code class="name flex">
+<span>def <span class="ident">add_misc_info</span></span>(<span>self, description: str, text: str | None = None, numeric: int | None = None) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_misc_info(self, description: str, text: str | None = None, numeric: int | None = None) -&gt; None:
+    &#34;&#34;&#34;Add misc info to the report.&#34;&#34;&#34;
+    self._report.add_misc_info(description=description, text=text, numeric=numeric)</code></pre>
+</details>
+<div class="desc"><p>Add misc info to the report.</p></div>
+</dd>
+<dt id="WSJF.models.RootSequenceCallStep.add_sequence_call"><code class="name flex">
+<span>def <span class="ident">add_sequence_call</span></span>(<span>self, name: str, path: str, version: str) ‑> <a title="WSJF.models.SequenceCallStep" href="#WSJF.models.SequenceCallStep">SequenceCallStep</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_sequence_call(self, name: str, path: str, version: str) -&gt; SequenceCallStep:
+    &#34;&#34;&#34;Add a sequence call to the step.&#34;&#34;&#34;
+    step = SequenceCallStep(
+        name=name,
+        status=StepStatusCode.PASSED,
+        seqCall=SequenceCall(path=path, name=name, version=version),
+    )
+    # Private attributes in Pydantic aren&#39;t included in the `init` method
+    # so we need to set it manually
+    step._parent = self  # noqa: SLF001
+    self.steps.append(step)
+    return step</code></pre>
+</details>
+<div class="desc"><p>Add a sequence call to the step.</p></div>
+</dd>
+<dt id="WSJF.models.RootSequenceCallStep.add_subunit"><code class="name flex">
+<span>def <span class="ident">add_subunit</span></span>(<span>self, part_type: str, part_number: str, revision: str, serial_number: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_subunit(
+    self,
+    part_type: str,
+    part_number: str,
+    revision: str,
+    serial_number: str,
+) -&gt; None:
+    &#34;&#34;&#34;See `WSJF.models.WATSReport.add_subunit`&#34;&#34;&#34;
+    self._report.add_subunit(
+        part_type=part_type,
+        part_number=part_number,
+        revision=revision,
+        serial_number=serial_number,
+    )</code></pre>
+</details>
+<div class="desc"><p>See <code><a title="WSJF.models.WATSReport.add_subunit" href="#WSJF.models.WATSReport.add_subunit">WATSReport.add_subunit()</a></code></p></div>
+</dd>
+<dt id="WSJF.models.RootSequenceCallStep.set_status"><code class="name flex">
+<span>def <span class="ident">set_status</span></span>(<span>self, status: StepStatusCode) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_status(self, status: StepStatusCode) -&gt; None:
+    &#34;&#34;&#34;Set the status of the step and if propagate the status if it failed.&#34;&#34;&#34;
+    self.status = status
+    if status == StepStatusCode.FAILED:
+        self._report.set_result(UUTStatusCode.FAILED)</code></pre>
+</details>
+<div class="desc"><p>Set the status of the step and if propagate the status if it failed.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.SequenceCallStep"><code class="flex name class">
+<span>class <span class="ident">SequenceCallStep</span></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SequenceCallStep(_NonRootStep, RootSequenceCallStep):
+    &#34;&#34;&#34;A step of type SequenceCall.
+
+    This step can contain other steps.
+    &#34;&#34;&#34;
+
+    def add_test_step[T: StepTypeUnion](self, name: str, step_type: type[T]) -&gt; T:
+        &#34;&#34;&#34;Add a test step to the sequence call.
+
+        Example:
+
+        ```
+        report = WATSReport.factory(...)
+        step = report.add_test_sequence(&#34;TestSequence&#34;, &#34;TestReport&#34;)
+        numeric_limit_step = step.add_test_step(&#34;TestStep&#34;, SingleNumericLimitStep)
+        numeric_limit_step.compare_binary(1, 1, BinaryCompOp.EQUAL, &#34;V&#34;)
+        ```
+        &#34;&#34;&#34;
+        step = step_type(name=name, status=StepStatusCode.PASSED)
+        # Private attributes in Pydantic aren&#39;t included in the `init` method
+        # so we need to set it manually
+        step._parent = self  # noqa: SLF001
+        self.steps.append(step)
+        return step</code></pre>
+</details>
+<div class="desc"><p>A step of type SequenceCall.</p>
+<p>This step can contain other steps.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.RootSequenceCallStep" href="#WSJF.models.RootSequenceCallStep">RootSequenceCallStep</a></li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.SequenceCallStep.add_test_step"><code class="name flex">
+<span>def <span class="ident">add_test_step</span></span>(<span>self, name: str, step_type: type[T]) ‑> T</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_test_step[T: StepTypeUnion](self, name: str, step_type: type[T]) -&gt; T:
+    &#34;&#34;&#34;Add a test step to the sequence call.
+
+    Example:
+
+    ```
+    report = WATSReport.factory(...)
+    step = report.add_test_sequence(&#34;TestSequence&#34;, &#34;TestReport&#34;)
+    numeric_limit_step = step.add_test_step(&#34;TestStep&#34;, SingleNumericLimitStep)
+    numeric_limit_step.compare_binary(1, 1, BinaryCompOp.EQUAL, &#34;V&#34;)
+    ```
+    &#34;&#34;&#34;
+    step = step_type(name=name, status=StepStatusCode.PASSED)
+    # Private attributes in Pydantic aren&#39;t included in the `init` method
+    # so we need to set it manually
+    step._parent = self  # noqa: SLF001
+    self.steps.append(step)
+    return step</code></pre>
+</details>
+<div class="desc"><p>Add a test step to the sequence call.</p>
+<p>Example:</p>
+<pre><code>report = WATSReport.factory(...)
+step = report.add_test_sequence(&quot;TestSequence&quot;, &quot;TestReport&quot;)
+numeric_limit_step = step.add_test_step(&quot;TestStep&quot;, SingleNumericLimitStep)
+numeric_limit_step.compare_binary(1, 1, BinaryCompOp.EQUAL, &quot;V&quot;)
+</code></pre></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.RootSequenceCallStep" href="#WSJF.models.RootSequenceCallStep">RootSequenceCallStep</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_asset" href="#WSJF.models.RootSequenceCallStep.add_asset">add_asset</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_comment" href="#WSJF.models.RootSequenceCallStep.add_comment">add_comment</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_misc_info" href="#WSJF.models.RootSequenceCallStep.add_misc_info">add_misc_info</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_sequence_call" href="#WSJF.models.RootSequenceCallStep.add_sequence_call">add_sequence_call</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_subunit" href="#WSJF.models.RootSequenceCallStep.add_subunit">add_subunit</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.set_status" href="#WSJF.models.RootSequenceCallStep.set_status">set_status</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.SingleBooleanLimitStep"><code class="flex name class">
+<span>class <span class="ident">SingleBooleanLimitStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = ET_PFT,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None,<br>booleanMeas: list[<a title="WSJF.sub_models.BooleanMeasurement" href="sub_models.html#WSJF.sub_models.BooleanMeasurement">BooleanMeasurement</a>] = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SingleBooleanLimitStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type SingleBooleanLimit.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.BOOLEAN_VALUE_SINGLE,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+        frozen=True,
+    )
+    booleanMeas: list[BooleanMeasurement] = Field(
+        default_factory=list,
+        description=&#34;A list of boolean measurements belonging to this step.&#34;,
+    )
+
+    @property
+    def data(self) -&gt; list[BooleanMeasurement]:
+        &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+        return self.booleanMeas
+
+    def add_result(self, *, result: bool) -&gt; bool:
+        &#34;&#34;&#34;Add a measurement to the step.&#34;&#34;&#34;
+        _measurement_assertions(self, name=None)
+        status = MeasurementStatusCode.PASSED if result else MeasurementStatusCode.FAILED
+        measurement = BooleanMeasurement(status=status)
+        self.booleanMeas.append(measurement)
+
+        self.set_status(StepStatusCode(status))
+        check.is_true(result)
+        return result</code></pre>
+</details>
+<div class="desc"><p>A step of type SingleBooleanLimit.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.SingleBooleanLimitStep.booleanMeas"><code class="name">var <span class="ident">booleanMeas</span> : list[<a title="WSJF.sub_models.BooleanMeasurement" href="sub_models.html#WSJF.sub_models.BooleanMeasurement">BooleanMeasurement</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="WSJF.models.SingleBooleanLimitStep.data"><code class="name">prop <span class="ident">data</span> : list[BooleanMeasurement]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self) -&gt; list[BooleanMeasurement]:
+    &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+    return self.booleanMeas</code></pre>
+</details>
+<div class="desc"><p>Return the data of the step.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.SingleBooleanLimitStep.add_result"><code class="name flex">
+<span>def <span class="ident">add_result</span></span>(<span>self, *, result: bool) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_result(self, *, result: bool) -&gt; bool:
+    &#34;&#34;&#34;Add a measurement to the step.&#34;&#34;&#34;
+    _measurement_assertions(self, name=None)
+    status = MeasurementStatusCode.PASSED if result else MeasurementStatusCode.FAILED
+    measurement = BooleanMeasurement(status=status)
+    self.booleanMeas.append(measurement)
+
+    self.set_status(StepStatusCode(status))
+    check.is_true(result)
+    return result</code></pre>
+</details>
+<div class="desc"><p>Add a measurement to the step.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.SingleNumericLimitStep"><code class="flex name class">
+<span>class <span class="ident">SingleNumericLimitStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = ET_NLT,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None,<br>numericMeas: Annotated[list[<a title="WSJF.sub_models.NumericMeasurement" href="sub_models.html#WSJF.sub_models.NumericMeasurement">NumericMeasurement</a>], MaxLen(max_length=1)] = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SingleNumericLimitStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type NumericLimit.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.NUMERIC_LIMIT_SINGLE,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+    )
+    numericMeas: list[NumericMeasurement] = Field(
+        default_factory=list,
+        description=&#34;A list of numeric measurements belonging to this step.&#34;,
+        max_length=1,
+    )
+
+    @property
+    def data(self) -&gt; list[NumericMeasurement]:
+        &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+        return self.numericMeas
+
+    def compare_binary(
+        self,
+        value: float,
+        limit: float,
+        operator: BinaryCompOp,
+        unit: str,
+    ) -&gt; bool:
+        &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+        Adds the measurement to the step and returns the result.
+
+        **Note**: For `SingleNumericLimitStep`, only a single value can be added.
+        Would raise a `ValueError` if the step already contains a measurement.
+        &#34;&#34;&#34;
+        return _compare_binary_impl(self, value, limit, operator, unit)
+
+    def compare_ternary(
+        self,
+        value: float,
+        low_limit: float,
+        high_limit: float,
+        operator: TernaryCompOp,
+        unit: str,
+    ) -&gt; bool:
+        &#34;&#34;&#34;Compare a value against two limits and a given operator.
+
+        Adds the measurement to the step and returns the result.
+
+        **Note**: For `SingleNumericLimitStep`, only a single value can be added.
+        Would raise a `ValueError` if the step already contains a measurement.
+        &#34;&#34;&#34;
+        return _compare_ternary_impl(self, value, low_limit, high_limit, operator, unit)
+
+    def log(self, value: float, unit: str) -&gt; None:
+        &#34;&#34;&#34;Log a measurement to the step.
+
+        **Note**: For `SingleNumericLimitStep`, only a single value can be added.
+        &#34;&#34;&#34;
+        _measurement_assertions(self, name=None)
+        measurement = NumericMeasurement(
+            value=value,
+            compOp=&#34;LOG&#34;,
+            status=MeasurementStatusCode.PASSED,
+            unit=unit,
+        )
+        self.numericMeas.append(measurement)</code></pre>
+</details>
+<div class="desc"><p>A step of type NumericLimit.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.SingleNumericLimitStep.numericMeas"><code class="name">var <span class="ident">numericMeas</span> : list[<a title="WSJF.sub_models.NumericMeasurement" href="sub_models.html#WSJF.sub_models.NumericMeasurement">NumericMeasurement</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="WSJF.models.SingleNumericLimitStep.data"><code class="name">prop <span class="ident">data</span> : list[NumericMeasurement]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self) -&gt; list[NumericMeasurement]:
+    &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+    return self.numericMeas</code></pre>
+</details>
+<div class="desc"><p>Return the data of the step.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.SingleNumericLimitStep.compare_binary"><code class="name flex">
+<span>def <span class="ident">compare_binary</span></span>(<span>self, value: float, limit: float, operator: BinaryCompOp, unit: str) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_binary(
+    self,
+    value: float,
+    limit: float,
+    operator: BinaryCompOp,
+    unit: str,
+) -&gt; bool:
+    &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+    Adds the measurement to the step and returns the result.
+
+    **Note**: For `SingleNumericLimitStep`, only a single value can be added.
+    Would raise a `ValueError` if the step already contains a measurement.
+    &#34;&#34;&#34;
+    return _compare_binary_impl(self, value, limit, operator, unit)</code></pre>
+</details>
+<div class="desc"><p>Compare a value against a single limit and a given operator.</p>
+<p>Adds the measurement to the step and returns the result.</p>
+<p><strong>Note</strong>: For <code><a title="WSJF.models.SingleNumericLimitStep" href="#WSJF.models.SingleNumericLimitStep">SingleNumericLimitStep</a></code>, only a single value can be added.
+Would raise a <code>ValueError</code> if the step already contains a measurement.</p></div>
+</dd>
+<dt id="WSJF.models.SingleNumericLimitStep.compare_ternary"><code class="name flex">
+<span>def <span class="ident">compare_ternary</span></span>(<span>self,<br>value: float,<br>low_limit: float,<br>high_limit: float,<br>operator: TernaryCompOp,<br>unit: str) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_ternary(
+    self,
+    value: float,
+    low_limit: float,
+    high_limit: float,
+    operator: TernaryCompOp,
+    unit: str,
+) -&gt; bool:
+    &#34;&#34;&#34;Compare a value against two limits and a given operator.
+
+    Adds the measurement to the step and returns the result.
+
+    **Note**: For `SingleNumericLimitStep`, only a single value can be added.
+    Would raise a `ValueError` if the step already contains a measurement.
+    &#34;&#34;&#34;
+    return _compare_ternary_impl(self, value, low_limit, high_limit, operator, unit)</code></pre>
+</details>
+<div class="desc"><p>Compare a value against two limits and a given operator.</p>
+<p>Adds the measurement to the step and returns the result.</p>
+<p><strong>Note</strong>: For <code><a title="WSJF.models.SingleNumericLimitStep" href="#WSJF.models.SingleNumericLimitStep">SingleNumericLimitStep</a></code>, only a single value can be added.
+Would raise a <code>ValueError</code> if the step already contains a measurement.</p></div>
+</dd>
+<dt id="WSJF.models.SingleNumericLimitStep.log"><code class="name flex">
+<span>def <span class="ident">log</span></span>(<span>self, value: float, unit: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log(self, value: float, unit: str) -&gt; None:
+    &#34;&#34;&#34;Log a measurement to the step.
+
+    **Note**: For `SingleNumericLimitStep`, only a single value can be added.
+    &#34;&#34;&#34;
+    _measurement_assertions(self, name=None)
+    measurement = NumericMeasurement(
+        value=value,
+        compOp=&#34;LOG&#34;,
+        status=MeasurementStatusCode.PASSED,
+        unit=unit,
+    )
+    self.numericMeas.append(measurement)</code></pre>
+</details>
+<div class="desc"><p>Log a measurement to the step.</p>
+<p><strong>Note</strong>: For <code><a title="WSJF.models.SingleNumericLimitStep" href="#WSJF.models.SingleNumericLimitStep">SingleNumericLimitStep</a></code>, only a single value can be added.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.SingleStringLimitStep"><code class="flex name class">
+<span>class <span class="ident">SingleStringLimitStep</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)] = ET_SVT,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None,<br>stringMeas: list[<a title="WSJF.sub_models.StringMeasurement" href="sub_models.html#WSJF.sub_models.StringMeasurement">StringMeasurement</a>] = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SingleStringLimitStep(_NonRootStep, Step):
+    &#34;&#34;&#34;A step of type SingleStringLimit.&#34;&#34;&#34;
+
+    stepType: StepType = Field(
+        default=StepType.STRING_VALUE_SINGLE,
+        description=&#34;The step type, a textual description of the step.&#34;,
+        min_length=1,
+        frozen=True,
+    )
+    stringMeas: list[StringMeasurement] = Field(
+        default_factory=list,
+        description=&#34;A list of string measurements belonging to this step.&#34;,
+    )
+
+    @property
+    def data(self) -&gt; list[StringMeasurement]:
+        &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+        return self.stringMeas
+
+    def compare_binary(self, value: str, limit: str, operator: BinaryCompOp) -&gt; bool:
+        &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+        Adds the measurement to the step and returns the result.
+        **Note**: For `SingleStringLimitStep`, only a single value can be added.
+
+
+        &#34;&#34;&#34;
+        if operator in [
+            BinaryCompOp.GREATER_THAN,
+            BinaryCompOp.LESS_THAN,
+            BinaryCompOp.GREATER_OR_EQUAL,
+            BinaryCompOp.LESS_OR_EQUAL,
+        ]:
+            # These operators are supposed to work according to the documentation, but they don&#39;t
+            errmsg = f&#34;Operator {operator} is broken for strings&#34;
+            raise NotImplementedError(errmsg)
+
+        return _string_compare_binary_impl(self, value, limit, operator)
+
+    def compare_case(self, value: str, limit: str, operator: StringCaseOp) -&gt; bool:
+        &#34;&#34;&#34;Compare a string against another string.
+
+        See `WSJF.compare.compare_case` for more info.
+        &#34;&#34;&#34;
+        return _string_compare_case_impl(self, value, limit, operator)
+
+    def log(self, value: str) -&gt; None:
+        &#34;&#34;&#34;Add a string to the step as a log entry.&#34;&#34;&#34;
+        _string_log_impl(self, value)</code></pre>
+</details>
+<div class="desc"><p>A step of type SingleStringLimit.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>WSJF.models._NonRootStep</li>
+<li><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.SingleStringLimitStep.stringMeas"><code class="name">var <span class="ident">stringMeas</span> : list[<a title="WSJF.sub_models.StringMeasurement" href="sub_models.html#WSJF.sub_models.StringMeasurement">StringMeasurement</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="WSJF.models.SingleStringLimitStep.data"><code class="name">prop <span class="ident">data</span> : list[StringMeasurement]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def data(self) -&gt; list[StringMeasurement]:
+    &#34;&#34;&#34;Return the data of the step.&#34;&#34;&#34;
+    return self.stringMeas</code></pre>
+</details>
+<div class="desc"><p>Return the data of the step.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.SingleStringLimitStep.compare_binary"><code class="name flex">
+<span>def <span class="ident">compare_binary</span></span>(<span>self, value: str, limit: str, operator: BinaryCompOp) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_binary(self, value: str, limit: str, operator: BinaryCompOp) -&gt; bool:
+    &#34;&#34;&#34;Compare a value against a single limit and a given operator.
+
+    Adds the measurement to the step and returns the result.
+    **Note**: For `SingleStringLimitStep`, only a single value can be added.
+
+
+    &#34;&#34;&#34;
+    if operator in [
+        BinaryCompOp.GREATER_THAN,
+        BinaryCompOp.LESS_THAN,
+        BinaryCompOp.GREATER_OR_EQUAL,
+        BinaryCompOp.LESS_OR_EQUAL,
+    ]:
+        # These operators are supposed to work according to the documentation, but they don&#39;t
+        errmsg = f&#34;Operator {operator} is broken for strings&#34;
+        raise NotImplementedError(errmsg)
+
+    return _string_compare_binary_impl(self, value, limit, operator)</code></pre>
+</details>
+<div class="desc"><p>Compare a value against a single limit and a given operator.</p>
+<p>Adds the measurement to the step and returns the result.
+<strong>Note</strong>: For <code><a title="WSJF.models.SingleStringLimitStep" href="#WSJF.models.SingleStringLimitStep">SingleStringLimitStep</a></code>, only a single value can be added.</p></div>
+</dd>
+<dt id="WSJF.models.SingleStringLimitStep.compare_case"><code class="name flex">
+<span>def <span class="ident">compare_case</span></span>(<span>self, value: str, limit: str, operator: StringCaseOp) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_case(self, value: str, limit: str, operator: StringCaseOp) -&gt; bool:
+    &#34;&#34;&#34;Compare a string against another string.
+
+    See `WSJF.compare.compare_case` for more info.
+    &#34;&#34;&#34;
+    return _string_compare_case_impl(self, value, limit, operator)</code></pre>
+</details>
+<div class="desc"><p>Compare a string against another string.</p>
+<p>See <code><a title="WSJF.compare.compare_case" href="compare.html#WSJF.compare.compare_case">compare_case()</a></code> for more info.</p></div>
+</dd>
+<dt id="WSJF.models.SingleStringLimitStep.log"><code class="name flex">
+<span>def <span class="ident">log</span></span>(<span>self, value: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log(self, value: str) -&gt; None:
+    &#34;&#34;&#34;Add a string to the step as a log entry.&#34;&#34;&#34;
+    _string_log_impl(self, value)</code></pre>
+</details>
+<div class="desc"><p>Add a string to the step as a log entry.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></b></code>:
+<ul class="hlist">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="WSJF.models.Step"><code class="flex name class">
+<span>class <span class="ident">Step</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)],<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Step(BaseModel):
+    &#34;&#34;&#34; &#34;&#34;&#34;
+
+    id: int | str | None = Field(
+        default=None,
+        description=&#34;The id of the step.&#34;,
+    )
+    group: str = Field(
+        default=&#34;M&#34;,
+        description=&#34;The step group. S(Startup), M(Main), or C(Cleanup)&#34;,
+        pattern=r&#34;^[SMC]$&#34;,
+        min_length=1,
+        max_length=1,
+    )
+    stepType: StepType = Field(
+        description=&#34;The step type, a textual description of the step.&#34;,
+        # TODO: make this a string enum
+        min_length=1,
+    )
+    name: str = Field(
+        description=&#34;Name of the step.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    start: str | None = Field(
+        default=None,
+        description=&#34;The start date and time of the step with timezone.&#34;,
+    )
+    status: StepStatusCode = Field(
+        description=&#34;The status of the step.&#34;,
+        min_length=1,
+        max_length=1,
+    )
+    errorCode: int | str | None = Field(
+        default=None,
+        description=&#34;The error code of the error that occurred during the step execution, if any.&#34;,
+    )
+    errorMessage: str | None = Field(
+        default=None,
+        description=&#34;The error message of the error that occurred during the step execution, if any.&#34;,
+    )
+
+    totTime: float | None = Field(
+        default=0.0,
+        description=&#34;The total time spent executing this step.&#34;,
+    )
+    causedSeqFailure: bool | None = Field(
+        default=None,
+        description=&#34;A flag indicating if this step caused the sequence to fail.&#34;,
+    )
+    causedUUTFailure: bool | None = Field(
+        default=None,
+        description=&#34;A flag indicating if this step caused the UUT report to fail.&#34;,
+    )
+    reportText: str | None = Field(
+        default=None,
+        description=&#34;The step comment.&#34;,
+    )
+    additionalResults: list[AdditionalData] | None = Field(
+        default=None,
+        description=&#34;A list of additional results for the step.&#34;,
+    )
+    chart: Chart | None = Field(
+        default=None,
+        description=&#34;The chart belonging to this step.&#34;,
+    )
+    attachment: Attachment | None = Field(
+        default=None,
+        description=&#34;The attachment belonging to this step.&#34;,
+    )
+
+    def add_chart(
+        self,
+        label: str,
+        xlabel: str,
+        ylabel: str,
+        chart_type: ChartType = ChartType.LINE,
+        xunit: str | None = None,
+        yunit: str | None = None,
+    ) -&gt; Chart:
+        &#34;&#34;&#34;Add a chart to the step.
+
+        Then call `WSJF.sub_models.Chart.add_series` to add a series to the chart.
+
+        **Note:** This function can only be called once.
+        &#34;&#34;&#34;
+        if self.chart is not None:
+            errmsg = &#34;Chart already exists. This function should only be called once&#34;
+            raise RuntimeError(errmsg)
+        chart = Chart(
+            chartType=chart_type,
+            label=label,
+            xLabel=xlabel,
+            yLabel=ylabel,
+            xUnit=xunit,
+            yUnit=yunit,
+        )
+        self.chart = chart
+        return chart
+
+    # callExe: Optional[CallExe] = Field(
+    #     default=None,
+    #     description=&#34;Information about the executable called by this step.&#34;,
+    # )
+    # Not expecting us to use this function
+    # messagePopup: Optional[MessagePopup] = Field(
+    #     default=None, description=&#34;Information about the popup message belonging to this step.&#34;
+    # )
+
+    def set_total_time(self, time: float) -&gt; None:
+        &#34;&#34;&#34;Set the total time spent executing this step.&#34;&#34;&#34;
+        self.totTime = time
+
+    def add_attachment(self, name: str, content_type: str, data: str) -&gt; None:
+        &#34;&#34;&#34;Add an attachment to the step.
+
+        * `name`: Name of the attachment
+        * `content_type`: The MIME-type of the attachment.&lt;/br&gt;
+            E.g.: `application/pdf`, `image/png`, etc.
+        * `data`: base64 encoded data of the attachment
+
+        **Note:** This function can only be called once per step.
+        &#34;&#34;&#34;
+        if self.attachment is not None:
+            errmsg = &#34;Attachment already exists. This function should only be called once&#34;
+            raise RuntimeError(errmsg)
+        attachment = Attachment(name=name, contentType=content_type, data=data)
+        self.attachment = attachment</code></pre>
+</details>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="WSJF.models.AttachmentStep" href="#WSJF.models.AttachmentStep">AttachmentStep</a></li>
+<li><a title="WSJF.models.ChartStep" href="#WSJF.models.ChartStep">ChartStep</a></li>
+<li><a title="WSJF.models.MultipleBooleanLimitStep" href="#WSJF.models.MultipleBooleanLimitStep">MultipleBooleanLimitStep</a></li>
+<li><a title="WSJF.models.MultipleNumericLimitStep" href="#WSJF.models.MultipleNumericLimitStep">MultipleNumericLimitStep</a></li>
+<li><a title="WSJF.models.MultipleStringLimitStep" href="#WSJF.models.MultipleStringLimitStep">MultipleStringLimitStep</a></li>
+<li><a title="WSJF.models.RootSequenceCallStep" href="#WSJF.models.RootSequenceCallStep">RootSequenceCallStep</a></li>
+<li><a title="WSJF.models.SingleBooleanLimitStep" href="#WSJF.models.SingleBooleanLimitStep">SingleBooleanLimitStep</a></li>
+<li><a title="WSJF.models.SingleNumericLimitStep" href="#WSJF.models.SingleNumericLimitStep">SingleNumericLimitStep</a></li>
+<li><a title="WSJF.models.SingleStringLimitStep" href="#WSJF.models.SingleStringLimitStep">SingleStringLimitStep</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.Step.additionalResults"><code class="name">var <span class="ident">additionalResults</span> : list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.attachment"><code class="name">var <span class="ident">attachment</span> : <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.causedSeqFailure"><code class="name">var <span class="ident">causedSeqFailure</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.causedUUTFailure"><code class="name">var <span class="ident">causedUUTFailure</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.chart"><code class="name">var <span class="ident">chart</span> : <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.errorCode"><code class="name">var <span class="ident">errorCode</span> : int | str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.errorMessage"><code class="name">var <span class="ident">errorMessage</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.group"><code class="name">var <span class="ident">group</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.id"><code class="name">var <span class="ident">id</span> : int | str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.reportText"><code class="name">var <span class="ident">reportText</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.start"><code class="name">var <span class="ident">start</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.status"><code class="name">var <span class="ident">status</span> : <a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.stepType"><code class="name">var <span class="ident">stepType</span> : <a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.totTime"><code class="name">var <span class="ident">totTime</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.Step.add_attachment"><code class="name flex">
+<span>def <span class="ident">add_attachment</span></span>(<span>self, name: str, content_type: str, data: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_attachment(self, name: str, content_type: str, data: str) -&gt; None:
+    &#34;&#34;&#34;Add an attachment to the step.
+
+    * `name`: Name of the attachment
+    * `content_type`: The MIME-type of the attachment.&lt;/br&gt;
+        E.g.: `application/pdf`, `image/png`, etc.
+    * `data`: base64 encoded data of the attachment
+
+    **Note:** This function can only be called once per step.
+    &#34;&#34;&#34;
+    if self.attachment is not None:
+        errmsg = &#34;Attachment already exists. This function should only be called once&#34;
+        raise RuntimeError(errmsg)
+    attachment = Attachment(name=name, contentType=content_type, data=data)
+    self.attachment = attachment</code></pre>
+</details>
+<div class="desc"><p>Add an attachment to the step.</p>
+<ul>
+<li><code>name</code>: Name of the attachment</li>
+<li><code>content_type</code>: The MIME-type of the attachment.</br>
+E.g.: <code>application/pdf</code>, <code>image/png</code>, etc.</li>
+<li><code>data</code>: base64 encoded data of the attachment</li>
+</ul>
+<p><strong>Note:</strong> This function can only be called once per step.</p></div>
+</dd>
+<dt id="WSJF.models.Step.add_chart"><code class="name flex">
+<span>def <span class="ident">add_chart</span></span>(<span>self,<br>label: str,<br>xlabel: str,<br>ylabel: str,<br>chart_type: ChartType = LINE,<br>xunit: str | None = None,<br>yunit: str | None = None) ‑> <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_chart(
+    self,
+    label: str,
+    xlabel: str,
+    ylabel: str,
+    chart_type: ChartType = ChartType.LINE,
+    xunit: str | None = None,
+    yunit: str | None = None,
+) -&gt; Chart:
+    &#34;&#34;&#34;Add a chart to the step.
+
+    Then call `WSJF.sub_models.Chart.add_series` to add a series to the chart.
+
+    **Note:** This function can only be called once.
+    &#34;&#34;&#34;
+    if self.chart is not None:
+        errmsg = &#34;Chart already exists. This function should only be called once&#34;
+        raise RuntimeError(errmsg)
+    chart = Chart(
+        chartType=chart_type,
+        label=label,
+        xLabel=xlabel,
+        yLabel=ylabel,
+        xUnit=xunit,
+        yUnit=yunit,
+    )
+    self.chart = chart
+    return chart</code></pre>
+</details>
+<div class="desc"><p>Add a chart to the step.</p>
+<p>Then call <code><a title="WSJF.sub_models.Chart.add_series" href="sub_models.html#WSJF.sub_models.Chart.add_series">Chart.add_series()</a></code> to add a series to the chart.</p>
+<p><strong>Note:</strong> This function can only be called once.</p></div>
+</dd>
+<dt id="WSJF.models.Step.set_total_time"><code class="name flex">
+<span>def <span class="ident">set_total_time</span></span>(<span>self, time: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_total_time(self, time: float) -&gt; None:
+    &#34;&#34;&#34;Set the total time spent executing this step.&#34;&#34;&#34;
+    self.totTime = time</code></pre>
+</details>
+<div class="desc"><p>Set the total time spent executing this step.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.models.Step"><code class="flex name class">
+<span>class <span class="ident">cls</span></span>
+<span>(</span><span>*,<br>id: int | str | None = None,<br>group: Annotated[str, MinLen(min_length=1), MaxLen(max_length=1), _PydanticGeneralMetadata(pattern='^[SMC]$')] = 'M',<br>stepType: Annotated[<a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a>, MinLen(min_length=1)],<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>start: str | None = None,<br>status: Annotated[<a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>totTime: float | None = 0.0,<br>causedSeqFailure: bool | None = None,<br>causedUUTFailure: bool | None = None,<br>reportText: str | None = None,<br>additionalResults: list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None = None,<br>chart: <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None = None,<br>attachment: <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Step(BaseModel):
+    &#34;&#34;&#34; &#34;&#34;&#34;
+
+    id: int | str | None = Field(
+        default=None,
+        description=&#34;The id of the step.&#34;,
+    )
+    group: str = Field(
+        default=&#34;M&#34;,
+        description=&#34;The step group. S(Startup), M(Main), or C(Cleanup)&#34;,
+        pattern=r&#34;^[SMC]$&#34;,
+        min_length=1,
+        max_length=1,
+    )
+    stepType: StepType = Field(
+        description=&#34;The step type, a textual description of the step.&#34;,
+        # TODO: make this a string enum
+        min_length=1,
+    )
+    name: str = Field(
+        description=&#34;Name of the step.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    start: str | None = Field(
+        default=None,
+        description=&#34;The start date and time of the step with timezone.&#34;,
+    )
+    status: StepStatusCode = Field(
+        description=&#34;The status of the step.&#34;,
+        min_length=1,
+        max_length=1,
+    )
+    errorCode: int | str | None = Field(
+        default=None,
+        description=&#34;The error code of the error that occurred during the step execution, if any.&#34;,
+    )
+    errorMessage: str | None = Field(
+        default=None,
+        description=&#34;The error message of the error that occurred during the step execution, if any.&#34;,
+    )
+
+    totTime: float | None = Field(
+        default=0.0,
+        description=&#34;The total time spent executing this step.&#34;,
+    )
+    causedSeqFailure: bool | None = Field(
+        default=None,
+        description=&#34;A flag indicating if this step caused the sequence to fail.&#34;,
+    )
+    causedUUTFailure: bool | None = Field(
+        default=None,
+        description=&#34;A flag indicating if this step caused the UUT report to fail.&#34;,
+    )
+    reportText: str | None = Field(
+        default=None,
+        description=&#34;The step comment.&#34;,
+    )
+    additionalResults: list[AdditionalData] | None = Field(
+        default=None,
+        description=&#34;A list of additional results for the step.&#34;,
+    )
+    chart: Chart | None = Field(
+        default=None,
+        description=&#34;The chart belonging to this step.&#34;,
+    )
+    attachment: Attachment | None = Field(
+        default=None,
+        description=&#34;The attachment belonging to this step.&#34;,
+    )
+
+    def add_chart(
+        self,
+        label: str,
+        xlabel: str,
+        ylabel: str,
+        chart_type: ChartType = ChartType.LINE,
+        xunit: str | None = None,
+        yunit: str | None = None,
+    ) -&gt; Chart:
+        &#34;&#34;&#34;Add a chart to the step.
+
+        Then call `WSJF.sub_models.Chart.add_series` to add a series to the chart.
+
+        **Note:** This function can only be called once.
+        &#34;&#34;&#34;
+        if self.chart is not None:
+            errmsg = &#34;Chart already exists. This function should only be called once&#34;
+            raise RuntimeError(errmsg)
+        chart = Chart(
+            chartType=chart_type,
+            label=label,
+            xLabel=xlabel,
+            yLabel=ylabel,
+            xUnit=xunit,
+            yUnit=yunit,
+        )
+        self.chart = chart
+        return chart
+
+    # callExe: Optional[CallExe] = Field(
+    #     default=None,
+    #     description=&#34;Information about the executable called by this step.&#34;,
+    # )
+    # Not expecting us to use this function
+    # messagePopup: Optional[MessagePopup] = Field(
+    #     default=None, description=&#34;Information about the popup message belonging to this step.&#34;
+    # )
+
+    def set_total_time(self, time: float) -&gt; None:
+        &#34;&#34;&#34;Set the total time spent executing this step.&#34;&#34;&#34;
+        self.totTime = time
+
+    def add_attachment(self, name: str, content_type: str, data: str) -&gt; None:
+        &#34;&#34;&#34;Add an attachment to the step.
+
+        * `name`: Name of the attachment
+        * `content_type`: The MIME-type of the attachment.&lt;/br&gt;
+            E.g.: `application/pdf`, `image/png`, etc.
+        * `data`: base64 encoded data of the attachment
+
+        **Note:** This function can only be called once per step.
+        &#34;&#34;&#34;
+        if self.attachment is not None:
+            errmsg = &#34;Attachment already exists. This function should only be called once&#34;
+            raise RuntimeError(errmsg)
+        attachment = Attachment(name=name, contentType=content_type, data=data)
+        self.attachment = attachment</code></pre>
+</details>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="WSJF.models.AttachmentStep" href="#WSJF.models.AttachmentStep">AttachmentStep</a></li>
+<li><a title="WSJF.models.ChartStep" href="#WSJF.models.ChartStep">ChartStep</a></li>
+<li><a title="WSJF.models.MultipleBooleanLimitStep" href="#WSJF.models.MultipleBooleanLimitStep">MultipleBooleanLimitStep</a></li>
+<li><a title="WSJF.models.MultipleNumericLimitStep" href="#WSJF.models.MultipleNumericLimitStep">MultipleNumericLimitStep</a></li>
+<li><a title="WSJF.models.MultipleStringLimitStep" href="#WSJF.models.MultipleStringLimitStep">MultipleStringLimitStep</a></li>
+<li><a title="WSJF.models.RootSequenceCallStep" href="#WSJF.models.RootSequenceCallStep">RootSequenceCallStep</a></li>
+<li><a title="WSJF.models.SingleBooleanLimitStep" href="#WSJF.models.SingleBooleanLimitStep">SingleBooleanLimitStep</a></li>
+<li><a title="WSJF.models.SingleNumericLimitStep" href="#WSJF.models.SingleNumericLimitStep">SingleNumericLimitStep</a></li>
+<li><a title="WSJF.models.SingleStringLimitStep" href="#WSJF.models.SingleStringLimitStep">SingleStringLimitStep</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.Step.additionalResults"><code class="name">var <span class="ident">additionalResults</span> : list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>] | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.attachment"><code class="name">var <span class="ident">attachment</span> : <a title="WSJF.sub_models.Attachment" href="sub_models.html#WSJF.sub_models.Attachment">Attachment</a> | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.causedSeqFailure"><code class="name">var <span class="ident">causedSeqFailure</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.causedUUTFailure"><code class="name">var <span class="ident">causedUUTFailure</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.chart"><code class="name">var <span class="ident">chart</span> : <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a> | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.errorCode"><code class="name">var <span class="ident">errorCode</span> : int | str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.errorMessage"><code class="name">var <span class="ident">errorMessage</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.group"><code class="name">var <span class="ident">group</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.id"><code class="name">var <span class="ident">id</span> : int | str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.reportText"><code class="name">var <span class="ident">reportText</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.start"><code class="name">var <span class="ident">start</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.status"><code class="name">var <span class="ident">status</span> : <a title="WSJF.enums.StepStatusCode" href="enums.html#WSJF.enums.StepStatusCode">StepStatusCode</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.stepType"><code class="name">var <span class="ident">stepType</span> : <a title="WSJF.enums.StepType" href="enums.html#WSJF.enums.StepType">StepType</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.Step.totTime"><code class="name">var <span class="ident">totTime</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.Step.add_attachment"><code class="name flex">
+<span>def <span class="ident">add_attachment</span></span>(<span>self, name: str, content_type: str, data: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_attachment(self, name: str, content_type: str, data: str) -&gt; None:
+    &#34;&#34;&#34;Add an attachment to the step.
+
+    * `name`: Name of the attachment
+    * `content_type`: The MIME-type of the attachment.&lt;/br&gt;
+        E.g.: `application/pdf`, `image/png`, etc.
+    * `data`: base64 encoded data of the attachment
+
+    **Note:** This function can only be called once per step.
+    &#34;&#34;&#34;
+    if self.attachment is not None:
+        errmsg = &#34;Attachment already exists. This function should only be called once&#34;
+        raise RuntimeError(errmsg)
+    attachment = Attachment(name=name, contentType=content_type, data=data)
+    self.attachment = attachment</code></pre>
+</details>
+<div class="desc"><p>Add an attachment to the step.</p>
+<ul>
+<li><code>name</code>: Name of the attachment</li>
+<li><code>content_type</code>: The MIME-type of the attachment.</br>
+E.g.: <code>application/pdf</code>, <code>image/png</code>, etc.</li>
+<li><code>data</code>: base64 encoded data of the attachment</li>
+</ul>
+<p><strong>Note:</strong> This function can only be called once per step.</p></div>
+</dd>
+<dt id="WSJF.models.Step.add_chart"><code class="name flex">
+<span>def <span class="ident">add_chart</span></span>(<span>self,<br>label: str,<br>xlabel: str,<br>ylabel: str,<br>chart_type: ChartType = LINE,<br>xunit: str | None = None,<br>yunit: str | None = None) ‑> <a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_chart(
+    self,
+    label: str,
+    xlabel: str,
+    ylabel: str,
+    chart_type: ChartType = ChartType.LINE,
+    xunit: str | None = None,
+    yunit: str | None = None,
+) -&gt; Chart:
+    &#34;&#34;&#34;Add a chart to the step.
+
+    Then call `WSJF.sub_models.Chart.add_series` to add a series to the chart.
+
+    **Note:** This function can only be called once.
+    &#34;&#34;&#34;
+    if self.chart is not None:
+        errmsg = &#34;Chart already exists. This function should only be called once&#34;
+        raise RuntimeError(errmsg)
+    chart = Chart(
+        chartType=chart_type,
+        label=label,
+        xLabel=xlabel,
+        yLabel=ylabel,
+        xUnit=xunit,
+        yUnit=yunit,
+    )
+    self.chart = chart
+    return chart</code></pre>
+</details>
+<div class="desc"><p>Add a chart to the step.</p>
+<p>Then call <code><a title="WSJF.sub_models.Chart.add_series" href="sub_models.html#WSJF.sub_models.Chart.add_series">Chart.add_series()</a></code> to add a series to the chart.</p>
+<p><strong>Note:</strong> This function can only be called once.</p></div>
+</dd>
+<dt id="WSJF.models.Step.set_total_time"><code class="name flex">
+<span>def <span class="ident">set_total_time</span></span>(<span>self, time: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_total_time(self, time: float) -&gt; None:
+    &#34;&#34;&#34;Set the total time spent executing this step.&#34;&#34;&#34;
+    self.totTime = time</code></pre>
+</details>
+<div class="desc"><p>Set the total time spent executing this step.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.models.WATSReport"><code class="flex name class">
+<span>class <span class="ident">WATSReport</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class WATSReport(BaseModel):
+    &#34;&#34;&#34;&#34;&#34;&#34;
+
+    type: str = Field(
+        description=&#34;The unique identifier for a type of report.&#34;,
+        min_length=1,
+        max_length=1,
+        default=&#34;T&#34;,  # We default to test report
+    )
+    id: UUID = Field(
+        description=&#34;The unique identifier for a report.&#34;,
+        default_factory=uuid4,
+    )
+    pn: str = Field(
+        description=&#34;The Partnumber of the Unit.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    sn: str = Field(
+        description=&#34;The Serialnumber of the Unit.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    rev: str = Field(
+        description=&#34;The Revision number of the Unit.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    productName: str | None = Field(
+        default=None,
+        description=&#34;The Product name of the Unit. This property is not used for incoming report (read-only).&#34;,
+        min_length=0,
+        max_length=100,
+    )
+    processCode: int = Field(
+        description=&#34;The Process identifier (code) for the report.&#34;,
+    )
+    processName: str | None = Field(
+        default=None,
+        description=&#34;The Process identifier (name) for a report.&#34;,
+        min_length=0,
+        max_length=100,
+    )
+    result: UUTStatusCode = Field(
+        description=(
+            &#34;The outcome (result) of a test. Must be one of Passed, Failed, Error or Terminated. UUR must be Passed.&#34;
+        ),
+        min_length=1,
+        max_length=1,
+    )
+    machineName: str = Field(
+        description=&#34;The machine name where the report was produced.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    location: str = Field(
+        description=&#34;The location where the report was produced.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    purpose: str = Field(
+        description=&#34;The primary (or current) purpose of the tester used to produce the report.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    # TODO: Look into making this a datetime field
+    start: str = Field(
+        description=&#34;The date and time when the report was created including timezone.&#34;,
+        examples=[[&#34;2019-09-12T14:26:16.977+02:00&#34;]],
+    )
+    startUTC: str | None = Field(
+        default=None,
+        description=(
+            &#34;The date and time when the report was created in UTC.&#34;
+            &#34;If specified, the time must be equal to start, but in +00:00 or Z timezone.&#34;
+        ),
+        examples=[[&#34;2019-09-12T12:26:16.977Z&#34;]],
+    )
+    root: RootSequenceCallStep = Field(
+        description=&#34;The root step of the report. Only for UUT reports.&#34;,
+    )
+    uut: UUT = Field(
+        description=&#34;The header data for a UUT report. The documentation say it&#39;s optional, but it is required.&#34;,
+    )
+    miscInfos: list[MiscInfo] = Field(
+        default_factory=list,
+        description=&#34;A list of miscellaneous information.&#34;,
+    )
+    subUnits: list[SubUnit] = Field(
+        default_factory=list,
+        description=&#34;A list of subunits. In UUR reports, may be hierarchical.&#34;,
+    )
+    additionalData: list[AdditionalData] = Field(
+        default_factory=list,
+        description=&#34;A list of additional header data.&#34;,
+    )
+    assets: list[Asset] = Field(
+        default_factory=list,
+        description=&#34;A list of assets used in test.&#34;,
+    )
+
+    def save_as_json(self, path: Path) -&gt; Path:
+        &#34;&#34;&#34;Save the report as a JSON file.
+
+        The file name is in the format `YYYY-MM-DDTHHMMSS-{part_number}-{serial_number}_WATS.json`.
+        &#34;&#34;&#34;
+        filename = f&#34;{datetime.now().strftime(&#39;%Y-%m-%dT%H%M%S&#39;)}-{self.root.name}-{self.sn}_WATS.json&#34;
+        filepath = path / filename
+        filepath.write_text(self.model_dump_json(indent=2, exclude_none=True))
+        return filepath
+
+    def set_result(self, result: UUTStatusCode) -&gt; None:
+        &#34;&#34;&#34;Set the result of the report.
+
+        The result must be the same as the root step status.
+        &#34;&#34;&#34;
+        if self.root.status != result:
+            errmsg = &#34;Root step status must be the same as the report status&#34;
+            raise ValueError(errmsg)
+        self.result = result
+
+    def add_asset(self, asset_sn: str, usage_count: int) -&gt; None:
+        &#34;&#34;&#34;Add an asset to the report.
+
+        **Note**: The asset needs to be set up in the WATS client before it can be used.
+        This requires there to be an asset with this serial number in the asset manager.
+
+        https://[your-domain].wats.com/dist/#/control-panel/asset-manager
+
+        &#34;&#34;&#34;
+        asset = Asset(assetSN=asset_sn, usageCount=usage_count)
+        self.assets.append(asset)
+
+    def add_comment(self, comment: str) -&gt; str:
+        &#34;&#34;&#34;Add a comment to the report.
+
+        If the comment already contains text, a newline in the form of a `&lt;/br&gt;` is added before the new comment.
+
+        Note: This field supports HTML, although everything will be formatted bold italic.
+
+        Returns:
+            The comment with the new text added.
+
+        &#34;&#34;&#34;
+        if self.uut.comment is None:
+            self.uut.comment = comment
+        else:
+            self.uut.comment += f&#34;&lt;/br&gt;{comment}&#34;
+
+        return self.uut.comment
+
+    def add_misc_info(self, description: str, text: str | None = None, numeric: int | None = None) -&gt; None:
+        &#34;&#34;&#34;Add a misc info to the report.&#34;&#34;&#34;
+        miscinfo = MiscInfo(description=description, text=text, numeric=numeric)
+        self.miscInfos.append(miscinfo)
+
+    def add_subunit(
+        self,
+        part_type: str,
+        part_number: str,
+        revision: str,
+        serial_number: str,
+    ) -&gt; None:
+        &#34;&#34;&#34;Add a subunit to the report.
+
+        **Note:** The part type, part number, revision and serial number should be set up in the WATS.
+
+        https://[your-domain].wats.com/dist/#/control-panel/product-manager
+        &#34;&#34;&#34;
+        subunit = SubUnit(partType=part_type, pn=part_number, rev=revision, sn=serial_number)
+        self.subUnits.append(subunit)
+
+    def add_test_sequence(self, name: str, path: str, version: str = &#34;0&#34;) -&gt; SequenceCallStep:
+        &#34;&#34;&#34;Add a test sequence to the report.&#34;&#34;&#34;
+        return self.root.add_sequence_call(name=name, path=path, version=version)
+
+    @classmethod
+    def factory(
+        cls,
+        name: str,
+        part_number: str,
+        serial_number: str,
+        revision: str,
+        process_code: int,
+        machine_name: str,  # TODO: If the WATS client is used, this isn&#39;t required. Maybe set to optional?
+        location: str,  # TODO: Also not needed if the WATS client is used
+        purpose: str,  # TODO: Ditto.
+        operator_name: str,
+    ) -&gt; WATSReport:
+        &#34;&#34;&#34;A convenience method to create a `WATSReport`.
+
+        It will create a root step with the given name and a sequence call with the same name.
+        &#34;&#34;&#34;
+        root = RootSequenceCallStep(
+            name=name,
+            status=StepStatusCode.PASSED,
+            seqCall=SequenceCall(
+                path=name,  # TODO: Expose this?
+                name=name,
+                version=&#34;1.0&#34;,  # TODO: Expose this
+            ),
+        )
+
+        report = WATSReport(
+            pn=part_number,
+            sn=serial_number,
+            rev=revision,
+            processCode=process_code,
+            result=UUTStatusCode.PASSED,
+            machineName=machine_name,
+            location=location,
+            purpose=purpose,
+            start=str(datetime.now().astimezone().replace(microsecond=0).isoformat()),
+            root=root,
+            uut=UUT(user=operator_name),
+        )
+        root._report = report  # noqa: SLF001
+        return report</code></pre>
+</details>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.models.WATSReport.additionalData"><code class="name">var <span class="ident">additionalData</span> : list[<a title="WSJF.sub_models.AdditionalData" href="sub_models.html#WSJF.sub_models.AdditionalData">AdditionalData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.assets"><code class="name">var <span class="ident">assets</span> : list[<a title="WSJF.sub_models.Asset" href="sub_models.html#WSJF.sub_models.Asset">Asset</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.id"><code class="name">var <span class="ident">id</span> : uuid.UUID</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.location"><code class="name">var <span class="ident">location</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.machineName"><code class="name">var <span class="ident">machineName</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.miscInfos"><code class="name">var <span class="ident">miscInfos</span> : list[<a title="WSJF.sub_models.MiscInfo" href="sub_models.html#WSJF.sub_models.MiscInfo">MiscInfo</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.pn"><code class="name">var <span class="ident">pn</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.processCode"><code class="name">var <span class="ident">processCode</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.processName"><code class="name">var <span class="ident">processName</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.productName"><code class="name">var <span class="ident">productName</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.purpose"><code class="name">var <span class="ident">purpose</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.result"><code class="name">var <span class="ident">result</span> : <a title="WSJF.enums.UUTStatusCode" href="enums.html#WSJF.enums.UUTStatusCode">UUTStatusCode</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.rev"><code class="name">var <span class="ident">rev</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.root"><code class="name">var <span class="ident">root</span> : <a title="WSJF.models.RootSequenceCallStep" href="#WSJF.models.RootSequenceCallStep">RootSequenceCallStep</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.sn"><code class="name">var <span class="ident">sn</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.start"><code class="name">var <span class="ident">start</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.startUTC"><code class="name">var <span class="ident">startUTC</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.subUnits"><code class="name">var <span class="ident">subUnits</span> : list[<a title="WSJF.sub_models.SubUnit" href="sub_models.html#WSJF.sub_models.SubUnit">SubUnit</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.type"><code class="name">var <span class="ident">type</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.models.WATSReport.uut"><code class="name">var <span class="ident">uut</span> : <a title="WSJF.sub_models.UUT" href="sub_models.html#WSJF.sub_models.UUT">UUT</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="WSJF.models.WATSReport.factory"><code class="name flex">
+<span>def <span class="ident">factory</span></span>(<span>name: str,<br>part_number: str,<br>serial_number: str,<br>revision: str,<br>process_code: int,<br>machine_name: str,<br>location: str,<br>purpose: str,<br>operator_name: str) ‑> <a title="WSJF.models.WATSReport" href="#WSJF.models.WATSReport">WATSReport</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A convenience method to create a <code><a title="WSJF.models.WATSReport" href="#WSJF.models.WATSReport">WATSReport</a></code>.</p>
+<p>It will create a root step with the given name and a sequence call with the same name.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.models.WATSReport.add_asset"><code class="name flex">
+<span>def <span class="ident">add_asset</span></span>(<span>self, asset_sn: str, usage_count: int) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_asset(self, asset_sn: str, usage_count: int) -&gt; None:
+    &#34;&#34;&#34;Add an asset to the report.
+
+    **Note**: The asset needs to be set up in the WATS client before it can be used.
+    This requires there to be an asset with this serial number in the asset manager.
+
+    https://[your-domain].wats.com/dist/#/control-panel/asset-manager
+
+    &#34;&#34;&#34;
+    asset = Asset(assetSN=asset_sn, usageCount=usage_count)
+    self.assets.append(asset)</code></pre>
+</details>
+<div class="desc"><p>Add an asset to the report.</p>
+<p><strong>Note</strong>: The asset needs to be set up in the WATS client before it can be used.
+This requires there to be an asset with this serial number in the asset manager.</p>
+<p><a href="https://[your-domain].wats.com/dist/#/control-panel/asset-manager">https://[your-domain].wats.com/dist/#/control-panel/asset-manager</a></p></div>
+</dd>
+<dt id="WSJF.models.WATSReport.add_comment"><code class="name flex">
+<span>def <span class="ident">add_comment</span></span>(<span>self, comment: str) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_comment(self, comment: str) -&gt; str:
+    &#34;&#34;&#34;Add a comment to the report.
+
+    If the comment already contains text, a newline in the form of a `&lt;/br&gt;` is added before the new comment.
+
+    Note: This field supports HTML, although everything will be formatted bold italic.
+
+    Returns:
+        The comment with the new text added.
+
+    &#34;&#34;&#34;
+    if self.uut.comment is None:
+        self.uut.comment = comment
+    else:
+        self.uut.comment += f&#34;&lt;/br&gt;{comment}&#34;
+
+    return self.uut.comment</code></pre>
+</details>
+<div class="desc"><p>Add a comment to the report.</p>
+<p>If the comment already contains text, a newline in the form of a <code>&lt;/br&gt;</code> is added before the new comment.</p>
+<p>Note: This field supports HTML, although everything will be formatted bold italic.</p>
+<h2 id="returns">Returns</h2>
+<p>The comment with the new text added.</p></div>
+</dd>
+<dt id="WSJF.models.WATSReport.add_misc_info"><code class="name flex">
+<span>def <span class="ident">add_misc_info</span></span>(<span>self, description: str, text: str | None = None, numeric: int | None = None) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_misc_info(self, description: str, text: str | None = None, numeric: int | None = None) -&gt; None:
+    &#34;&#34;&#34;Add a misc info to the report.&#34;&#34;&#34;
+    miscinfo = MiscInfo(description=description, text=text, numeric=numeric)
+    self.miscInfos.append(miscinfo)</code></pre>
+</details>
+<div class="desc"><p>Add a misc info to the report.</p></div>
+</dd>
+<dt id="WSJF.models.WATSReport.add_subunit"><code class="name flex">
+<span>def <span class="ident">add_subunit</span></span>(<span>self, part_type: str, part_number: str, revision: str, serial_number: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_subunit(
+    self,
+    part_type: str,
+    part_number: str,
+    revision: str,
+    serial_number: str,
+) -&gt; None:
+    &#34;&#34;&#34;Add a subunit to the report.
+
+    **Note:** The part type, part number, revision and serial number should be set up in the WATS.
+
+    https://[your-domain].wats.com/dist/#/control-panel/product-manager
+    &#34;&#34;&#34;
+    subunit = SubUnit(partType=part_type, pn=part_number, rev=revision, sn=serial_number)
+    self.subUnits.append(subunit)</code></pre>
+</details>
+<div class="desc"><p>Add a subunit to the report.</p>
+<p><strong>Note:</strong> The part type, part number, revision and serial number should be set up in the WATS.</p>
+<p><a href="https://[your-domain].wats.com/dist/#/control-panel/product-manager">https://[your-domain].wats.com/dist/#/control-panel/product-manager</a></p></div>
+</dd>
+<dt id="WSJF.models.WATSReport.add_test_sequence"><code class="name flex">
+<span>def <span class="ident">add_test_sequence</span></span>(<span>self, name: str, path: str, version: str = '0') ‑> <a title="WSJF.models.SequenceCallStep" href="#WSJF.models.SequenceCallStep">SequenceCallStep</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_test_sequence(self, name: str, path: str, version: str = &#34;0&#34;) -&gt; SequenceCallStep:
+    &#34;&#34;&#34;Add a test sequence to the report.&#34;&#34;&#34;
+    return self.root.add_sequence_call(name=name, path=path, version=version)</code></pre>
+</details>
+<div class="desc"><p>Add a test sequence to the report.</p></div>
+</dd>
+<dt id="WSJF.models.WATSReport.save_as_json"><code class="name flex">
+<span>def <span class="ident">save_as_json</span></span>(<span>self, path: Path) ‑> Path</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_as_json(self, path: Path) -&gt; Path:
+    &#34;&#34;&#34;Save the report as a JSON file.
+
+    The file name is in the format `YYYY-MM-DDTHHMMSS-{part_number}-{serial_number}_WATS.json`.
+    &#34;&#34;&#34;
+    filename = f&#34;{datetime.now().strftime(&#39;%Y-%m-%dT%H%M%S&#39;)}-{self.root.name}-{self.sn}_WATS.json&#34;
+    filepath = path / filename
+    filepath.write_text(self.model_dump_json(indent=2, exclude_none=True))
+    return filepath</code></pre>
+</details>
+<div class="desc"><p>Save the report as a JSON file.</p>
+<p>The file name is in the format <code>YYYY-MM-DDTHHMMSS-{part_number}-{serial_number}_WATS.json</code>.</p></div>
+</dd>
+<dt id="WSJF.models.WATSReport.set_result"><code class="name flex">
+<span>def <span class="ident">set_result</span></span>(<span>self, result: UUTStatusCode) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_result(self, result: UUTStatusCode) -&gt; None:
+    &#34;&#34;&#34;Set the result of the report.
+
+    The result must be the same as the root step status.
+    &#34;&#34;&#34;
+    if self.root.status != result:
+        errmsg = &#34;Root step status must be the same as the report status&#34;
+        raise ValueError(errmsg)
+    self.result = result</code></pre>
+</details>
+<div class="desc"><p>Set the result of the report.</p>
+<p>The result must be the same as the root step status.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="WSJF" href="index.html">WSJF</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="WSJF.models.AttachmentStep" href="#WSJF.models.AttachmentStep">AttachmentStep</a></code></h4>
+</li>
+<li>
+<h4><code><a title="WSJF.models.ChartStep" href="#WSJF.models.ChartStep">ChartStep</a></code></h4>
+</li>
+<li>
+<h4><code><a title="WSJF.models.MultipleBooleanLimitStep" href="#WSJF.models.MultipleBooleanLimitStep">MultipleBooleanLimitStep</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.models.MultipleBooleanLimitStep.add_result" href="#WSJF.models.MultipleBooleanLimitStep.add_result">add_result</a></code></li>
+<li><code><a title="WSJF.models.MultipleBooleanLimitStep.booleanMeas" href="#WSJF.models.MultipleBooleanLimitStep.booleanMeas">booleanMeas</a></code></li>
+<li><code><a title="WSJF.models.MultipleBooleanLimitStep.data" href="#WSJF.models.MultipleBooleanLimitStep.data">data</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.MultipleNumericLimitStep" href="#WSJF.models.MultipleNumericLimitStep">MultipleNumericLimitStep</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.models.MultipleNumericLimitStep.compare_binary" href="#WSJF.models.MultipleNumericLimitStep.compare_binary">compare_binary</a></code></li>
+<li><code><a title="WSJF.models.MultipleNumericLimitStep.compare_ternary" href="#WSJF.models.MultipleNumericLimitStep.compare_ternary">compare_ternary</a></code></li>
+<li><code><a title="WSJF.models.MultipleNumericLimitStep.data" href="#WSJF.models.MultipleNumericLimitStep.data">data</a></code></li>
+<li><code><a title="WSJF.models.MultipleNumericLimitStep.log" href="#WSJF.models.MultipleNumericLimitStep.log">log</a></code></li>
+<li><code><a title="WSJF.models.MultipleNumericLimitStep.numericMeas" href="#WSJF.models.MultipleNumericLimitStep.numericMeas">numericMeas</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.MultipleStringLimitStep" href="#WSJF.models.MultipleStringLimitStep">MultipleStringLimitStep</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.models.MultipleStringLimitStep.compare_binary" href="#WSJF.models.MultipleStringLimitStep.compare_binary">compare_binary</a></code></li>
+<li><code><a title="WSJF.models.MultipleStringLimitStep.compare_case" href="#WSJF.models.MultipleStringLimitStep.compare_case">compare_case</a></code></li>
+<li><code><a title="WSJF.models.MultipleStringLimitStep.data" href="#WSJF.models.MultipleStringLimitStep.data">data</a></code></li>
+<li><code><a title="WSJF.models.MultipleStringLimitStep.log" href="#WSJF.models.MultipleStringLimitStep.log">log</a></code></li>
+<li><code><a title="WSJF.models.MultipleStringLimitStep.stringMeas" href="#WSJF.models.MultipleStringLimitStep.stringMeas">stringMeas</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.RootSequenceCallStep" href="#WSJF.models.RootSequenceCallStep">RootSequenceCallStep</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_asset" href="#WSJF.models.RootSequenceCallStep.add_asset">add_asset</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_comment" href="#WSJF.models.RootSequenceCallStep.add_comment">add_comment</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_misc_info" href="#WSJF.models.RootSequenceCallStep.add_misc_info">add_misc_info</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_sequence_call" href="#WSJF.models.RootSequenceCallStep.add_sequence_call">add_sequence_call</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.add_subunit" href="#WSJF.models.RootSequenceCallStep.add_subunit">add_subunit</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.seqCall" href="#WSJF.models.RootSequenceCallStep.seqCall">seqCall</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.set_status" href="#WSJF.models.RootSequenceCallStep.set_status">set_status</a></code></li>
+<li><code><a title="WSJF.models.RootSequenceCallStep.steps" href="#WSJF.models.RootSequenceCallStep.steps">steps</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.SequenceCallStep" href="#WSJF.models.SequenceCallStep">SequenceCallStep</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.models.SequenceCallStep.add_test_step" href="#WSJF.models.SequenceCallStep.add_test_step">add_test_step</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.SingleBooleanLimitStep" href="#WSJF.models.SingleBooleanLimitStep">SingleBooleanLimitStep</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.models.SingleBooleanLimitStep.add_result" href="#WSJF.models.SingleBooleanLimitStep.add_result">add_result</a></code></li>
+<li><code><a title="WSJF.models.SingleBooleanLimitStep.booleanMeas" href="#WSJF.models.SingleBooleanLimitStep.booleanMeas">booleanMeas</a></code></li>
+<li><code><a title="WSJF.models.SingleBooleanLimitStep.data" href="#WSJF.models.SingleBooleanLimitStep.data">data</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.SingleNumericLimitStep" href="#WSJF.models.SingleNumericLimitStep">SingleNumericLimitStep</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.models.SingleNumericLimitStep.compare_binary" href="#WSJF.models.SingleNumericLimitStep.compare_binary">compare_binary</a></code></li>
+<li><code><a title="WSJF.models.SingleNumericLimitStep.compare_ternary" href="#WSJF.models.SingleNumericLimitStep.compare_ternary">compare_ternary</a></code></li>
+<li><code><a title="WSJF.models.SingleNumericLimitStep.data" href="#WSJF.models.SingleNumericLimitStep.data">data</a></code></li>
+<li><code><a title="WSJF.models.SingleNumericLimitStep.log" href="#WSJF.models.SingleNumericLimitStep.log">log</a></code></li>
+<li><code><a title="WSJF.models.SingleNumericLimitStep.numericMeas" href="#WSJF.models.SingleNumericLimitStep.numericMeas">numericMeas</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.SingleStringLimitStep" href="#WSJF.models.SingleStringLimitStep">SingleStringLimitStep</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.models.SingleStringLimitStep.compare_binary" href="#WSJF.models.SingleStringLimitStep.compare_binary">compare_binary</a></code></li>
+<li><code><a title="WSJF.models.SingleStringLimitStep.compare_case" href="#WSJF.models.SingleStringLimitStep.compare_case">compare_case</a></code></li>
+<li><code><a title="WSJF.models.SingleStringLimitStep.data" href="#WSJF.models.SingleStringLimitStep.data">data</a></code></li>
+<li><code><a title="WSJF.models.SingleStringLimitStep.log" href="#WSJF.models.SingleStringLimitStep.log">log</a></code></li>
+<li><code><a title="WSJF.models.SingleStringLimitStep.stringMeas" href="#WSJF.models.SingleStringLimitStep.stringMeas">stringMeas</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.additionalResults" href="#WSJF.models.Step.additionalResults">additionalResults</a></code></li>
+<li><code><a title="WSJF.models.Step.attachment" href="#WSJF.models.Step.attachment">attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.causedSeqFailure" href="#WSJF.models.Step.causedSeqFailure">causedSeqFailure</a></code></li>
+<li><code><a title="WSJF.models.Step.causedUUTFailure" href="#WSJF.models.Step.causedUUTFailure">causedUUTFailure</a></code></li>
+<li><code><a title="WSJF.models.Step.chart" href="#WSJF.models.Step.chart">chart</a></code></li>
+<li><code><a title="WSJF.models.Step.errorCode" href="#WSJF.models.Step.errorCode">errorCode</a></code></li>
+<li><code><a title="WSJF.models.Step.errorMessage" href="#WSJF.models.Step.errorMessage">errorMessage</a></code></li>
+<li><code><a title="WSJF.models.Step.group" href="#WSJF.models.Step.group">group</a></code></li>
+<li><code><a title="WSJF.models.Step.id" href="#WSJF.models.Step.id">id</a></code></li>
+<li><code><a title="WSJF.models.Step.name" href="#WSJF.models.Step.name">name</a></code></li>
+<li><code><a title="WSJF.models.Step.reportText" href="#WSJF.models.Step.reportText">reportText</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+<li><code><a title="WSJF.models.Step.start" href="#WSJF.models.Step.start">start</a></code></li>
+<li><code><a title="WSJF.models.Step.status" href="#WSJF.models.Step.status">status</a></code></li>
+<li><code><a title="WSJF.models.Step.stepType" href="#WSJF.models.Step.stepType">stepType</a></code></li>
+<li><code><a title="WSJF.models.Step.totTime" href="#WSJF.models.Step.totTime">totTime</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.Step" href="#WSJF.models.Step">Step</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.models.Step.add_attachment" href="#WSJF.models.Step.add_attachment">add_attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.add_chart" href="#WSJF.models.Step.add_chart">add_chart</a></code></li>
+<li><code><a title="WSJF.models.Step.additionalResults" href="#WSJF.models.Step.additionalResults">additionalResults</a></code></li>
+<li><code><a title="WSJF.models.Step.attachment" href="#WSJF.models.Step.attachment">attachment</a></code></li>
+<li><code><a title="WSJF.models.Step.causedSeqFailure" href="#WSJF.models.Step.causedSeqFailure">causedSeqFailure</a></code></li>
+<li><code><a title="WSJF.models.Step.causedUUTFailure" href="#WSJF.models.Step.causedUUTFailure">causedUUTFailure</a></code></li>
+<li><code><a title="WSJF.models.Step.chart" href="#WSJF.models.Step.chart">chart</a></code></li>
+<li><code><a title="WSJF.models.Step.errorCode" href="#WSJF.models.Step.errorCode">errorCode</a></code></li>
+<li><code><a title="WSJF.models.Step.errorMessage" href="#WSJF.models.Step.errorMessage">errorMessage</a></code></li>
+<li><code><a title="WSJF.models.Step.group" href="#WSJF.models.Step.group">group</a></code></li>
+<li><code><a title="WSJF.models.Step.id" href="#WSJF.models.Step.id">id</a></code></li>
+<li><code><a title="WSJF.models.Step.name" href="#WSJF.models.Step.name">name</a></code></li>
+<li><code><a title="WSJF.models.Step.reportText" href="#WSJF.models.Step.reportText">reportText</a></code></li>
+<li><code><a title="WSJF.models.Step.set_total_time" href="#WSJF.models.Step.set_total_time">set_total_time</a></code></li>
+<li><code><a title="WSJF.models.Step.start" href="#WSJF.models.Step.start">start</a></code></li>
+<li><code><a title="WSJF.models.Step.status" href="#WSJF.models.Step.status">status</a></code></li>
+<li><code><a title="WSJF.models.Step.stepType" href="#WSJF.models.Step.stepType">stepType</a></code></li>
+<li><code><a title="WSJF.models.Step.totTime" href="#WSJF.models.Step.totTime">totTime</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.models.WATSReport" href="#WSJF.models.WATSReport">WATSReport</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.models.WATSReport.add_asset" href="#WSJF.models.WATSReport.add_asset">add_asset</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.add_comment" href="#WSJF.models.WATSReport.add_comment">add_comment</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.add_misc_info" href="#WSJF.models.WATSReport.add_misc_info">add_misc_info</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.add_subunit" href="#WSJF.models.WATSReport.add_subunit">add_subunit</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.add_test_sequence" href="#WSJF.models.WATSReport.add_test_sequence">add_test_sequence</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.additionalData" href="#WSJF.models.WATSReport.additionalData">additionalData</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.assets" href="#WSJF.models.WATSReport.assets">assets</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.factory" href="#WSJF.models.WATSReport.factory">factory</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.id" href="#WSJF.models.WATSReport.id">id</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.location" href="#WSJF.models.WATSReport.location">location</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.machineName" href="#WSJF.models.WATSReport.machineName">machineName</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.miscInfos" href="#WSJF.models.WATSReport.miscInfos">miscInfos</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.model_config" href="#WSJF.models.WATSReport.model_config">model_config</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.pn" href="#WSJF.models.WATSReport.pn">pn</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.processCode" href="#WSJF.models.WATSReport.processCode">processCode</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.processName" href="#WSJF.models.WATSReport.processName">processName</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.productName" href="#WSJF.models.WATSReport.productName">productName</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.purpose" href="#WSJF.models.WATSReport.purpose">purpose</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.result" href="#WSJF.models.WATSReport.result">result</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.rev" href="#WSJF.models.WATSReport.rev">rev</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.root" href="#WSJF.models.WATSReport.root">root</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.save_as_json" href="#WSJF.models.WATSReport.save_as_json">save_as_json</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.set_result" href="#WSJF.models.WATSReport.set_result">set_result</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.sn" href="#WSJF.models.WATSReport.sn">sn</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.start" href="#WSJF.models.WATSReport.start">start</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.startUTC" href="#WSJF.models.WATSReport.startUTC">startUTC</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.subUnits" href="#WSJF.models.WATSReport.subUnits">subUnits</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.type" href="#WSJF.models.WATSReport.type">type</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.uut" href="#WSJF.models.WATSReport.uut">uut</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

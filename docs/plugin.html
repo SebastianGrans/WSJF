@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>WSJF.plugin API documentation</title>
+<meta name="description" content="Pytest plugin for generating WATS reports.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>WSJF.plugin</code></h1>
+</header>
+<section id="section-intro">
+<p>Pytest plugin for generating WATS reports.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="WSJF.plugin.pytest_addoption"><code class="name flex">
+<span>def <span class="ident">pytest_addoption</span></span>(<span>parser: _pytest.config.argparsing.Parser) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pytest_addoption(parser: pytest.Parser) -&gt; None:
+    &#34;&#34;&#34;Add command line options to pytest.&#34;&#34;&#34;
+    main = parser.getgroup(&#34;WSJF Plugin arguments&#34;, &#34;A pluging that generates WATS reports&#34;)
+    main.addoption(
+        &#34;--name&#34;,
+        type=str,
+        required=True,
+        help=&#34;Name of the test sequence&#34;,
+    )
+    main.addoption(
+        &#34;--part-number&#34;,
+        type=str,
+        required=True,
+        help=&#34;Part number of the unit under test&#34;,
+    )
+    main.addoption(
+        &#34;--serial-number&#34;,
+        type=str,
+        required=True,
+        help=&#34;Serial number of the unit under test&#34;,
+    )
+    main.addoption(
+        &#34;--revision&#34;,
+        type=str,
+        required=True,
+        help=&#34;Revision of the unit under test&#34;,
+    )
+    main.addoption(
+        &#34;--process-code&#34;,
+        type=int,  # Hm... this might not fly well
+        required=True,
+        help=&#34;Process code for the test sequence&#34;,
+    )
+    main.addoption(
+        &#34;--machine-name&#34;,
+        type=str,
+        required=True,
+        help=&#34;Name of the machine running the test&#34;,
+    )
+    main.addoption(
+        &#34;--location&#34;,
+        type=str,
+        required=True,
+        help=&#34;Location where the test is being conducted&#34;,
+    )
+    main.addoption(
+        &#34;--purpose&#34;,
+        type=str,
+        required=True,
+        help=&#34;Purpose of the test sequence&#34;,
+    )
+    main.addoption(
+        &#34;--operator-name&#34;,
+        type=str,
+        required=True,
+        help=&#34;Name of the operator conducting the test&#34;,
+    )
+    main.addoption(
+        &#34;--report-save-path&#34;,
+        type=_absolute_path,
+        help=&#34;Path where to save the report. The path must be absolute and exist.&#34;,
+    )
+
+    rest_client_group = parser.getgroup(&#34;WATS plugin REST Client arguments&#34;)
+    rest_client_group.addoption(
+        &#34;--base-url&#34;,
+        type=str,
+        help=&#34;Base URL of the WATS server. E.g.: https://company.wats.com&#34;,
+    )
+    rest_client_group.addoption(
+        &#34;--token-environment-variable&#34;,
+        type=str,
+        default=DEFAULT_REST_API_TOKEN_ENV_NAME,
+        help=&#34;Name of the environment variable that contains the API token.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>Add command line options to pytest.</p></div>
+</dd>
+<dt id="WSJF.plugin.pytest_configure"><code class="name flex">
+<span>def <span class="ident">pytest_configure</span></span>(<span>config: _pytest.config.Config) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pytest_configure(config: pytest.Config) -&gt; None:
+    &#34;&#34;&#34;Called when pytest is configured.&#34;&#34;&#34;
+    # It would be nice of we could populate this as part of a test
+    # instead of having the user specify it on the command line.
+
+    # This is a bit of a hack.
+    # If we just run `pytest --help`, pytest will crash because it of the calls to `_get_option` below.
+    if config.getoption(&#34;help&#34;):
+        return
+
+    name = _get_option(config, &#34;name&#34;, str)
+    part_number = _get_option(config, &#34;part_number&#34;, str)
+    serial_number = _get_option(config, &#34;serial_number&#34;, str)
+    revision = _get_option(config, &#34;revision&#34;, str)
+    process_code = _get_option(config, &#34;process_code&#34;, int)
+    machine_name = _get_option(config, &#34;machine_name&#34;, str)
+    location = _get_option(config, &#34;location&#34;, str)
+    purpose = _get_option(config, &#34;purpose&#34;, str)
+    operator_name = _get_option(config, &#34;operator_name&#34;, str)
+
+    # Handle optional arguments
+    report_save_path = _get_optional_option(config, &#34;report_save_path&#34;, Path)
+    base_url = _get_optional_option(config, &#34;base_url&#34;, str)
+    token_environment_variable = _get_optional_option(config, &#34;token_environment_variable&#34;, str)
+
+    log.debug(f&#34;Name: {name}&#34;)
+    log.debug(f&#34;Part Number: {part_number}&#34;)
+    log.debug(f&#34;Serial Number: {serial_number}&#34;)
+    log.debug(f&#34;Revision: {revision}&#34;)
+    log.debug(f&#34;Process Code: {process_code}&#34;)
+    log.debug(f&#34;Machine Name: {machine_name}&#34;)
+    log.debug(f&#34;Location: {location}&#34;)
+    log.debug(f&#34;Purpose: {purpose}&#34;)
+    log.debug(f&#34;Operator Name: {operator_name}&#34;)
+    log.debug(f&#34;Report Save Path: {report_save_path}&#34;)
+    log.debug(f&#34;Base URL: {base_url}&#34;)
+    log.debug(f&#34;Token Environment Variable: {token_environment_variable}&#34;)
+
+    config.pluginmanager.register(
+        WATSReportPlugin(
+            name=name,
+            part_number=part_number,
+            serial_number=serial_number,
+            revision=revision,
+            process_code=process_code,
+            machine_name=machine_name,
+            location=location,
+            purpose=purpose,
+            operator_name=operator_name,
+            report_save_path=report_save_path,
+            base_url=base_url,
+            token_environment_variable=token_environment_variable,
+        ),
+    )</code></pre>
+</details>
+<div class="desc"><p>Called when pytest is configured.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="WSJF.plugin.WATSReportPlugin"><code class="flex name class">
+<span>class <span class="ident">WATSReportPlugin</span></span>
+<span>(</span><span>name: str,<br>part_number: str,<br>serial_number: str,<br>revision: str,<br>process_code: int,<br>machine_name: str,<br>location: str,<br>purpose: str,<br>operator_name: str,<br>report_save_path: pathlib.Path | None = None,<br>base_url: str | None = None,<br>token_environment_variable: str | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class WATSReportPlugin:
+    &#34;&#34;&#34;Pytest plugin for generating WATS reports.
+
+    what
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        name: str,
+        part_number: str,
+        serial_number: str,
+        revision: str,
+        process_code: int,
+        machine_name: str,
+        location: str,
+        purpose: str,
+        operator_name: str,
+        report_save_path: Path | None = None,
+        base_url: str | None = None,
+        token_environment_variable: str | None = None,
+    ):
+        &#34;&#34;&#34;Initialize the WATS report plugin.&#34;&#34;&#34;
+        self.test_start_time = datetime.now()
+
+        self.report_save_path = report_save_path
+        self.base_url = base_url
+        self.token_environment_variable = token_environment_variable
+
+        self._report = WATSReport.factory(
+            name=name,
+            part_number=part_number,
+            serial_number=serial_number,
+            revision=revision,
+            process_code=process_code,
+            machine_name=machine_name,
+            location=location,
+            purpose=purpose,
+            operator_name=operator_name,
+        )
+        self._step = self._report.root
+
+    @pytest.fixture(autouse=True)
+    def step(self) -&gt; SequenceCallStep:
+        &#34;&#34;&#34;A fixture for accessing the current step.
+
+        For each test, a new `models.SequenceCall` step is created. The test can use this fixture to add sub-steps.
+        &#34;&#34;&#34;
+        if not isinstance(self._step, SequenceCallStep):
+            # You shouldn&#39;t be able to end up here, unless your doing something funky.
+            errmsg = &#34;This should only be called once a test is running&#34;
+            raise RuntimeError(errmsg)
+        return self._step
+
+    @property
+    def _root(self) -&gt; RootSequenceCallStep:
+        return self._report.root
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_runtest_protocol(self, item: Item, nextitem: Item | None) -&gt; Generator[None, None, None]:  # noqa: ARG002
+        &#34;&#34;&#34;Pre test hook to handle the test start.
+
+        See the pytest documentation for more information.
+        &#34;&#34;&#34;
+        (file_name, _, function_name) = item.location
+        # TODO: Why do we do this? Windows paths maybe?
+        file_name = file_name.replace(&#34;\\&#34;, &#34;/&#34;)
+
+        self._step = self._root.add_sequence_call(name=function_name, path=file_name, version=&#34;1.0&#34;)
+
+        test_start = datetime.now()
+        yield
+        test_end = datetime.now()
+
+        test_duration = test_end - test_start
+        self._step.set_total_time(test_duration.total_seconds())
+
+    @pytest.hookimpl(tryfirst=True, wrapper=True)
+    def pytest_runtest_makereport(self, item: Item, call: CallInfo) -&gt; Generator[None, TestReport, None | TestReport]:  # noqa: ARG002
+        &#34;&#34;&#34;Post test hook to handle the test result.
+
+        See the pytest documentation for more information.
+
+        In this function, we:
+
+        * Set the test result of the step
+        * If an exception was raised, we set the error message to the exception type
+          and include the stack trace in the `WSJF.models.Step.reportText` field.
+
+        &#34;&#34;&#34;
+        result: TestReport = yield
+
+        if call.when == &#34;call&#34;:
+            outcome = result.outcome
+            if outcome not in (&#34;passed&#34;, &#34;failed&#34;, &#34;skipped&#34;):
+                errmsg = f&#34;Unexpected outcome: {outcome}&#34;
+                raise ValueError(errmsg)
+
+            status = self._outcome_to_step_status_code(outcome)
+            self._step.set_status(status)
+
+            if status == StepStatusCode.FAILED:
+                # Strip out ansi color codes from pytest error string to avoid them being included in the WATS report
+                # Because the WATS client does not handle them correctly.
+                # https://regex101.com/r/yK7pjy/1
+                # TODO: Use a library for this?
+                pattern = re.compile(r&#34;(\x1B\[\d+(;\d+){0,2}m)|(\u001b\[\d+(;\d+){0,2}m)&#34;)
+                result_error_message = pattern.sub(&#34;\xa0&#34;, result.longreprtext)
+
+                result_error_message = self._exception_str_to_pre_html(result_error_message)
+
+                # Depending on the size of the terminal, pytest adds separators to the error message.
+                # Replacing them with 30 dash-space pairs to avoid overflow.
+                result_error_message = re.sub(r&#34;(_ )+_*&#34;, lambda _: &#34;- &#34; * 30, result_error_message)
+
+                # Using assert, or pytest_check will raise an AssertionError. This is expected and we
+                # should not add the stack trace to the WATS report.
+                if call.excinfo is not None and not isinstance(call.excinfo.value, AssertionError):
+                    # TODO: How does this work?
+                    exception_without_ansi = pattern.sub(&#34;&#34;, str(call.excinfo.value))
+                    self._step.errorMessage = exception_without_ansi
+
+                    # It the test failed due to pytest.fail, we don&#39;t need to print the stack trace.
+                    if not isinstance(call.excinfo.value, pytest.fail.Exception):
+                        self._step.reportText = result_error_message
+
+        return result
+
+    def pytest_sessionfinish(self, session: Session, exitstatus: ExitCode):  # noqa: ANN201, ARG002
+        &#34;&#34;&#34;Called after the test session has finished.
+
+        In this function, we:
+        * Set the execution time of the entire test sequence
+        * Set the report result and the `UUT.status` to the exit code
+
+        If `--report-save-path` was provided, we save the report to the specified path.
+        See `WSJF.models.WATSReport.save_as_json` for more information.
+
+        If `--base-url` and `--token-environment-variable` were provided, we upload the report to the WATS server.
+        See `WSJF.restclient.WATSREST.upload_report` for more information.
+        &#34;&#34;&#34;
+        exit_code = self._exitcode_to_report_status_code(exitstatus)
+
+        # The exit code is already being propagated during the tests.
+        # Only if a test has not passed, e.g. skipped or some other pytest failure,
+        # should we update the exit code.
+        if exit_code != UUTStatusCode.PASSED:
+            self._report.result = exit_code
+            self._report.root.status = StepStatusCode(exit_code)
+
+        self._report.uut.execTime = (datetime.now() - self.test_start_time).total_seconds()
+
+        if self.report_save_path is not None:
+            report_path = self._report.save_as_json(self.report_save_path)
+            log.info(f&#34;Report saved to: {report_path}&#34;)
+
+        if self.base_url is not None and self.token_environment_variable is not None:
+            rest_client = WATSREST(base_url=self.base_url, token_environment_variable=self.token_environment_variable)
+            rest_client.upload_report(self._report)
+
+    @staticmethod
+    def _exitcode_to_report_status_code(exit_code: ExitCode) -&gt; UUTStatusCode:
+        &#34;&#34;&#34;Convert the exit code to a WATS status code.&#34;&#34;&#34;
+        match exit_code:
+            case ExitCode.OK:
+                return UUTStatusCode.PASSED
+            case ExitCode.INTERRUPTED:
+                return UUTStatusCode.TERMINATED
+            case ExitCode.TESTS_FAILED:
+                return UUTStatusCode.FAILED
+            case ExitCode.INTERNAL_ERROR | ExitCode.USAGE_ERROR | ExitCode.NO_TESTS_COLLECTED:
+                return UUTStatusCode.FAILED
+            case _:
+                errmsg = f&#34;Unknown exit code: {exit_code}&#34;
+                raise ValueError(errmsg)
+
+    def _outcome_to_step_status_code(self, outcome: Literal[&#34;passed&#34;, &#34;failed&#34;, &#34;skipped&#34;]) -&gt; StepStatusCode:
+        match outcome:
+            case &#34;passed&#34;:
+                return StepStatusCode.PASSED
+            case &#34;failed&#34;:
+                return StepStatusCode.FAILED
+            case &#34;skipped&#34;:
+                return StepStatusCode.SKIPPED
+            case _:
+                errmsg = f&#34;Unknown outcome: {outcome}&#34;
+                raise ValueError(errmsg)
+
+    def _exception_str_to_pre_html(self, exception: str) -&gt; str:
+        # WATS replaces subsequent spaces.
+        # Replacing them with non-breaking spaces to keep the stack trace properly formatted.
+        result_error_message = re.sub(r&#34;[ ] +&#34;, lambda m: &#34;\u00a0&#34; * len(m.group()), exception)
+
+        return f&#34;&lt;pre&gt;{result_error_message[-4950:]}&lt;/pre&gt;&#34;</code></pre>
+</details>
+<div class="desc"><p>Pytest plugin for generating WATS reports.</p>
+<p>what</p>
+<p>Initialize the WATS report plugin.</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.plugin.WATSReportPlugin.pytest_runtest_makereport"><code class="name flex">
+<span>def <span class="ident">pytest_runtest_makereport</span></span>(<span>self, item: _pytest.nodes.Item, call: _pytest.runner.CallInfo) ‑> Generator[None, _pytest.reports.TestReport, None | _pytest.reports.TestReport]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@pytest.hookimpl(tryfirst=True, wrapper=True)
+def pytest_runtest_makereport(self, item: Item, call: CallInfo) -&gt; Generator[None, TestReport, None | TestReport]:  # noqa: ARG002
+    &#34;&#34;&#34;Post test hook to handle the test result.
+
+    See the pytest documentation for more information.
+
+    In this function, we:
+
+    * Set the test result of the step
+    * If an exception was raised, we set the error message to the exception type
+      and include the stack trace in the `WSJF.models.Step.reportText` field.
+
+    &#34;&#34;&#34;
+    result: TestReport = yield
+
+    if call.when == &#34;call&#34;:
+        outcome = result.outcome
+        if outcome not in (&#34;passed&#34;, &#34;failed&#34;, &#34;skipped&#34;):
+            errmsg = f&#34;Unexpected outcome: {outcome}&#34;
+            raise ValueError(errmsg)
+
+        status = self._outcome_to_step_status_code(outcome)
+        self._step.set_status(status)
+
+        if status == StepStatusCode.FAILED:
+            # Strip out ansi color codes from pytest error string to avoid them being included in the WATS report
+            # Because the WATS client does not handle them correctly.
+            # https://regex101.com/r/yK7pjy/1
+            # TODO: Use a library for this?
+            pattern = re.compile(r&#34;(\x1B\[\d+(;\d+){0,2}m)|(\u001b\[\d+(;\d+){0,2}m)&#34;)
+            result_error_message = pattern.sub(&#34;\xa0&#34;, result.longreprtext)
+
+            result_error_message = self._exception_str_to_pre_html(result_error_message)
+
+            # Depending on the size of the terminal, pytest adds separators to the error message.
+            # Replacing them with 30 dash-space pairs to avoid overflow.
+            result_error_message = re.sub(r&#34;(_ )+_*&#34;, lambda _: &#34;- &#34; * 30, result_error_message)
+
+            # Using assert, or pytest_check will raise an AssertionError. This is expected and we
+            # should not add the stack trace to the WATS report.
+            if call.excinfo is not None and not isinstance(call.excinfo.value, AssertionError):
+                # TODO: How does this work?
+                exception_without_ansi = pattern.sub(&#34;&#34;, str(call.excinfo.value))
+                self._step.errorMessage = exception_without_ansi
+
+                # It the test failed due to pytest.fail, we don&#39;t need to print the stack trace.
+                if not isinstance(call.excinfo.value, pytest.fail.Exception):
+                    self._step.reportText = result_error_message
+
+    return result</code></pre>
+</details>
+<div class="desc"><p>Post test hook to handle the test result.</p>
+<p>See the pytest documentation for more information.</p>
+<p>In this function, we:</p>
+<ul>
+<li>Set the test result of the step</li>
+<li>If an exception was raised, we set the error message to the exception type
+and include the stack trace in the <code><a title="WSJF.models.Step.reportText" href="models.html#WSJF.models.Step.reportText">Step.reportText</a></code> field.</li>
+</ul></div>
+</dd>
+<dt id="WSJF.plugin.WATSReportPlugin.pytest_runtest_protocol"><code class="name flex">
+<span>def <span class="ident">pytest_runtest_protocol</span></span>(<span>self, item: _pytest.nodes.Item, nextitem: _pytest.nodes.Item | None) ‑> Generator[None, None, None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@pytest.hookimpl(wrapper=True)
+def pytest_runtest_protocol(self, item: Item, nextitem: Item | None) -&gt; Generator[None, None, None]:  # noqa: ARG002
+    &#34;&#34;&#34;Pre test hook to handle the test start.
+
+    See the pytest documentation for more information.
+    &#34;&#34;&#34;
+    (file_name, _, function_name) = item.location
+    # TODO: Why do we do this? Windows paths maybe?
+    file_name = file_name.replace(&#34;\\&#34;, &#34;/&#34;)
+
+    self._step = self._root.add_sequence_call(name=function_name, path=file_name, version=&#34;1.0&#34;)
+
+    test_start = datetime.now()
+    yield
+    test_end = datetime.now()
+
+    test_duration = test_end - test_start
+    self._step.set_total_time(test_duration.total_seconds())</code></pre>
+</details>
+<div class="desc"><p>Pre test hook to handle the test start.</p>
+<p>See the pytest documentation for more information.</p></div>
+</dd>
+<dt id="WSJF.plugin.WATSReportPlugin.pytest_sessionfinish"><code class="name flex">
+<span>def <span class="ident">pytest_sessionfinish</span></span>(<span>self, session: _pytest.main.Session, exitstatus: _pytest.config.ExitCode)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pytest_sessionfinish(self, session: Session, exitstatus: ExitCode):  # noqa: ANN201, ARG002
+    &#34;&#34;&#34;Called after the test session has finished.
+
+    In this function, we:
+    * Set the execution time of the entire test sequence
+    * Set the report result and the `UUT.status` to the exit code
+
+    If `--report-save-path` was provided, we save the report to the specified path.
+    See `WSJF.models.WATSReport.save_as_json` for more information.
+
+    If `--base-url` and `--token-environment-variable` were provided, we upload the report to the WATS server.
+    See `WSJF.restclient.WATSREST.upload_report` for more information.
+    &#34;&#34;&#34;
+    exit_code = self._exitcode_to_report_status_code(exitstatus)
+
+    # The exit code is already being propagated during the tests.
+    # Only if a test has not passed, e.g. skipped or some other pytest failure,
+    # should we update the exit code.
+    if exit_code != UUTStatusCode.PASSED:
+        self._report.result = exit_code
+        self._report.root.status = StepStatusCode(exit_code)
+
+    self._report.uut.execTime = (datetime.now() - self.test_start_time).total_seconds()
+
+    if self.report_save_path is not None:
+        report_path = self._report.save_as_json(self.report_save_path)
+        log.info(f&#34;Report saved to: {report_path}&#34;)
+
+    if self.base_url is not None and self.token_environment_variable is not None:
+        rest_client = WATSREST(base_url=self.base_url, token_environment_variable=self.token_environment_variable)
+        rest_client.upload_report(self._report)</code></pre>
+</details>
+<div class="desc"><p>Called after the test session has finished.</p>
+<p>In this function, we:
+* Set the execution time of the entire test sequence
+* Set the report result and the <code>UUT.status</code> to the exit code</p>
+<p>If <code>--report-save-path</code> was provided, we save the report to the specified path.
+See <code><a title="WSJF.models.WATSReport.save_as_json" href="models.html#WSJF.models.WATSReport.save_as_json">WATSReport.save_as_json()</a></code> for more information.</p>
+<p>If <code>--base-url</code> and <code>--token-environment-variable</code> were provided, we upload the report to the WATS server.
+See <code><a title="WSJF.restclient.WATSREST.upload_report" href="restclient.html#WSJF.restclient.WATSREST.upload_report">WATSREST.upload_report()</a></code> for more information.</p></div>
+</dd>
+<dt id="WSJF.plugin.WATSReportPlugin.step"><code class="name flex">
+<span>def <span class="ident">step</span></span>(<span>self) ‑> <a title="WSJF.models.SequenceCallStep" href="models.html#WSJF.models.SequenceCallStep">SequenceCallStep</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@pytest.fixture(autouse=True)
+def step(self) -&gt; SequenceCallStep:
+    &#34;&#34;&#34;A fixture for accessing the current step.
+
+    For each test, a new `models.SequenceCall` step is created. The test can use this fixture to add sub-steps.
+    &#34;&#34;&#34;
+    if not isinstance(self._step, SequenceCallStep):
+        # You shouldn&#39;t be able to end up here, unless your doing something funky.
+        errmsg = &#34;This should only be called once a test is running&#34;
+        raise RuntimeError(errmsg)
+    return self._step</code></pre>
+</details>
+<div class="desc"><p>A fixture for accessing the current step.</p>
+<p>For each test, a new <code>models.SequenceCall</code> step is created. The test can use this fixture to add sub-steps.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="WSJF" href="index.html">WSJF</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="WSJF.plugin.pytest_addoption" href="#WSJF.plugin.pytest_addoption">pytest_addoption</a></code></li>
+<li><code><a title="WSJF.plugin.pytest_configure" href="#WSJF.plugin.pytest_configure">pytest_configure</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="WSJF.plugin.WATSReportPlugin" href="#WSJF.plugin.WATSReportPlugin">WATSReportPlugin</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.plugin.WATSReportPlugin.pytest_runtest_makereport" href="#WSJF.plugin.WATSReportPlugin.pytest_runtest_makereport">pytest_runtest_makereport</a></code></li>
+<li><code><a title="WSJF.plugin.WATSReportPlugin.pytest_runtest_protocol" href="#WSJF.plugin.WATSReportPlugin.pytest_runtest_protocol">pytest_runtest_protocol</a></code></li>
+<li><code><a title="WSJF.plugin.WATSReportPlugin.pytest_sessionfinish" href="#WSJF.plugin.WATSReportPlugin.pytest_sessionfinish">pytest_sessionfinish</a></code></li>
+<li><code><a title="WSJF.plugin.WATSReportPlugin.step" href="#WSJF.plugin.WATSReportPlugin.step">step</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

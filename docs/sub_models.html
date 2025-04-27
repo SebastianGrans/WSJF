@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>WSJF.sub_models API documentation</title>
+<meta name="description" content="The sub-models of the WATS report.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>WSJF.sub_models</code></h1>
+</header>
+<section id="section-intro">
+<p>The sub-models of the WATS report.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="WSJF.sub_models.AdditionalData"><code class="flex name class">
+<span>class <span class="ident">AdditionalData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AdditionalData(BaseModel):
+    &#34;&#34;&#34;TODO: Add a docstring for AdditionalData.&#34;&#34;&#34;
+
+    name: str = Field(
+        description=&#34;The name of the additional data.&#34;,
+        min_length=1,
+        max_length=200,
+    )
+    props: list[AdditionalDataProperty] = Field(
+        default_factory=list,
+        description=&#34;list of properties in the additional data.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: Add a docstring for AdditionalData.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.AdditionalData.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalData.props"><code class="name">var <span class="ident">props</span> : list[<a title="WSJF.sub_models.AdditionalDataProperty" href="#WSJF.sub_models.AdditionalDataProperty">AdditionalDataProperty</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataArray"><code class="flex name class">
+<span>class <span class="ident">AdditionalDataArray</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AdditionalDataArray(BaseModel):
+    &#34;&#34;&#34;TODO: Add a docstring for AdditionalData.&#34;&#34;&#34;
+
+    dimension: int = Field(
+        description=&#34;Dimension of array.&#34;,
+    )
+    type: str = Field(
+        description=&#34;Type of the values in the array.&#34;,
+    )
+    indexes: list[AdditionalDataArrayIndex] = Field(
+        description=&#34;list of indexes in the array.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: Add a docstring for AdditionalData.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.AdditionalDataArray.dimension"><code class="name">var <span class="ident">dimension</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataArray.indexes"><code class="name">var <span class="ident">indexes</span> : list[<a title="WSJF.sub_models.AdditionalDataArrayIndex" href="#WSJF.sub_models.AdditionalDataArrayIndex">AdditionalDataArrayIndex</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataArray.type"><code class="name">var <span class="ident">type</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataArrayIndex"><code class="flex name class">
+<span>class <span class="ident">AdditionalDataArrayIndex</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AdditionalDataArrayIndex(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    TODO: ADD DOCSTRING
+    &#34;&#34;&#34;
+
+    text: str = Field(
+        description=&#34;The index as text.&#34;,
+    )
+    indexes: list[int] = Field(
+        description=&#34;list of indexes ordered by dimension.&#34;,
+    )
+    value: AdditionalDataProperty | None = None</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.AdditionalDataArrayIndex.indexes"><code class="name">var <span class="ident">indexes</span> : list[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataArrayIndex.text"><code class="name">var <span class="ident">text</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataArrayIndex.value"><code class="name">var <span class="ident">value</span> : <a title="WSJF.sub_models.AdditionalDataProperty" href="#WSJF.sub_models.AdditionalDataProperty">AdditionalDataProperty</a> | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataProperty"><code class="flex name class">
+<span>class <span class="ident">AdditionalDataProperty</span></span>
+<span>(</span><span>*,<br>name: str,<br>type: str,<br>flags: int | None = None,<br>value: str | None = None,<br>comment: str | None = None,<br>props: list[<a title="WSJF.sub_models.AdditionalDataProperty" href="#WSJF.sub_models.AdditionalDataProperty">AdditionalDataProperty</a>] = &lt;factory&gt;,<br>array: <a title="WSJF.sub_models.AdditionalDataArray" href="#WSJF.sub_models.AdditionalDataArray">AdditionalDataArray</a> | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AdditionalDataProperty(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    name: str
+    type: str
+    flags: int | None = Field(
+        default=None,
+        description=&#34;Bit flags of property.&#34;,
+    )
+    value: str | None = Field(
+        default=None,
+        description=&#34;Value string of property.&#34;,
+    )
+    comment: str | None = Field(
+        default=None,
+        description=&#34;Comment of property.&#34;,
+    )
+    props: list[AdditionalDataProperty] = Field(
+        default_factory=list,
+        description=&#34;Array of sub-properties. Used for type Obj.&#34;,
+    )
+    array: AdditionalDataArray | None = Field(
+        default=None,
+        description=&#34;Array information. Used for type Array.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.AdditionalDataProperty.array"><code class="name">var <span class="ident">array</span> : <a title="WSJF.sub_models.AdditionalDataArray" href="#WSJF.sub_models.AdditionalDataArray">AdditionalDataArray</a> | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataProperty.comment"><code class="name">var <span class="ident">comment</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataProperty.flags"><code class="name">var <span class="ident">flags</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataProperty.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataProperty.props"><code class="name">var <span class="ident">props</span> : list[<a title="WSJF.sub_models.AdditionalDataProperty" href="#WSJF.sub_models.AdditionalDataProperty">AdditionalDataProperty</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataProperty.type"><code class="name">var <span class="ident">type</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.AdditionalDataProperty.value"><code class="name">var <span class="ident">value</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.Asset"><code class="flex name class">
+<span>class <span class="ident">Asset</span></span>
+<span>(</span><span>*, assetSN: Annotated[str, MaxLen(max_length=100)], usageCount: int)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Asset(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    assetSN: str = Field(
+        description=&#34;The Serial number of the asset.&#34;,
+        max_length=100,
+    )
+    usageCount: int = Field(
+        description=&#34;How much the asset was used.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.Asset.assetSN"><code class="name">var <span class="ident">assetSN</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Asset.usageCount"><code class="name">var <span class="ident">usageCount</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.Attachment"><code class="flex name class">
+<span>class <span class="ident">Attachment</span></span>
+<span>(</span><span>*,<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>contentType: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>data: Annotated[str, MinLen(min_length=1)])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Attachment(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    name: str = Field(
+        description=&#34;The name of the attachment.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    contentType: str = Field(
+        description=&#34;The Mime-type of the attachment. E.g. image/png, application/pdf.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    data: str = Field(
+        description=&#34;The base64 encoded data of the attachment.&#34;,
+        min_length=1,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.Attachment.contentType"><code class="name">var <span class="ident">contentType</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Attachment.data"><code class="name">var <span class="ident">data</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Attachment.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.BooleanMeasurement"><code class="flex name class">
+<span>class <span class="ident">BooleanMeasurement</span></span>
+<span>(</span><span>*,<br>name: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=100)] = None,<br>status: Annotated[<a title="WSJF.enums.MeasurementStatusCode" href="enums.html#WSJF.enums.MeasurementStatusCode">MeasurementStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BooleanMeasurement(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    name: str | None = Field(
+        default=None,
+        description=(
+            &#34;The Name of the measurement. Required if there are multiple measurements in the same step.&#34;
+            &#34;Do not use if there is only one measurement in the step.&#34;
+        ),
+        min_length=0,
+        max_length=100,
+    )
+    status: MeasurementStatusCode = Field(
+        description=&#34;The Status of the measurement.&#34;,
+        min_length=1,
+        max_length=1,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.BooleanMeasurement.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.BooleanMeasurement.status"><code class="name">var <span class="ident">status</span> : <a title="WSJF.enums.MeasurementStatusCode" href="enums.html#WSJF.enums.MeasurementStatusCode">MeasurementStatusCode</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.Chart"><code class="flex name class">
+<span>class <span class="ident">Chart</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Chart(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    chartType: ChartType = Field(
+        description=&#34;The type of chart.&#34;,
+        examples=[list(ChartType)],
+        min_length=1,
+        max_length=30,
+    )
+    label: str = Field(
+        description=&#34;The name of the chart.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    xLabel: str = Field(
+        description=&#34;The name of the x-axis.&#34;,
+        min_length=1,
+        max_length=50,
+    )
+    xUnit: str | None = Field(
+        default=None,
+        description=&#34;The unit of the x-axis.&#34;,
+        min_length=0,
+        max_length=20,
+    )
+    yLabel: str = Field(
+        description=&#34;The name of the y-axis.&#34;,
+        min_length=1,
+        max_length=50,
+    )
+    yUnit: str | None = Field(
+        default=None,
+        description=&#34;The unit of the y-axis.&#34;,
+        min_length=0,
+        max_length=20,
+    )
+    series: list[ChartSeries] = Field(
+        default_factory=list,
+        description=&#34;A list of chart series.&#34;,
+    )
+
+    def add_series(
+        self,
+        name: str,
+        xdata: str,
+        ydata: str,
+    ) -&gt; None:
+        &#34;&#34;&#34;Adds a series to the chart.
+
+        **Note**:
+        * `xdata` and `ydata` must be semicolon (;) separated lists of values.
+        * `xdata` and `ydata` must contain the same number of elements.
+        * A maximum of 10 series is allowed to be added to a step.
+
+        &#34;&#34;&#34;
+        if len(self.series) == 10:
+            errmsg = &#34;A maximum of 10 series is allowed to be added to a step&#34;
+            raise RuntimeError(errmsg)
+
+        if len(xdata.split(&#34;;&#34;)) != len(ydata.split(&#34;;&#34;)):
+            errmsg = &#34;xdata and ydata must have the same number of elements&#34;
+            raise ValueError(errmsg)
+
+        if len(xdata) &gt; 10_000:
+            errmsg = &#34;x- and ydata must be less than 10 000 characters&#34;
+            raise ValueError(errmsg)
+
+        series = ChartSeries(
+            name=name,
+            xdata=xdata,
+            ydata=ydata,
+        )
+        self.series.append(series)</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.Chart.chartType"><code class="name">var <span class="ident">chartType</span> : <a title="WSJF.enums.ChartType" href="enums.html#WSJF.enums.ChartType">ChartType</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Chart.label"><code class="name">var <span class="ident">label</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Chart.series"><code class="name">var <span class="ident">series</span> : list[<a title="WSJF.sub_models.ChartSeries" href="#WSJF.sub_models.ChartSeries">ChartSeries</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Chart.xLabel"><code class="name">var <span class="ident">xLabel</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Chart.xUnit"><code class="name">var <span class="ident">xUnit</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Chart.yLabel"><code class="name">var <span class="ident">yLabel</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.Chart.yUnit"><code class="name">var <span class="ident">yUnit</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.sub_models.Chart.add_series"><code class="name flex">
+<span>def <span class="ident">add_series</span></span>(<span>self, name: str, xdata: str, ydata: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_series(
+    self,
+    name: str,
+    xdata: str,
+    ydata: str,
+) -&gt; None:
+    &#34;&#34;&#34;Adds a series to the chart.
+
+    **Note**:
+    * `xdata` and `ydata` must be semicolon (;) separated lists of values.
+    * `xdata` and `ydata` must contain the same number of elements.
+    * A maximum of 10 series is allowed to be added to a step.
+
+    &#34;&#34;&#34;
+    if len(self.series) == 10:
+        errmsg = &#34;A maximum of 10 series is allowed to be added to a step&#34;
+        raise RuntimeError(errmsg)
+
+    if len(xdata.split(&#34;;&#34;)) != len(ydata.split(&#34;;&#34;)):
+        errmsg = &#34;xdata and ydata must have the same number of elements&#34;
+        raise ValueError(errmsg)
+
+    if len(xdata) &gt; 10_000:
+        errmsg = &#34;x- and ydata must be less than 10 000 characters&#34;
+        raise ValueError(errmsg)
+
+    series = ChartSeries(
+        name=name,
+        xdata=xdata,
+        ydata=ydata,
+    )
+    self.series.append(series)</code></pre>
+</details>
+<div class="desc"><p>Adds a series to the chart.</p>
+<p><strong>Note</strong>:
+* <code>xdata</code> and <code>ydata</code> must be semicolon (;) separated lists of values.
+* <code>xdata</code> and <code>ydata</code> must contain the same number of elements.
+* A maximum of 10 series is allowed to be added to a step.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.ChartSeries"><code class="flex name class">
+<span>class <span class="ident">ChartSeries</span></span>
+<span>(</span><span>*,<br>dataType: Literal['XYG'] = 'XYG',<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>xdata: str,<br>ydata: Annotated[str, MinLen(min_length=1)])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ChartSeries(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    dataType: Literal[&#34;XYG&#34;] = Field(default=&#34;XYG&#34;)
+    name: str = Field(
+        description=&#34;The name of the series.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    xdata: str = Field(
+        description=&#34;A semicolon (;) separated list of values on the x-axis.&#34;,
+    )
+    ydata: str = Field(
+        description=&#34;A semicolon (;) separated list of values on the y-axis.&#34;,
+        min_length=1,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.ChartSeries.dataType"><code class="name">var <span class="ident">dataType</span> : Literal['XYG']</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.ChartSeries.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.ChartSeries.xdata"><code class="name">var <span class="ident">xdata</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.ChartSeries.ydata"><code class="name">var <span class="ident">ydata</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.MiscInfo"><code class="flex name class">
+<span>class <span class="ident">MiscInfo</span></span>
+<span>(</span><span>*,<br>description: str,<br>typedef: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=30)] = None,<br>text: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=100)] = None,<br>numeric: int | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MiscInfo(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    description: str
+    typedef: str | None = Field(
+        default=None,
+        description=&#34;The type definition of the misc info.&#34;,
+        min_length=0,
+        max_length=30,
+        # I have now idea what this is supposed to be, and it doesn&#39;t show up in the web interface
+    )
+    text: str | None = Field(
+        None,
+        description=&#34;The text value of the misc info.&#34;,
+        min_length=0,
+        max_length=100,
+    )
+    numeric: int | None = Field(
+        default=None,
+        description=&#34;The numeric value of the misc info.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.MiscInfo.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.MiscInfo.numeric"><code class="name">var <span class="ident">numeric</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.MiscInfo.text"><code class="name">var <span class="ident">text</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.MiscInfo.typedef"><code class="name">var <span class="ident">typedef</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.NumericMeasurement"><code class="flex name class">
+<span>class <span class="ident">NumericMeasurement</span></span>
+<span>(</span><span>*,<br>compOp: Annotated[str, MinLen(min_length=1), MaxLen(max_length=10)],<br>name: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=100)] = None,<br>status: Annotated[<a title="WSJF.enums.MeasurementStatusCode" href="enums.html#WSJF.enums.MeasurementStatusCode">MeasurementStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>unit: Annotated[str, MinLen(min_length=0), MaxLen(max_length=20)],<br>value: float,<br>highLimit: float | None = None,<br>lowLimit: float | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NumericMeasurement(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    &#34;&#34;&#34;
+    This is a docstring for NumericMeasurement.
+
+    It&#39;s used by `WSJF.models.SingleNumericLimitStep` and `WSJF.models.MultipleNumericLimitStep`
+    &#34;&#34;&#34;
+
+    compOp: str = Field(
+        description=&#34;The comparison operator used to compare the value to the limit(s).&#34;,
+        min_length=1,
+        max_length=10,
+    )
+    name: str | None = Field(
+        default=None,
+        description=(
+            &#34;The Name of the measurement. Required if there are multiple measurements in the same step.&#34;
+            &#34;Do not use if there is only one measurement in the step.&#34;
+        ),
+        min_length=0,
+        max_length=100,
+    )
+    status: MeasurementStatusCode = Field(
+        description=&#34;The status of the measurement.&#34;,
+        min_length=1,
+        max_length=1,
+    )
+    unit: str = Field(
+        description=&#34;The unit of the measured value.&#34;,
+        min_length=0,
+        max_length=20,
+    )
+    value: float = Field(
+        description=&#34;The measured value.&#34;,
+    )
+    highLimit: float | None = Field(
+        default=None,
+        description=&#34;The high limit. Used in less than comparisons.&#34;,
+    )
+    lowLimit: float | None = Field(
+        default=None,
+        description=&#34;The low limit. Used in greater than and equals comparisons.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.NumericMeasurement.compOp"><code class="name">var <span class="ident">compOp</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.NumericMeasurement.highLimit"><code class="name">var <span class="ident">highLimit</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.NumericMeasurement.lowLimit"><code class="name">var <span class="ident">lowLimit</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.NumericMeasurement.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.NumericMeasurement.status"><code class="name">var <span class="ident">status</span> : <a title="WSJF.enums.MeasurementStatusCode" href="enums.html#WSJF.enums.MeasurementStatusCode">MeasurementStatusCode</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.NumericMeasurement.unit"><code class="name">var <span class="ident">unit</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.NumericMeasurement.value"><code class="name">var <span class="ident">value</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.SequenceCall"><code class="flex name class">
+<span>class <span class="ident">SequenceCall</span></span>
+<span>(</span><span>*,<br>path: Annotated[str, MinLen(min_length=1), MaxLen(max_length=500)],<br>name: Annotated[str, MinLen(min_length=1), MaxLen(max_length=200)],<br>version: Annotated[str, MinLen(min_length=1), MaxLen(max_length=30)])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SequenceCall(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    path: str = Field(
+        description=&#34;The path to the sequence file.&#34;,
+        min_length=1,
+        max_length=500,
+    )
+    name: str = Field(
+        description=&#34;The name of the sequence.&#34;,
+        min_length=1,
+        max_length=200,
+    )
+    version: str = Field(
+        description=&#34;The version of the sequence file.&#34;,
+        min_length=1,
+        max_length=30,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.SequenceCall.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.SequenceCall.path"><code class="name">var <span class="ident">path</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.SequenceCall.version"><code class="name">var <span class="ident">version</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.StringMeasurement"><code class="flex name class">
+<span>class <span class="ident">StringMeasurement</span></span>
+<span>(</span><span>*,<br>compOp: Annotated[str, MinLen(min_length=1), MaxLen(max_length=10)],<br>name: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=100)] = None,<br>status: Annotated[<a title="WSJF.enums.MeasurementStatusCode" href="enums.html#WSJF.enums.MeasurementStatusCode">MeasurementStatusCode</a>, MinLen(min_length=1), MaxLen(max_length=1)],<br>value: Annotated[str, MinLen(min_length=0), MaxLen(max_length=100)],<br>limit: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=100)] = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StringMeasurement(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING.&#34;&#34;&#34;
+
+    compOp: str = Field(
+        description=&#34;The comparison operator used to compare the value to the limit.&#34;,
+        min_length=1,
+        max_length=10,
+    )
+    name: str | None = Field(
+        default=None,
+        description=(
+            &#34;The Name of the measurement. Required if there are multiple measurements in the same step.&#34;
+            &#34; Do not use if there is only one measurement in the step.&#34;
+        ),
+        min_length=0,
+        max_length=100,
+    )
+    status: MeasurementStatusCode = Field(
+        description=&#34;The status of the measurement.&#34;,
+        min_length=1,
+        max_length=1,
+    )
+    value: str = Field(
+        description=&#34;The measured text value.&#34;,
+        min_length=0,
+        max_length=100,
+    )
+
+    limit: str | None = Field(
+        default=None,
+        description=&#34;The limit to compare the measured value to.&#34;,
+        min_length=0,
+        max_length=100,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.StringMeasurement.compOp"><code class="name">var <span class="ident">compOp</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.StringMeasurement.limit"><code class="name">var <span class="ident">limit</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.StringMeasurement.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.StringMeasurement.status"><code class="name">var <span class="ident">status</span> : <a title="WSJF.enums.MeasurementStatusCode" href="enums.html#WSJF.enums.MeasurementStatusCode">MeasurementStatusCode</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.StringMeasurement.value"><code class="name">var <span class="ident">value</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.SubUnit"><code class="flex name class">
+<span>class <span class="ident">SubUnit</span></span>
+<span>(</span><span>*,<br>partType: Annotated[str, MinLen(min_length=1), MaxLen(max_length=50)],<br>pn: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>rev: Annotated[str, MinLen(min_length=0), MaxLen(max_length=100)],<br>sn: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SubUnit(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING&#34;&#34;&#34;
+
+    partType: str = Field(
+        description=&#34;The type of sub unit.&#34;,
+        min_length=1,
+        max_length=50,
+    )
+    pn: str = Field(
+        description=&#34;The partnumber of the sub unit.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    rev: str = Field(
+        description=&#34;The revision of the sub unit.&#34;,
+        min_length=0,
+        max_length=100,
+    )
+    sn: str = Field(
+        description=&#34;The serial number of the sub unit.&#34;,
+        min_length=1,
+        max_length=100,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.SubUnit.partType"><code class="name">var <span class="ident">partType</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.SubUnit.pn"><code class="name">var <span class="ident">pn</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.SubUnit.rev"><code class="name">var <span class="ident">rev</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.SubUnit.sn"><code class="name">var <span class="ident">sn</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.sub_models.UUT"><code class="flex name class">
+<span>class <span class="ident">UUT</span></span>
+<span>(</span><span>*,<br>execTime: float | None = None,<br>testSocketIndex: int | None = None,<br>batchSN: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=100)] = None,<br>comment: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=5000)] = None,<br>errorCode: int | str | None = None,<br>errorMessage: str | None = None,<br>fixtureId: Annotated[str | None, MinLen(min_length=0), MaxLen(max_length=100)] = None,<br>user: Annotated[str, MinLen(min_length=1), MaxLen(max_length=100)],<br>batchFailCount: int | None = None,<br>batchLoopIndex: int | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UUT(BaseModel):
+    &#34;&#34;&#34;TODO: ADD DOCSTRING.&#34;&#34;&#34;
+
+    execTime: float | None = Field(
+        default=None,
+        description=&#34;The total time for the test to be executed.&#34;,
+    )
+    testSocketIndex: int | None = Field(
+        default=None,
+        description=&#34;The index of the test socket the unit was plugged into.&#34;,
+    )
+    batchSN: str | None = Field(
+        default=None,
+        description=&#34;The serial number of the batch the unit belongs to.&#34;,
+        min_length=0,
+        max_length=100,
+    )
+    comment: str | None = Field(
+        default=None,
+        description=&#34;A comment about the test.&#34;,
+        min_length=0,
+        max_length=5000,
+    )
+    errorCode: int | str | None = Field(
+        default=None,
+        description=&#34;The error code of the error that occurred during the test.&#34;,
+    )
+    errorMessage: str | None = Field(
+        default=None,
+        description=&#34;The error message of the error that occurred during the test.&#34;,
+    )
+    fixtureId: str | None = Field(
+        default=None,
+        description=&#34;The id of the fixture used to perform the test.&#34;,
+        min_length=0,
+        max_length=100,
+    )
+    user: str = Field(
+        description=&#34;The operator of the test.&#34;,
+        min_length=1,
+        max_length=100,
+    )
+    batchFailCount: int | None = Field(
+        default=None,
+        description=&#34;The number of failed tests in the batch.&#34;,
+    )
+    batchLoopIndex: int | None = Field(
+        default=None,
+        description=&#34;The index in the batch loop.&#34;,
+    )</code></pre>
+</details>
+<div class="desc"><p>TODO: ADD DOCSTRING.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.sub_models.UUT.batchFailCount"><code class="name">var <span class="ident">batchFailCount</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.batchLoopIndex"><code class="name">var <span class="ident">batchLoopIndex</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.batchSN"><code class="name">var <span class="ident">batchSN</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.comment"><code class="name">var <span class="ident">comment</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.errorCode"><code class="name">var <span class="ident">errorCode</span> : int | str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.errorMessage"><code class="name">var <span class="ident">errorMessage</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.execTime"><code class="name">var <span class="ident">execTime</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.fixtureId"><code class="name">var <span class="ident">fixtureId</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.testSocketIndex"><code class="name">var <span class="ident">testSocketIndex</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="WSJF.sub_models.UUT.user"><code class="name">var <span class="ident">user</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="WSJF" href="index.html">WSJF</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="WSJF.sub_models.AdditionalData" href="#WSJF.sub_models.AdditionalData">AdditionalData</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.AdditionalData.name" href="#WSJF.sub_models.AdditionalData.name">name</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalData.props" href="#WSJF.sub_models.AdditionalData.props">props</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.AdditionalDataArray" href="#WSJF.sub_models.AdditionalDataArray">AdditionalDataArray</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.AdditionalDataArray.dimension" href="#WSJF.sub_models.AdditionalDataArray.dimension">dimension</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataArray.indexes" href="#WSJF.sub_models.AdditionalDataArray.indexes">indexes</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataArray.type" href="#WSJF.sub_models.AdditionalDataArray.type">type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.AdditionalDataArrayIndex" href="#WSJF.sub_models.AdditionalDataArrayIndex">AdditionalDataArrayIndex</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.AdditionalDataArrayIndex.indexes" href="#WSJF.sub_models.AdditionalDataArrayIndex.indexes">indexes</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataArrayIndex.text" href="#WSJF.sub_models.AdditionalDataArrayIndex.text">text</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataArrayIndex.value" href="#WSJF.sub_models.AdditionalDataArrayIndex.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.AdditionalDataProperty" href="#WSJF.sub_models.AdditionalDataProperty">AdditionalDataProperty</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.sub_models.AdditionalDataProperty.array" href="#WSJF.sub_models.AdditionalDataProperty.array">array</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataProperty.comment" href="#WSJF.sub_models.AdditionalDataProperty.comment">comment</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataProperty.flags" href="#WSJF.sub_models.AdditionalDataProperty.flags">flags</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataProperty.name" href="#WSJF.sub_models.AdditionalDataProperty.name">name</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataProperty.props" href="#WSJF.sub_models.AdditionalDataProperty.props">props</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataProperty.type" href="#WSJF.sub_models.AdditionalDataProperty.type">type</a></code></li>
+<li><code><a title="WSJF.sub_models.AdditionalDataProperty.value" href="#WSJF.sub_models.AdditionalDataProperty.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.Asset" href="#WSJF.sub_models.Asset">Asset</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.Asset.assetSN" href="#WSJF.sub_models.Asset.assetSN">assetSN</a></code></li>
+<li><code><a title="WSJF.sub_models.Asset.usageCount" href="#WSJF.sub_models.Asset.usageCount">usageCount</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.Attachment" href="#WSJF.sub_models.Attachment">Attachment</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.Attachment.contentType" href="#WSJF.sub_models.Attachment.contentType">contentType</a></code></li>
+<li><code><a title="WSJF.sub_models.Attachment.data" href="#WSJF.sub_models.Attachment.data">data</a></code></li>
+<li><code><a title="WSJF.sub_models.Attachment.name" href="#WSJF.sub_models.Attachment.name">name</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.BooleanMeasurement" href="#WSJF.sub_models.BooleanMeasurement">BooleanMeasurement</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.BooleanMeasurement.name" href="#WSJF.sub_models.BooleanMeasurement.name">name</a></code></li>
+<li><code><a title="WSJF.sub_models.BooleanMeasurement.status" href="#WSJF.sub_models.BooleanMeasurement.status">status</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.Chart" href="#WSJF.sub_models.Chart">Chart</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.sub_models.Chart.add_series" href="#WSJF.sub_models.Chart.add_series">add_series</a></code></li>
+<li><code><a title="WSJF.sub_models.Chart.chartType" href="#WSJF.sub_models.Chart.chartType">chartType</a></code></li>
+<li><code><a title="WSJF.sub_models.Chart.label" href="#WSJF.sub_models.Chart.label">label</a></code></li>
+<li><code><a title="WSJF.sub_models.Chart.series" href="#WSJF.sub_models.Chart.series">series</a></code></li>
+<li><code><a title="WSJF.sub_models.Chart.xLabel" href="#WSJF.sub_models.Chart.xLabel">xLabel</a></code></li>
+<li><code><a title="WSJF.sub_models.Chart.xUnit" href="#WSJF.sub_models.Chart.xUnit">xUnit</a></code></li>
+<li><code><a title="WSJF.sub_models.Chart.yLabel" href="#WSJF.sub_models.Chart.yLabel">yLabel</a></code></li>
+<li><code><a title="WSJF.sub_models.Chart.yUnit" href="#WSJF.sub_models.Chart.yUnit">yUnit</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.ChartSeries" href="#WSJF.sub_models.ChartSeries">ChartSeries</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.ChartSeries.dataType" href="#WSJF.sub_models.ChartSeries.dataType">dataType</a></code></li>
+<li><code><a title="WSJF.sub_models.ChartSeries.name" href="#WSJF.sub_models.ChartSeries.name">name</a></code></li>
+<li><code><a title="WSJF.sub_models.ChartSeries.xdata" href="#WSJF.sub_models.ChartSeries.xdata">xdata</a></code></li>
+<li><code><a title="WSJF.sub_models.ChartSeries.ydata" href="#WSJF.sub_models.ChartSeries.ydata">ydata</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.MiscInfo" href="#WSJF.sub_models.MiscInfo">MiscInfo</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.MiscInfo.description" href="#WSJF.sub_models.MiscInfo.description">description</a></code></li>
+<li><code><a title="WSJF.sub_models.MiscInfo.numeric" href="#WSJF.sub_models.MiscInfo.numeric">numeric</a></code></li>
+<li><code><a title="WSJF.sub_models.MiscInfo.text" href="#WSJF.sub_models.MiscInfo.text">text</a></code></li>
+<li><code><a title="WSJF.sub_models.MiscInfo.typedef" href="#WSJF.sub_models.MiscInfo.typedef">typedef</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.NumericMeasurement" href="#WSJF.sub_models.NumericMeasurement">NumericMeasurement</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.sub_models.NumericMeasurement.compOp" href="#WSJF.sub_models.NumericMeasurement.compOp">compOp</a></code></li>
+<li><code><a title="WSJF.sub_models.NumericMeasurement.highLimit" href="#WSJF.sub_models.NumericMeasurement.highLimit">highLimit</a></code></li>
+<li><code><a title="WSJF.sub_models.NumericMeasurement.lowLimit" href="#WSJF.sub_models.NumericMeasurement.lowLimit">lowLimit</a></code></li>
+<li><code><a title="WSJF.sub_models.NumericMeasurement.name" href="#WSJF.sub_models.NumericMeasurement.name">name</a></code></li>
+<li><code><a title="WSJF.sub_models.NumericMeasurement.status" href="#WSJF.sub_models.NumericMeasurement.status">status</a></code></li>
+<li><code><a title="WSJF.sub_models.NumericMeasurement.unit" href="#WSJF.sub_models.NumericMeasurement.unit">unit</a></code></li>
+<li><code><a title="WSJF.sub_models.NumericMeasurement.value" href="#WSJF.sub_models.NumericMeasurement.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.SequenceCall" href="#WSJF.sub_models.SequenceCall">SequenceCall</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.SequenceCall.name" href="#WSJF.sub_models.SequenceCall.name">name</a></code></li>
+<li><code><a title="WSJF.sub_models.SequenceCall.path" href="#WSJF.sub_models.SequenceCall.path">path</a></code></li>
+<li><code><a title="WSJF.sub_models.SequenceCall.version" href="#WSJF.sub_models.SequenceCall.version">version</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.StringMeasurement" href="#WSJF.sub_models.StringMeasurement">StringMeasurement</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.StringMeasurement.compOp" href="#WSJF.sub_models.StringMeasurement.compOp">compOp</a></code></li>
+<li><code><a title="WSJF.sub_models.StringMeasurement.limit" href="#WSJF.sub_models.StringMeasurement.limit">limit</a></code></li>
+<li><code><a title="WSJF.sub_models.StringMeasurement.name" href="#WSJF.sub_models.StringMeasurement.name">name</a></code></li>
+<li><code><a title="WSJF.sub_models.StringMeasurement.status" href="#WSJF.sub_models.StringMeasurement.status">status</a></code></li>
+<li><code><a title="WSJF.sub_models.StringMeasurement.value" href="#WSJF.sub_models.StringMeasurement.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.SubUnit" href="#WSJF.sub_models.SubUnit">SubUnit</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.sub_models.SubUnit.partType" href="#WSJF.sub_models.SubUnit.partType">partType</a></code></li>
+<li><code><a title="WSJF.sub_models.SubUnit.pn" href="#WSJF.sub_models.SubUnit.pn">pn</a></code></li>
+<li><code><a title="WSJF.sub_models.SubUnit.rev" href="#WSJF.sub_models.SubUnit.rev">rev</a></code></li>
+<li><code><a title="WSJF.sub_models.SubUnit.sn" href="#WSJF.sub_models.SubUnit.sn">sn</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.sub_models.UUT" href="#WSJF.sub_models.UUT">UUT</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.sub_models.UUT.batchFailCount" href="#WSJF.sub_models.UUT.batchFailCount">batchFailCount</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.batchLoopIndex" href="#WSJF.sub_models.UUT.batchLoopIndex">batchLoopIndex</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.batchSN" href="#WSJF.sub_models.UUT.batchSN">batchSN</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.comment" href="#WSJF.sub_models.UUT.comment">comment</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.errorCode" href="#WSJF.sub_models.UUT.errorCode">errorCode</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.errorMessage" href="#WSJF.sub_models.UUT.errorMessage">errorMessage</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.execTime" href="#WSJF.sub_models.UUT.execTime">execTime</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.fixtureId" href="#WSJF.sub_models.UUT.fixtureId">fixtureId</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.testSocketIndex" href="#WSJF.sub_models.UUT.testSocketIndex">testSocketIndex</a></code></li>
+<li><code><a title="WSJF.sub_models.UUT.user" href="#WSJF.sub_models.UUT.user">user</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

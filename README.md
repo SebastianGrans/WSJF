@@ -26,6 +26,10 @@ datamodel-codegen --input WSJFReport.schema.json \
     --output-model-type pydantic_v2.BaseModel
 ```
 
+## API Documentation
+
+<https://sebastiangrans.github.io/WSJF/>
+
 ## Usage as pytest plugin
 
 You can clone this repo and run this command.

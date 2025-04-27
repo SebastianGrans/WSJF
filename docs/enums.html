@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>WSJF.enums API documentation</title>
+<meta name="description" content="Various enums used in the library.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>WSJF.enums</code></h1>
+</header>
+<section id="section-intro">
+<p>Various enums used in the library.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="WSJF.enums.BinaryCompOp"><code class="flex name class">
+<span>class <span class="ident">BinaryCompOp</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BinaryCompOp(StrEnum):
+    &#34;&#34;&#34;Used in `WSJF.compare.compare_binary` to compare a value with a limit.
+
+    \\(v\\) - the value to compare\n
+    \\(a\\) - the limit to compare against
+    &#34;&#34;&#34;
+
+    #: \\( v = a \\)
+    EQUAL = &#34;EQ&#34;
+
+    #: \\( v \\neq a \\)
+    NOT_EQUAL = &#34;NE&#34;
+
+    #: \\( v &gt; a \\)
+    GREATER_THAN = &#34;GT&#34;
+
+    #: \\( v \\geq a \\)
+    GREATER_OR_EQUAL = &#34;GE&#34;
+
+    #: \\( v &lt; a \\)
+    LESS_THAN = &#34;LT&#34;
+
+    #: \\( v \\leq a \\)
+    LESS_OR_EQUAL = &#34;LE&#34;
+
+    def as_symbol(self) -&gt; str:
+        &#34;&#34;&#34;Returns the symbol for the operator.
+
+        Example:
+        ```
+        &gt;&gt;&gt; BinaryCompOp.GREATER_OR_EQUAL()
+        &#39;≥&#39;
+        ```
+
+        &#34;&#34;&#34;
+        match self:
+            case BinaryCompOp.EQUAL:
+                return &#34;=&#34;
+            case BinaryCompOp.NOT_EQUAL:
+                return &#34;≠&#34;
+            case BinaryCompOp.GREATER_THAN:
+                return &#34;&gt;&#34;
+            case BinaryCompOp.GREATER_OR_EQUAL:
+                return &#34;≥&#34;
+            case BinaryCompOp.LESS_THAN:
+                return &#34;&lt;&#34;
+            case BinaryCompOp.LESS_OR_EQUAL:
+                return &#34;≤&#34;
+            case _:
+                errmsg = f&#34;Operator {self} not implemented.&#34;
+                raise NotImplementedError(errmsg)</code></pre>
+</details>
+<div class="desc"><p>Used in <code><a title="WSJF.compare.compare_binary" href="compare.html#WSJF.compare.compare_binary">compare_binary()</a></code> to compare a value with a limit.</p>
+<p><span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> - the value to compare</p>
+<p><span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> - the limit to compare against</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.BinaryCompOp.EQUAL"><code class="name">var <span class="ident">EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p>\( v = a \)</p></div>
+</dd>
+<dt id="WSJF.enums.BinaryCompOp.GREATER_OR_EQUAL"><code class="name">var <span class="ident">GREATER_OR_EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p>\( v \geq a \)</p></div>
+</dd>
+<dt id="WSJF.enums.BinaryCompOp.GREATER_THAN"><code class="name">var <span class="ident">GREATER_THAN</span></code></dt>
+<dd>
+<div class="desc"><p>\( v &gt; a \)</p></div>
+</dd>
+<dt id="WSJF.enums.BinaryCompOp.LESS_OR_EQUAL"><code class="name">var <span class="ident">LESS_OR_EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p>\( v \leq a \)</p></div>
+</dd>
+<dt id="WSJF.enums.BinaryCompOp.LESS_THAN"><code class="name">var <span class="ident">LESS_THAN</span></code></dt>
+<dd>
+<div class="desc"><p>\( v &lt; a \)</p></div>
+</dd>
+<dt id="WSJF.enums.BinaryCompOp.NOT_EQUAL"><code class="name">var <span class="ident">NOT_EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p>\( v \neq a \)</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.enums.BinaryCompOp.as_symbol"><code class="name flex">
+<span>def <span class="ident">as_symbol</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_symbol(self) -&gt; str:
+    &#34;&#34;&#34;Returns the symbol for the operator.
+
+    Example:
+    ```
+    &gt;&gt;&gt; BinaryCompOp.GREATER_OR_EQUAL()
+    &#39;≥&#39;
+    ```
+
+    &#34;&#34;&#34;
+    match self:
+        case BinaryCompOp.EQUAL:
+            return &#34;=&#34;
+        case BinaryCompOp.NOT_EQUAL:
+            return &#34;≠&#34;
+        case BinaryCompOp.GREATER_THAN:
+            return &#34;&gt;&#34;
+        case BinaryCompOp.GREATER_OR_EQUAL:
+            return &#34;≥&#34;
+        case BinaryCompOp.LESS_THAN:
+            return &#34;&lt;&#34;
+        case BinaryCompOp.LESS_OR_EQUAL:
+            return &#34;≤&#34;
+        case _:
+            errmsg = f&#34;Operator {self} not implemented.&#34;
+            raise NotImplementedError(errmsg)</code></pre>
+</details>
+<div class="desc"><p>Returns the symbol for the operator.</p>
+<p>Example:</p>
+<pre><code>&gt;&gt;&gt; BinaryCompOp.GREATER_OR_EQUAL()
+'≥'
+</code></pre></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.enums.ChartType"><code class="flex name class">
+<span>class <span class="ident">ChartType</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ChartType(StrEnum):
+    &#34;&#34;&#34;Enum that defines which chart type to use.
+
+    Used in `WSJF.sub_models.Chart`
+    &#34;&#34;&#34;
+
+    #: Standard cartesian chart
+    LINE = &#34;LINE&#34;
+    #: Logarithmic X and Y axis
+    LINELOGXY = &#34;LineLogXY&#34;
+    #: Logarithmic X axis
+    LINELOGX = &#34;LineLogX&#34;
+    #: Logarithmic Y axis
+    LINELOGY = &#34;LineLogY&#34;</code></pre>
+</details>
+<div class="desc"><p>Enum that defines which chart type to use.</p>
+<p>Used in <code><a title="WSJF.sub_models.Chart" href="sub_models.html#WSJF.sub_models.Chart">Chart</a></code></p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.ChartType.LINE"><code class="name">var <span class="ident">LINE</span></code></dt>
+<dd>
+<div class="desc"><p>Standard cartesian chart</p></div>
+</dd>
+<dt id="WSJF.enums.ChartType.LINELOGX"><code class="name">var <span class="ident">LINELOGX</span></code></dt>
+<dd>
+<div class="desc"><p>Logarithmic X axis</p></div>
+</dd>
+<dt id="WSJF.enums.ChartType.LINELOGXY"><code class="name">var <span class="ident">LINELOGXY</span></code></dt>
+<dd>
+<div class="desc"><p>Logarithmic X and Y axis</p></div>
+</dd>
+<dt id="WSJF.enums.ChartType.LINELOGY"><code class="name">var <span class="ident">LINELOGY</span></code></dt>
+<dd>
+<div class="desc"><p>Logarithmic Y axis</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.enums.MeasurementStatusCode"><code class="flex name class">
+<span>class <span class="ident">MeasurementStatusCode</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MeasurementStatusCode(StrEnum):
+    &#34;&#34;&#34;A measurement, as part of a step, can have these status codes.
+
+    Used in these classes:
+
+    * `WSJF.sub_models.BooleanMeasurement`
+    * `WSJF.sub_models.NumericMeasurement`
+    * `WSJF.sub_models.StringMeasurement`
+
+
+    &#34;&#34;&#34;
+
+    #: WATS Code `P`
+    PASSED = &#34;P&#34;
+
+    #: WATS Code `F`
+    FAILED = &#34;F&#34;
+
+    #: WATS Code `S`
+    SKIPPED = &#34;S&#34;</code></pre>
+</details>
+<div class="desc"><p>A measurement, as part of a step, can have these status codes.</p>
+<p>Used in these classes:</p>
+<ul>
+<li><code><a title="WSJF.sub_models.BooleanMeasurement" href="sub_models.html#WSJF.sub_models.BooleanMeasurement">BooleanMeasurement</a></code></li>
+<li><code><a title="WSJF.sub_models.NumericMeasurement" href="sub_models.html#WSJF.sub_models.NumericMeasurement">NumericMeasurement</a></code></li>
+<li><code><a title="WSJF.sub_models.StringMeasurement" href="sub_models.html#WSJF.sub_models.StringMeasurement">StringMeasurement</a></code></li>
+</ul></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.MeasurementStatusCode.FAILED"><code class="name">var <span class="ident">FAILED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>F</code></p></div>
+</dd>
+<dt id="WSJF.enums.MeasurementStatusCode.PASSED"><code class="name">var <span class="ident">PASSED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>P</code></p></div>
+</dd>
+<dt id="WSJF.enums.MeasurementStatusCode.SKIPPED"><code class="name">var <span class="ident">SKIPPED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>S</code></p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.enums.StepStatusCode"><code class="flex name class">
+<span>class <span class="ident">StepStatusCode</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StepStatusCode(StrEnum):
+    &#34;&#34;&#34;A step can have any of these status codes&#34;&#34;&#34;
+
+    #: WATS Code `P`
+    PASSED = &#34;P&#34;
+    #: WATS Code `F`
+    FAILED = &#34;F&#34;
+    #: WATS Code `D`
+    DONE = &#34;D&#34;
+    #: WATS Code `E`
+    ERROR = &#34;E&#34;
+    #: WATS Code `T`
+    TERMINATED = &#34;T&#34;
+    #: WATS Code `S`
+    SKIPPED = &#34;S&#34;</code></pre>
+</details>
+<div class="desc"><p>A step can have any of these status codes</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.StepStatusCode.DONE"><code class="name">var <span class="ident">DONE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>D</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepStatusCode.ERROR"><code class="name">var <span class="ident">ERROR</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>E</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepStatusCode.FAILED"><code class="name">var <span class="ident">FAILED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>F</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepStatusCode.PASSED"><code class="name">var <span class="ident">PASSED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>P</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepStatusCode.SKIPPED"><code class="name">var <span class="ident">SKIPPED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>S</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepStatusCode.TERMINATED"><code class="name">var <span class="ident">TERMINATED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>T</code></p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.enums.StepType"><code class="flex name class">
+<span>class <span class="ident">StepType</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StepType(StrEnum):
+    &#34;&#34;&#34;A step can be of these types.&#34;&#34;&#34;
+
+    #: WATS Code `SequenceCall`
+    SEQUENCE_CALL = &#34;SequenceCall&#34;
+
+    #: WATS Code `ET_NLT`
+    NUMERIC_LIMIT_SINGLE = &#34;ET_NLT&#34;
+
+    #: WATS Code `ET_MNLT`
+    NUMERIC_LIMIT_MULTIPLE = &#34;ET_MNLT&#34;
+
+    #: WATS Code `ET_SLT`
+    STRING_VALUE_SINGLE = &#34;ET_SVT&#34;
+
+    #: WATS Code `ET_MSVT`
+    STRING_VALUE_MULTIPLE = &#34;ET_MSVT&#34;
+
+    #: WATS Code `ET_PFT`
+    BOOLEAN_VALUE_SINGLE = &#34;ET_PFT&#34;
+
+    #: WATS Code `ET_MPFT`
+    BOOLEAN_VALUE_MULTIPLE = &#34;ET_MPFT&#34;
+
+    #: WATS Code `Chart`
+    CHART = &#34;Chart&#34;
+
+    #: WATS Code `Attachment`
+    ATTACHMENT = &#34;Attachment&#34;  # Ditto.
+    # CALL_EXE = &#34;CallExe&#34; # Not implemented yet.
+    # MESSAGE_POPUP = &#34;MessagePopup&#34;  # Ditto.
+    # ACTION = &#34;Action&#34;  # Ditto.</code></pre>
+</details>
+<div class="desc"><p>A step can be of these types.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.StepType.ATTACHMENT"><code class="name">var <span class="ident">ATTACHMENT</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>Attachment</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.BOOLEAN_VALUE_MULTIPLE"><code class="name">var <span class="ident">BOOLEAN_VALUE_MULTIPLE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>ET_MPFT</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.BOOLEAN_VALUE_SINGLE"><code class="name">var <span class="ident">BOOLEAN_VALUE_SINGLE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>ET_PFT</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.CHART"><code class="name">var <span class="ident">CHART</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>Chart</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.NUMERIC_LIMIT_MULTIPLE"><code class="name">var <span class="ident">NUMERIC_LIMIT_MULTIPLE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>ET_MNLT</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.NUMERIC_LIMIT_SINGLE"><code class="name">var <span class="ident">NUMERIC_LIMIT_SINGLE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>ET_NLT</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.SEQUENCE_CALL"><code class="name">var <span class="ident">SEQUENCE_CALL</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>SequenceCall</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.STRING_VALUE_MULTIPLE"><code class="name">var <span class="ident">STRING_VALUE_MULTIPLE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>ET_MSVT</code></p></div>
+</dd>
+<dt id="WSJF.enums.StepType.STRING_VALUE_SINGLE"><code class="name">var <span class="ident">STRING_VALUE_SINGLE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>ET_SLT</code></p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.enums.StringCaseOp"><code class="flex name class">
+<span>class <span class="ident">StringCaseOp</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StringCaseOp(StrEnum):
+    &#34;&#34;&#34;Used in `WSJF.compare.compare_case` to compare a string.&#34;&#34;&#34;
+
+    #: WATS Code `CASESENSIT`
+    CASE_SENSITIVE = &#34;CASESENSIT&#34;
+
+    #: WATS Code `IGNORECASE`
+    IGNORECASE = &#34;IGNORECASE&#34;</code></pre>
+</details>
+<div class="desc"><p>Used in <code><a title="WSJF.compare.compare_case" href="compare.html#WSJF.compare.compare_case">compare_case()</a></code> to compare a string.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.StringCaseOp.CASE_SENSITIVE"><code class="name">var <span class="ident">CASE_SENSITIVE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>CASESENSIT</code></p></div>
+</dd>
+<dt id="WSJF.enums.StringCaseOp.IGNORECASE"><code class="name">var <span class="ident">IGNORECASE</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>IGNORECASE</code></p></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp"><code class="flex name class">
+<span>class <span class="ident">TernaryCompOp</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TernaryCompOp(StrEnum):
+    &#34;&#34;&#34;Used in `WSJF.compare.compare_ternary` to compare a value with two limits.
+
+    \\(v\\) - the value to compare\n
+    \\(a\\) - the &#34;lower&#34; limit to compare against\n
+    \\(b\\) - the &#34;upper&#34; limit to compare against\n
+
+    &#34;&#34;&#34;
+
+    GREATER_THAN_OR_LESS_THAN = &#34;GTLT&#34;  # Greater than low limit, less than high limit
+    &#34;&#34;&#34;
+    \\(a &lt; v &lt; b\\)\n\n
+    \\(v \\in (a, b)\\)
+    &#34;&#34;&#34;
+
+    GREATER_EQUAL_OR_LESS_EQUAL = &#34;GELE&#34;  # Greater or equal than low limit, less or equal than high limit
+    &#34;&#34;&#34;
+    \\(a \\leq v \\leq b\\)\n\n
+    \\(v \\in [a, b]\\)
+    &#34;&#34;&#34;
+
+    GREATER_EQUAL_OR_LESS_THAN = &#34;GELT&#34;  # Greater or equal than low limit, less than high limit
+    &#34;&#34;&#34;
+    \\(a \\leq v &lt; b\\)\n\n
+    \\(v \\in [a, b)\\)
+    &#34;&#34;&#34;
+
+    GREATER_THAN_OR_LESS_EQUAL = &#34;GTLE&#34;  # Greater than low limit, less or equal than high limit
+    &#34;&#34;&#34;
+    \\(a &lt; v \\leq b\\)\n\n
+    \\(v \\in (a, b]\\)
+    &#34;&#34;&#34;
+
+    LESS_THAN_OR_GREATER_THAN = &#34;LTGT&#34;  # Less than low limit, greater than high limit
+    &#34;&#34;&#34;
+    \\(a &gt; v &gt; b\\)\n\n
+    \\(v \\notin [a, b]\\)
+    &#34;&#34;&#34;
+
+    LESS_EQUAL_OR_GREATER_EQUAL = &#34;LEGE&#34;  # Less or equal than low limit, greater or equal than high limit
+    &#34;&#34;&#34;
+    \\(a \\geq v \\geq b\\)\n\n
+    \\(v \\notin (a, b)\\)
+    &#34;&#34;&#34;
+
+    LESS_EQUAL_OR_GREATER_THAN = &#34;LEGT&#34;  # Less or equal than low limit, greater than high limit
+    &#34;&#34;&#34;
+    \\(a \\geq v &lt; b\\)\n\n
+    \\(v \\notin (a, b]\\)\n
+    &#34;&#34;&#34;
+
+    LESS_THAN_OR_GREATER_EQUAL = &#34;LTGE&#34;  # Less than low limit, greater or equal than high limit
+    &#34;&#34;&#34;
+    \\(v &lt; a\\) or \\(v \\geq b\\)\n\n
+    \\(v \\notin [a, b)\\)\n
+    &#34;&#34;&#34;
+
+    def as_symbols(self) -&gt; tuple[str, str]:
+        &#34;&#34;&#34;Returns a `tuple` with symbols of the ternary operator.
+
+        E.g.:
+        ```
+        &gt;&gt;&gt; TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL.as_symbols()
+        (&#39;&lt;&#39;, &#39;≤&#39;)
+        ```
+
+        &#34;&#34;&#34;
+        match self:
+            case TernaryCompOp.GREATER_THAN_OR_LESS_THAN:
+                return &#34;&lt;&#34;, &#34;&lt;&#34;
+            case TernaryCompOp.GREATER_EQUAL_OR_LESS_EQUAL:
+                return &#34;≤&#34;, &#34;≤&#34;
+            case TernaryCompOp.GREATER_EQUAL_OR_LESS_THAN:
+                return &#34;≤&#34;, &#34;&lt;&#34;
+            case TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL:
+                return &#34;&lt;&#34;, &#34;≤&#34;
+            case TernaryCompOp.LESS_THAN_OR_GREATER_THAN:
+                return &#34;&gt;&#34;, &#34;&gt;&#34;
+            case TernaryCompOp.LESS_EQUAL_OR_GREATER_EQUAL:
+                return &#34;≥&#34;, &#34;≥&#34;
+            case TernaryCompOp.LESS_EQUAL_OR_GREATER_THAN:
+                return &#34;≥&#34;, &#34;&gt;&#34;
+            case TernaryCompOp.LESS_THAN_OR_GREATER_EQUAL:
+                return &#34;&gt;&#34;, &#34;≥&#34;
+            case _:
+                errmsg = f&#34;Operator {self} not implemented.&#34;
+                raise NotImplementedError(errmsg)</code></pre>
+</details>
+<div class="desc"><p>Used in <code><a title="WSJF.compare.compare_ternary" href="compare.html#WSJF.compare.compare_ternary">compare_ternary()</a></code> to compare a value with two limits.</p>
+<p><span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> - the value to compare</p>
+<p><span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> - the "lower" limit to compare against</p>
+<p><span><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> - the "upper" limit to compare against</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.TernaryCompOp.GREATER_EQUAL_OR_LESS_EQUAL"><code class="name">var <span class="ident">GREATER_EQUAL_OR_LESS_EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">a \leq v \leq b</span><script type="math/tex">a \leq v \leq b</script></span></p>
+<p><span><span class="MathJax_Preview">v \in [a, b]</span><script type="math/tex">v \in [a, b]</script></span></p></div>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp.GREATER_EQUAL_OR_LESS_THAN"><code class="name">var <span class="ident">GREATER_EQUAL_OR_LESS_THAN</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">a \leq v &lt; b</span><script type="math/tex">a \leq v < b</script></span></p>
+<p><span><span class="MathJax_Preview">v \in [a, b)</span><script type="math/tex">v \in [a, b)</script></span></p></div>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL"><code class="name">var <span class="ident">GREATER_THAN_OR_LESS_EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">a &lt; v \leq b</span><script type="math/tex">a < v \leq b</script></span></p>
+<p><span><span class="MathJax_Preview">v \in (a, b]</span><script type="math/tex">v \in (a, b]</script></span></p></div>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp.GREATER_THAN_OR_LESS_THAN"><code class="name">var <span class="ident">GREATER_THAN_OR_LESS_THAN</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">a &lt; v &lt; b</span><script type="math/tex">a < v < b</script></span></p>
+<p><span><span class="MathJax_Preview">v \in (a, b)</span><script type="math/tex">v \in (a, b)</script></span></p></div>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp.LESS_EQUAL_OR_GREATER_EQUAL"><code class="name">var <span class="ident">LESS_EQUAL_OR_GREATER_EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">a \geq v \geq b</span><script type="math/tex">a \geq v \geq b</script></span></p>
+<p><span><span class="MathJax_Preview">v \notin (a, b)</span><script type="math/tex">v \notin (a, b)</script></span></p></div>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp.LESS_EQUAL_OR_GREATER_THAN"><code class="name">var <span class="ident">LESS_EQUAL_OR_GREATER_THAN</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">a \geq v &lt; b</span><script type="math/tex">a \geq v < b</script></span></p>
+<p><span><span class="MathJax_Preview">v \notin (a, b]</span><script type="math/tex">v \notin (a, b]</script></span></p></div>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp.LESS_THAN_OR_GREATER_EQUAL"><code class="name">var <span class="ident">LESS_THAN_OR_GREATER_EQUAL</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">v &lt; a</span><script type="math/tex">v < a</script></span> or <span><span class="MathJax_Preview">v \geq b</span><script type="math/tex">v \geq b</script></span></p>
+<p><span><span class="MathJax_Preview">v \notin [a, b)</span><script type="math/tex">v \notin [a, b)</script></span></p></div>
+</dd>
+<dt id="WSJF.enums.TernaryCompOp.LESS_THAN_OR_GREATER_THAN"><code class="name">var <span class="ident">LESS_THAN_OR_GREATER_THAN</span></code></dt>
+<dd>
+<div class="desc"><p><span><span class="MathJax_Preview">a &gt; v &gt; b</span><script type="math/tex">a > v > b</script></span></p>
+<p><span><span class="MathJax_Preview">v \notin [a, b]</span><script type="math/tex">v \notin [a, b]</script></span></p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="WSJF.enums.TernaryCompOp.as_symbols"><code class="name flex">
+<span>def <span class="ident">as_symbols</span></span>(<span>self) ‑> tuple[str, str]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_symbols(self) -&gt; tuple[str, str]:
+    &#34;&#34;&#34;Returns a `tuple` with symbols of the ternary operator.
+
+    E.g.:
+    ```
+    &gt;&gt;&gt; TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL.as_symbols()
+    (&#39;&lt;&#39;, &#39;≤&#39;)
+    ```
+
+    &#34;&#34;&#34;
+    match self:
+        case TernaryCompOp.GREATER_THAN_OR_LESS_THAN:
+            return &#34;&lt;&#34;, &#34;&lt;&#34;
+        case TernaryCompOp.GREATER_EQUAL_OR_LESS_EQUAL:
+            return &#34;≤&#34;, &#34;≤&#34;
+        case TernaryCompOp.GREATER_EQUAL_OR_LESS_THAN:
+            return &#34;≤&#34;, &#34;&lt;&#34;
+        case TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL:
+            return &#34;&lt;&#34;, &#34;≤&#34;
+        case TernaryCompOp.LESS_THAN_OR_GREATER_THAN:
+            return &#34;&gt;&#34;, &#34;&gt;&#34;
+        case TernaryCompOp.LESS_EQUAL_OR_GREATER_EQUAL:
+            return &#34;≥&#34;, &#34;≥&#34;
+        case TernaryCompOp.LESS_EQUAL_OR_GREATER_THAN:
+            return &#34;≥&#34;, &#34;&gt;&#34;
+        case TernaryCompOp.LESS_THAN_OR_GREATER_EQUAL:
+            return &#34;&gt;&#34;, &#34;≥&#34;
+        case _:
+            errmsg = f&#34;Operator {self} not implemented.&#34;
+            raise NotImplementedError(errmsg)</code></pre>
+</details>
+<div class="desc"><p>Returns a <code>tuple</code> with symbols of the ternary operator.</p>
+<p>E.g.:</p>
+<pre><code>&gt;&gt;&gt; TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL.as_symbols()
+('&lt;', '≤')
+</code></pre></div>
+</dd>
+</dl>
+</dd>
+<dt id="WSJF.enums.UUTStatusCode"><code class="flex name class">
+<span>class <span class="ident">UUTStatusCode</span></span>
+<span>(</span><span>*values)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UUTStatusCode(StrEnum):
+    &#34;&#34;&#34;Enum of status codes for the report and root step.
+
+    This is applicable to:
+
+    * `WSJF.models.WATSReport`
+    * `WSJF.models.WATSReport.root`
+
+    **Note:** The report and root step **must** have the same status code.
+    &#34;&#34;&#34;
+
+    #: WATS Code `P`
+    PASSED = &#34;P&#34;
+    #: WATS Code `F`
+    FAILED = &#34;F&#34;
+    #: WATS Code `E`
+    ERROR = &#34;E&#34;
+    #: WATS Code `T`
+    TERMINATED = &#34;T&#34;</code></pre>
+</details>
+<div class="desc"><p>Enum of status codes for the report and root step.</p>
+<p>This is applicable to:</p>
+<ul>
+<li><code><a title="WSJF.models.WATSReport" href="models.html#WSJF.models.WATSReport">WATSReport</a></code></li>
+<li><code><a title="WSJF.models.WATSReport.root" href="models.html#WSJF.models.WATSReport.root">WATSReport.root</a></code></li>
+</ul>
+<p><strong>Note:</strong> The report and root step <strong>must</strong> have the same status code.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.StrEnum</li>
+<li>builtins.str</li>
+<li>enum.ReprEnum</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="WSJF.enums.UUTStatusCode.ERROR"><code class="name">var <span class="ident">ERROR</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>E</code></p></div>
+</dd>
+<dt id="WSJF.enums.UUTStatusCode.FAILED"><code class="name">var <span class="ident">FAILED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>F</code></p></div>
+</dd>
+<dt id="WSJF.enums.UUTStatusCode.PASSED"><code class="name">var <span class="ident">PASSED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>P</code></p></div>
+</dd>
+<dt id="WSJF.enums.UUTStatusCode.TERMINATED"><code class="name">var <span class="ident">TERMINATED</span></code></dt>
+<dd>
+<div class="desc"><p>WATS Code <code>T</code></p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="WSJF" href="index.html">WSJF</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="WSJF.enums.BinaryCompOp" href="#WSJF.enums.BinaryCompOp">BinaryCompOp</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.enums.BinaryCompOp.EQUAL" href="#WSJF.enums.BinaryCompOp.EQUAL">EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.BinaryCompOp.GREATER_OR_EQUAL" href="#WSJF.enums.BinaryCompOp.GREATER_OR_EQUAL">GREATER_OR_EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.BinaryCompOp.GREATER_THAN" href="#WSJF.enums.BinaryCompOp.GREATER_THAN">GREATER_THAN</a></code></li>
+<li><code><a title="WSJF.enums.BinaryCompOp.LESS_OR_EQUAL" href="#WSJF.enums.BinaryCompOp.LESS_OR_EQUAL">LESS_OR_EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.BinaryCompOp.LESS_THAN" href="#WSJF.enums.BinaryCompOp.LESS_THAN">LESS_THAN</a></code></li>
+<li><code><a title="WSJF.enums.BinaryCompOp.NOT_EQUAL" href="#WSJF.enums.BinaryCompOp.NOT_EQUAL">NOT_EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.BinaryCompOp.as_symbol" href="#WSJF.enums.BinaryCompOp.as_symbol">as_symbol</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.enums.ChartType" href="#WSJF.enums.ChartType">ChartType</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.enums.ChartType.LINE" href="#WSJF.enums.ChartType.LINE">LINE</a></code></li>
+<li><code><a title="WSJF.enums.ChartType.LINELOGX" href="#WSJF.enums.ChartType.LINELOGX">LINELOGX</a></code></li>
+<li><code><a title="WSJF.enums.ChartType.LINELOGXY" href="#WSJF.enums.ChartType.LINELOGXY">LINELOGXY</a></code></li>
+<li><code><a title="WSJF.enums.ChartType.LINELOGY" href="#WSJF.enums.ChartType.LINELOGY">LINELOGY</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.enums.MeasurementStatusCode" href="#WSJF.enums.MeasurementStatusCode">MeasurementStatusCode</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.enums.MeasurementStatusCode.FAILED" href="#WSJF.enums.MeasurementStatusCode.FAILED">FAILED</a></code></li>
+<li><code><a title="WSJF.enums.MeasurementStatusCode.PASSED" href="#WSJF.enums.MeasurementStatusCode.PASSED">PASSED</a></code></li>
+<li><code><a title="WSJF.enums.MeasurementStatusCode.SKIPPED" href="#WSJF.enums.MeasurementStatusCode.SKIPPED">SKIPPED</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.enums.StepStatusCode" href="#WSJF.enums.StepStatusCode">StepStatusCode</a></code></h4>
+<ul class="two-column">
+<li><code><a title="WSJF.enums.StepStatusCode.DONE" href="#WSJF.enums.StepStatusCode.DONE">DONE</a></code></li>
+<li><code><a title="WSJF.enums.StepStatusCode.ERROR" href="#WSJF.enums.StepStatusCode.ERROR">ERROR</a></code></li>
+<li><code><a title="WSJF.enums.StepStatusCode.FAILED" href="#WSJF.enums.StepStatusCode.FAILED">FAILED</a></code></li>
+<li><code><a title="WSJF.enums.StepStatusCode.PASSED" href="#WSJF.enums.StepStatusCode.PASSED">PASSED</a></code></li>
+<li><code><a title="WSJF.enums.StepStatusCode.SKIPPED" href="#WSJF.enums.StepStatusCode.SKIPPED">SKIPPED</a></code></li>
+<li><code><a title="WSJF.enums.StepStatusCode.TERMINATED" href="#WSJF.enums.StepStatusCode.TERMINATED">TERMINATED</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.enums.StepType" href="#WSJF.enums.StepType">StepType</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.enums.StepType.ATTACHMENT" href="#WSJF.enums.StepType.ATTACHMENT">ATTACHMENT</a></code></li>
+<li><code><a title="WSJF.enums.StepType.BOOLEAN_VALUE_MULTIPLE" href="#WSJF.enums.StepType.BOOLEAN_VALUE_MULTIPLE">BOOLEAN_VALUE_MULTIPLE</a></code></li>
+<li><code><a title="WSJF.enums.StepType.BOOLEAN_VALUE_SINGLE" href="#WSJF.enums.StepType.BOOLEAN_VALUE_SINGLE">BOOLEAN_VALUE_SINGLE</a></code></li>
+<li><code><a title="WSJF.enums.StepType.CHART" href="#WSJF.enums.StepType.CHART">CHART</a></code></li>
+<li><code><a title="WSJF.enums.StepType.NUMERIC_LIMIT_MULTIPLE" href="#WSJF.enums.StepType.NUMERIC_LIMIT_MULTIPLE">NUMERIC_LIMIT_MULTIPLE</a></code></li>
+<li><code><a title="WSJF.enums.StepType.NUMERIC_LIMIT_SINGLE" href="#WSJF.enums.StepType.NUMERIC_LIMIT_SINGLE">NUMERIC_LIMIT_SINGLE</a></code></li>
+<li><code><a title="WSJF.enums.StepType.SEQUENCE_CALL" href="#WSJF.enums.StepType.SEQUENCE_CALL">SEQUENCE_CALL</a></code></li>
+<li><code><a title="WSJF.enums.StepType.STRING_VALUE_MULTIPLE" href="#WSJF.enums.StepType.STRING_VALUE_MULTIPLE">STRING_VALUE_MULTIPLE</a></code></li>
+<li><code><a title="WSJF.enums.StepType.STRING_VALUE_SINGLE" href="#WSJF.enums.StepType.STRING_VALUE_SINGLE">STRING_VALUE_SINGLE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.enums.StringCaseOp" href="#WSJF.enums.StringCaseOp">StringCaseOp</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.enums.StringCaseOp.CASE_SENSITIVE" href="#WSJF.enums.StringCaseOp.CASE_SENSITIVE">CASE_SENSITIVE</a></code></li>
+<li><code><a title="WSJF.enums.StringCaseOp.IGNORECASE" href="#WSJF.enums.StringCaseOp.IGNORECASE">IGNORECASE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.enums.TernaryCompOp" href="#WSJF.enums.TernaryCompOp">TernaryCompOp</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.enums.TernaryCompOp.GREATER_EQUAL_OR_LESS_EQUAL" href="#WSJF.enums.TernaryCompOp.GREATER_EQUAL_OR_LESS_EQUAL">GREATER_EQUAL_OR_LESS_EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.GREATER_EQUAL_OR_LESS_THAN" href="#WSJF.enums.TernaryCompOp.GREATER_EQUAL_OR_LESS_THAN">GREATER_EQUAL_OR_LESS_THAN</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL" href="#WSJF.enums.TernaryCompOp.GREATER_THAN_OR_LESS_EQUAL">GREATER_THAN_OR_LESS_EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.GREATER_THAN_OR_LESS_THAN" href="#WSJF.enums.TernaryCompOp.GREATER_THAN_OR_LESS_THAN">GREATER_THAN_OR_LESS_THAN</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.LESS_EQUAL_OR_GREATER_EQUAL" href="#WSJF.enums.TernaryCompOp.LESS_EQUAL_OR_GREATER_EQUAL">LESS_EQUAL_OR_GREATER_EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.LESS_EQUAL_OR_GREATER_THAN" href="#WSJF.enums.TernaryCompOp.LESS_EQUAL_OR_GREATER_THAN">LESS_EQUAL_OR_GREATER_THAN</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.LESS_THAN_OR_GREATER_EQUAL" href="#WSJF.enums.TernaryCompOp.LESS_THAN_OR_GREATER_EQUAL">LESS_THAN_OR_GREATER_EQUAL</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.LESS_THAN_OR_GREATER_THAN" href="#WSJF.enums.TernaryCompOp.LESS_THAN_OR_GREATER_THAN">LESS_THAN_OR_GREATER_THAN</a></code></li>
+<li><code><a title="WSJF.enums.TernaryCompOp.as_symbols" href="#WSJF.enums.TernaryCompOp.as_symbols">as_symbols</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="WSJF.enums.UUTStatusCode" href="#WSJF.enums.UUTStatusCode">UUTStatusCode</a></code></h4>
+<ul class="">
+<li><code><a title="WSJF.enums.UUTStatusCode.ERROR" href="#WSJF.enums.UUTStatusCode.ERROR">ERROR</a></code></li>
+<li><code><a title="WSJF.enums.UUTStatusCode.FAILED" href="#WSJF.enums.UUTStatusCode.FAILED">FAILED</a></code></li>
+<li><code><a title="WSJF.enums.UUTStatusCode.PASSED" href="#WSJF.enums.UUTStatusCode.PASSED">PASSED</a></code></li>
+<li><code><a title="WSJF.enums.UUTStatusCode.TERMINATED" href="#WSJF.enums.UUTStatusCode.TERMINATED">TERMINATED</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
