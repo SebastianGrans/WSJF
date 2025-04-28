@@ -3,6 +3,16 @@
 from enum import StrEnum
 
 
+class AdditionalDataPropertyType(StrEnum):
+    """Enum of valid property types for the AdditionalDataProperty class."""
+
+    NUMBER = "Number"
+    STRING = "String"
+    BOOL = "Bool"
+    OBJ = "Obj"
+    ARRAY = "Array"
+
+
 class BinaryCompOp(StrEnum):
     """Used in `WSJF.compare.compare_binary` to compare a value with a limit.
 

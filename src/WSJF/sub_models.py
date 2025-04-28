@@ -6,7 +6,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from WSJF.enums import ChartType, MeasurementStatusCode
+from WSJF.enums import AdditionalDataPropertyType, ChartType, MeasurementStatusCode
 
 
 class AdditionalData(BaseModel):
@@ -22,6 +22,25 @@ class AdditionalData(BaseModel):
         description="list of properties in the additional data.",
     )
 
+    def add_additional_data_property(
+        self,
+        name: str,
+        typ: AdditionalDataPropertyType,
+        flags: int | None = None,
+        value: str | None = None,
+        comment: str | None = None,
+    ) -> AdditionalDataProperty:
+        """Adds a property to the additional data."""
+        prop = AdditionalDataProperty(
+            name=name,
+            type=typ,
+            flags=flags,
+            value=value,
+            comment=comment,
+        )
+        self.props.append(prop)
+        return prop
+
 
 class AdditionalDataArray(BaseModel):
     """TODO: Add a docstring for AdditionalData."""
@@ -33,16 +52,28 @@ class AdditionalDataArray(BaseModel):
         description="Type of the values in the array.",
     )
     indexes: list[AdditionalDataArrayIndex] = Field(
+        default_factory=list,
         description="list of indexes in the array.",
     )
+
+    def add_additional_data_array_index(
+        self,
+        text: str,
+        indexes: list[int],
+        value: AdditionalDataProperty,
+    ) -> AdditionalDataArrayIndex:
+        """Adds an index to the additional data array."""
+        index = AdditionalDataArrayIndex(
+            text=text,
+            indexes=indexes,
+            value=value,
+        )
+        self.indexes.append(index)
+        return index
 
 
 class AdditionalDataArrayIndex(BaseModel):
     """TODO: ADD DOCSTRING"""
-
-    """
-    TODO: ADD DOCSTRING
-    """
 
     text: str = Field(
         description="The index as text.",
@@ -50,17 +81,25 @@ class AdditionalDataArrayIndex(BaseModel):
     indexes: list[int] = Field(
         description="list of indexes ordered by dimension.",
     )
-    value: AdditionalDataProperty | None = None
+    value: AdditionalDataProperty
 
 
 class AdditionalDataProperty(BaseModel):
     """TODO: ADD DOCSTRING"""
 
-    name: str
-    type: str
+    name: str = Field(
+        description="Name of property.",
+        min_length=1,
+    )
+    type: AdditionalDataPropertyType = Field(
+        description="Type of property.",
+        examples=[list(AdditionalDataPropertyType)],
+    )
     flags: int | None = Field(
         default=None,
         description="Bit flags of property.",
+        # I have no idea what this is supposed to be.
+        # It doesn't appear in the web interface.
     )
     value: str | None = Field(
         default=None,
@@ -78,6 +117,38 @@ class AdditionalDataProperty(BaseModel):
         default=None,
         description="Array information. Used for type Array.",
     )
+
+    def add_additional_data_property(
+        self,
+        name: str,
+        typ: AdditionalDataPropertyType,
+        flags: int | None = None,
+        value: str | None = None,
+        comment: str | None = None,
+    ) -> AdditionalDataProperty:
+        """Adds a property to the additional data."""
+        prop = AdditionalDataProperty(
+            name=name,
+            type=typ,
+            flags=flags,
+            value=value,
+            comment=comment,
+        )
+        self.props.append(prop)
+        return prop
+
+    def add_additional_data_array(
+        self,
+        dimension: int,
+        typ: AdditionalDataPropertyType,
+    ) -> AdditionalDataArray:
+        """Adds an array to the additional data."""
+        array = AdditionalDataArray(
+            dimension=dimension,
+            type=typ,
+        )
+        self.array = array
+        return array
 
 
 class Asset(BaseModel):

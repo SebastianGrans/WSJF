@@ -217,6 +217,12 @@ class WATSReport(BaseModel):
         """Add a test sequence to the report."""
         return self.root.add_sequence_call(name=name, path=path, version=version)
 
+    def add_additional_data(self, name: str) -> AdditionalData:
+        """Add additional data to the report."""
+        additional_data = AdditionalData(name=name)
+        self.additionalData.append(additional_data)
+        return additional_data
+
     @classmethod
     def factory(
         cls,
@@ -319,8 +325,8 @@ class Step(BaseModel):
         default=None,
         description="The step comment.",
     )
-    additionalResults: list[AdditionalData] | None = Field(
-        default=None,
+    additionalResults: list[AdditionalData] = Field(
+        default_factory=list,
         description="A list of additional results for the step.",
     )
     chart: Chart | None = Field(
@@ -390,6 +396,24 @@ class Step(BaseModel):
         attachment = Attachment(name=name, contentType=content_type, data=data)
         self.attachment = attachment
 
+    def add_additional_data(self, name: str) -> AdditionalData:
+        """Add additional data to the step
+
+        Example:
+        ```
+        additional_data = step.add_additional_data("Some strings")
+        additional_data.add_additional_data_property(
+            "hello",
+            AdditionalDataPropertyType.STRING,
+            value="world",
+            comment="hello world",
+        )
+        ```
+        """
+        additional_data = AdditionalData(name=name)
+        self.additionalResults.append(additional_data)
+        return additional_data
+
 
 class _NonRootStep(BaseModel):
     _parent: _NonRootStep | RootSequenceCallStep = PrivateAttr()
@@ -417,9 +441,18 @@ class _NonRootStep(BaseModel):
             serial_number=serial_number,
         )
 
-    def add_comment(self, comment: str) -> None:
-        """See `WSJF.models.WATSReport.add_comment`"""
-        self._parent.add_comment(comment=comment)
+    def add_comment(self, comment: str) -> str:
+        """Add a comment to `WSJF.models.WATSReport`
+
+        See ``WSJF.models.WATSReport`.add_comment`
+
+        Returns the content of the comment field.
+        """
+        return self._parent.add_comment(comment=comment)
+
+    def add_additional_data_to_report(self, name: str) -> AdditionalData:
+        """Add additional data to the `WSJF.models.WATSReport`"""
+        return self._parent.add_additional_data_to_report(name=name)
 
 
 class RootSequenceCallStep(Step):
@@ -493,9 +526,16 @@ class RootSequenceCallStep(Step):
             serial_number=serial_number,
         )
 
-    def add_comment(self, comment: str) -> None:
-        """See `WSJF.models.WATSReport.add_comment`"""
-        self._report.add_comment(comment=comment)
+    def add_comment(self, comment: str) -> str:
+        """See `WSJF.models.WATSReport.add_comment`
+
+        Returns the content of the comment field.
+        """
+        return self._report.add_comment(comment=comment)
+
+    def add_additional_data_to_report(self, name: str) -> AdditionalData:
+        """Add additional data to the `WSJF.models.WATSReport`"""
+        return self._report.add_additional_data(name=name)
 
 
 class SequenceCallStep(_NonRootStep, RootSequenceCallStep):
