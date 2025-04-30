@@ -149,7 +149,7 @@ class WATSReport(BaseModel):
         """
         filename = f"{datetime.now().strftime('%Y-%m-%dT%H%M%S')}-{self.root.name}-{self.sn}_WATS.json"
         filepath = path / filename
-        filepath.write_text(self.model_dump_json(indent=2, exclude_none=True))
+        filepath.write_text(self.model_dump_json(indent=4, exclude_none=True))
         return filepath
 
     def set_result(self, result: UUTStatusCode) -> None:
@@ -222,6 +222,13 @@ class WATSReport(BaseModel):
         additional_data = AdditionalData(name=name)
         self.additionalData.append(additional_data)
         return additional_data
+
+    def find_steps_by_name(self, name: str) -> list[Step]:
+        """Find steps by name.
+
+        This will search the entire report for steps with the given name and return them as a list.
+        """
+        return self.root.find_steps_by_name(name=name)
 
     @classmethod
     def factory(
@@ -337,6 +344,28 @@ class Step(BaseModel):
         default=None,
         description="The attachment belonging to this step.",
     )
+
+    def find_steps_by_name(self, name: str) -> list[Step]:
+        """Find steps by name.
+
+        See `WATSReport.find_steps_by_name` for more information.
+        """
+        if isinstance(self, (RootSequenceCallStep, SequenceCallStep)):
+            steps_found = []
+            for step in self.steps:
+                found = step.find_steps_by_name(name=name)
+                if step:
+                    steps_found.extend(found)
+
+            if self.name == name:
+                steps_found.append(self)
+
+            return steps_found
+
+        if isinstance(self, StepTypeUnion) and self.name == name:
+            return [self]
+
+        return []
 
     def add_chart(
         self,
@@ -484,7 +513,12 @@ class RootSequenceCallStep(Step):
         description="The information about the sequence call.",
     )
 
-    def add_sequence_call(self, name: str, path: str, version: str) -> SequenceCallStep:
+    def add_sequence_call(
+        self,
+        name: str,
+        path: str,
+        version: str,
+    ) -> SequenceCallStep:
         """Add a sequence call to the step."""
         step = SequenceCallStep(
             name=name,
@@ -702,10 +736,10 @@ class MultipleNumericLimitStep(_NonRootStep, Step):
         self.numericMeas.append(measurement)
 
 
-def _measurement_assertions[T: (SingleMeasurementSteps, MultipleMeasurementSteps)](
-    step: T,
-    name: str | None = None,
-) -> None:
+def _measurement_assertions[T: (
+    SingleMeasurementSteps,
+    MultipleMeasurementSteps,
+)](step: T, name: str | None = None) -> None:
     """Various assertions to check before adding a measurement.
 
     Measurements in SingleMeasurementSteps CAN NOT have a name.
@@ -731,14 +765,10 @@ def _measurement_assertions[T: (SingleMeasurementSteps, MultipleMeasurementSteps
             raise ValueError(errmsg)
 
 
-def _compare_binary_impl[T: (SingleNumericLimitStep, MultipleNumericLimitStep)](
-    step: T,
-    value: float,
-    limit: float,
-    operator: BinaryCompOp,
-    unit: str,
-    name: str | None = None,
-) -> bool:
+def _compare_binary_impl[T: (
+    SingleNumericLimitStep,
+    MultipleNumericLimitStep,
+)](step: T, value: float, limit: float, operator: BinaryCompOp, unit: str, name: str | None = None) -> bool:
     _measurement_assertions(step, name=name)
 
     result = compare_binary(value, limit, operator)
@@ -785,7 +815,10 @@ def _compare_binary_impl[T: (SingleNumericLimitStep, MultipleNumericLimitStep)](
     return result
 
 
-def _compare_ternary_impl[T: (SingleNumericLimitStep, MultipleNumericLimitStep)](
+def _compare_ternary_impl[T: (
+    SingleNumericLimitStep,
+    MultipleNumericLimitStep,
+)](
     step: T,
     value: float,
     low_limit: float,
@@ -983,13 +1016,10 @@ class MultipleStringLimitStep(_NonRootStep, Step):
         _string_log_impl(self, value, name=name)
 
 
-def _string_compare_binary_impl[T: (SingleStringLimitStep, MultipleStringLimitStep)](
-    step: T,
-    value: str,
-    limit: str,
-    operator: BinaryCompOp,
-    name: str | None = None,
-) -> bool:
+def _string_compare_binary_impl[T: (
+    SingleStringLimitStep,
+    MultipleStringLimitStep,
+)](step: T, value: str, limit: str, operator: BinaryCompOp, name: str | None = None) -> bool:
     _measurement_assertions(step, name=name)
     result = compare_binary(value, limit, operator)
     status = MeasurementStatusCode.PASSED if result else MeasurementStatusCode.FAILED
@@ -1005,13 +1035,10 @@ def _string_compare_binary_impl[T: (SingleStringLimitStep, MultipleStringLimitSt
     return result
 
 
-def _string_compare_case_impl[T: (SingleStringLimitStep, MultipleStringLimitStep)](
-    step: T,
-    value: str,
-    limit: str,
-    operator: StringCaseOp,
-    name: str | None = None,
-) -> bool:
+def _string_compare_case_impl[T: (
+    SingleStringLimitStep,
+    MultipleStringLimitStep,
+)](step: T, value: str, limit: str, operator: StringCaseOp, name: str | None = None) -> bool:
     _measurement_assertions(step, name=None)
 
     result = compare_case(value, limit, operator)
@@ -1028,11 +1055,10 @@ def _string_compare_case_impl[T: (SingleStringLimitStep, MultipleStringLimitStep
     return result
 
 
-def _string_log_impl[T: (SingleStringLimitStep, MultipleStringLimitStep)](
-    step: T,
-    value: str,
-    name: str | None = None,
-) -> None:
+def _string_log_impl[T: (
+    SingleStringLimitStep,
+    MultipleStringLimitStep,
+)](step: T, value: str, name: str | None = None) -> None:
     _measurement_assertions(step, name=name)
     measurement = StringMeasurement(
         value=value,
