@@ -73,7 +73,7 @@ class ChartType(StrEnum):
     """
 
     #: Standard cartesian chart
-    LINE = "LINE"
+    LINE = "Line"
     #: Logarithmic X and Y axis
     LINELOGXY = "LineLogXY"
     #: Logarithmic X axis
@@ -146,7 +146,7 @@ class StepType(StrEnum):
     BOOLEAN_VALUE_MULTIPLE = "ET_MPFT"
 
     #: WATS Code `Chart`
-    CHART = "Chart"
+    CHART = "WATS_XYGMNLT"
 
     #: WATS Code `Attachment`
     ATTACHMENT = "Attachment"  # Ditto.
