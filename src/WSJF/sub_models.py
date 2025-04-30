@@ -345,8 +345,9 @@ class NumericMeasurement(BaseModel):
         min_length=1,
         max_length=1,
     )
-    unit: str = Field(
+    unit: str | None = Field(
         description="The unit of the measured value.",
+        default=None,
         min_length=0,
         max_length=20,
     )
