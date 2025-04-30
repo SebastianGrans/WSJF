@@ -51,6 +51,7 @@ fixable = ["ALL"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["ANN", "D", "S", "FBT", "INP", "B"]
+"examples/*" = ["ANN", "D", "S", "FBT", "INP", "B", "T20"]
 
 
 [tool.ruff.format]
