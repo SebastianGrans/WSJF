@@ -77,6 +77,7 @@ class AdditionalDataArrayIndex(BaseModel):
 
     text: str = Field(
         description="The index as text.",
+        # NOTE: This field will be over-written if you download the report from the web interface.
     )
     indexes: list[int] = Field(
         description="list of indexes ordered by dimension.",
@@ -87,9 +88,10 @@ class AdditionalDataArrayIndex(BaseModel):
 class AdditionalDataProperty(BaseModel):
     """TODO: ADD DOCSTRING"""
 
-    name: str = Field(
+    name: str | None = Field(
         description="Name of property.",
         min_length=1,
+        # NOTE: This will be over-written with `null` if you download the report from the web interface.
     )
     type: AdditionalDataPropertyType = Field(
         description="Type of property.",
@@ -108,6 +110,7 @@ class AdditionalDataProperty(BaseModel):
     comment: str | None = Field(
         default=None,
         description="Comment of property.",
+        # NOTE: This will not be included if you download the report from the web interface.
     )
     props: list[AdditionalDataProperty] = Field(
         default_factory=list,

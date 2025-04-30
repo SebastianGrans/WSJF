@@ -1,0 +1,1701 @@
+{
+    "type": "T",
+    "id": "4fed22df-38c5-47f4-8d3a-191a3abad175",
+    "pn": "somePartNumber",
+    "sn": "1234",
+    "rev": "x",
+    "productName": null,
+    "processCode": 10,
+    "processCodeFormat": null,
+    "processName": "SW Debug",
+    "result": "F",
+    "machineName": "hostname",
+    "location": "somewhere",
+    "purpose": "development",
+    "origin": "23001e11-37fe-4f3e-a272-6b8dd656d81e",
+    "start": "2025-04-30T18:37:07+02:00",
+    "startUTC": "2025-04-30T16:37:07Z",
+    "root": {
+        "id": 0,
+        "group": "M",
+        "stepType": "SequenceCall",
+        "name": "SomeTestName",
+        "status": "F",
+        "totTime": 0.0,
+        "causedUUTFailure": false,
+        "steps": [
+            {
+                "id": 1,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_additional_data",
+                "status": "P",
+                "totTime": 0.000937,
+                "causedUUTFailure": false,
+                "additionalResults": [
+                    {
+                        "name": "Some strings",
+                        "props": [
+                            {
+                                "name": "hello",
+                                "type": "String",
+                                "flags": 0,
+                                "value": "world",
+                                "comment": "hello world"
+                            },
+                            {
+                                "name": "number",
+                                "type": "Number",
+                                "flags": 1,
+                                "value": "42",
+                                "comment": "number"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_additional_data.py",
+                    "name": "test_add_additional_data",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 2,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_additional_data_obj",
+                "status": "P",
+                "totTime": 0.000323,
+                "causedUUTFailure": false,
+                "additionalResults": [
+                    {
+                        "name": "an obj",
+                        "props": [
+                            {
+                                "name": "hello",
+                                "type": "Obj",
+                                "flags": 0,
+                                "props": [
+                                    {
+                                        "name": "number",
+                                        "type": "Number",
+                                        "flags": 1,
+                                        "value": "42",
+                                        "comment": "number"
+                                    },
+                                    {
+                                        "name": "hello",
+                                        "type": "String",
+                                        "flags": 0,
+                                        "value": "world",
+                                        "comment": "hello world"
+                                    },
+                                    {
+                                        "name": "obj_in_obj",
+                                        "type": "Obj",
+                                        "flags": 0,
+                                        "props": [
+                                            {
+                                                "name": "number",
+                                                "type": "Number",
+                                                "flags": 1,
+                                                "value": "42",
+                                                "comment": "number"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_additional_data.py",
+                    "name": "test_add_additional_data_obj",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 3,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_additional_data_array",
+                "status": "P",
+                "totTime": 0.001296,
+                "causedUUTFailure": false,
+                "additionalResults": [
+                    {
+                        "name": "an array",
+                        "props": [
+                            {
+                                "name": "hello",
+                                "type": "Array",
+                                "flags": 0,
+                                "array": {
+                                    "dimension": 2,
+                                    "type": "Number",
+                                    "indexes": [
+                                        {
+                                            "text": "[0][0]",
+                                            "indexes": [
+                                                0,
+                                                0
+                                            ],
+                                            "value": {
+                                                "name": null,
+                                                "type": "Number",
+                                                "value": "1"
+                                            }
+                                        },
+                                        {
+                                            "text": "[0][1]",
+                                            "indexes": [
+                                                0,
+                                                1
+                                            ],
+                                            "value": {
+                                                "name": null,
+                                                "type": "Number",
+                                                "value": "1"
+                                            }
+                                        },
+                                        {
+                                            "text": "[1][0]",
+                                            "indexes": [
+                                                1,
+                                                0
+                                            ],
+                                            "value": {
+                                                "name": null,
+                                                "type": "Number",
+                                                "value": "2"
+                                            }
+                                        },
+                                        {
+                                            "text": "[1][1]",
+                                            "indexes": [
+                                                1,
+                                                1
+                                            ],
+                                            "value": {
+                                                "name": null,
+                                                "type": "Number",
+                                                "value": "2"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_additional_data.py",
+                    "name": "test_add_additional_data_array",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 4,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_additional_data_to_report",
+                "status": "P",
+                "totTime": 0.000315,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_additional_data.py",
+                    "name": "test_add_additional_data_to_report",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 5,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_asset",
+                "status": "P",
+                "totTime": 0.000381,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_asset.py",
+                    "name": "test_add_asset",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 6,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_attachment",
+                "status": "P",
+                "totTime": 0.000368,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_attachment.py",
+                    "name": "test_add_attachment",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 7,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_pass",
+                "status": "P",
+                "totTime": 0.000449,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_basic.py",
+                    "name": "test_pass",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 8,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_fail",
+                "status": "F",
+                "totTime": 0.008577,
+                "causedUUTFailure": true,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_basic.py",
+                    "name": "test_fail",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 9,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_fail_pytest_check",
+                "status": "F",
+                "totTime": 0.000445,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_basic.py",
+                    "name": "test_fail_pytest_check",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 10,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_skipped",
+                "status": "S",
+                "totTime": 0.000306,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_basic.py",
+                    "name": "test_skipped",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 11,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_bool[True]",
+                "status": "P",
+                "totTime": 0.000595,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 12,
+                        "group": "M",
+                        "stepType": "ET_PFT",
+                        "name": "Single Boolean Limit Step [True]",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "booleanMeas": [
+                            {
+                                "name": null,
+                                "status": "P"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_bool.py",
+                    "name": "test_single_bool[True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 13,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_bool[False]",
+                "status": "F",
+                "totTime": 0.000417,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 14,
+                        "group": "M",
+                        "stepType": "ET_PFT",
+                        "name": "Single Boolean Limit Step [False]",
+                        "status": "F",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "booleanMeas": [
+                            {
+                                "name": null,
+                                "status": "F"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_bool.py",
+                    "name": "test_single_bool[False]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 15,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_multiple_bool_limits[names0-values0]",
+                "status": "F",
+                "totTime": 0.000462,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 16,
+                        "group": "M",
+                        "stepType": "ET_MPFT",
+                        "name": "Multiple Bool Limit Step",
+                        "status": "F",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "booleanMeas": [
+                            {
+                                "name": "First",
+                                "status": "P"
+                            },
+                            {
+                                "name": "Second",
+                                "status": "F"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_bool.py",
+                    "name": "test_multiple_bool_limits[names0-values0]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 17,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_chart",
+                "status": "P",
+                "totTime": 0.001157,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 18,
+                        "group": "M",
+                        "stepType": "WATS_XYGMNLT",
+                        "name": "Chart step",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "chart": {
+                            "chartType": "Line",
+                            "label": "trig functions",
+                            "xLabel": "t",
+                            "xUnit": null,
+                            "yLabel": "f(t)",
+                            "yUnit": null,
+                            "series": [
+                                {
+                                    "dataType": "XYG",
+                                    "name": "y = sin(t)",
+                                    "xdata": "0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1;1.1;1.2;1.3;1.4;1.5;1.6;1.7;1.8;1.9;2;2.1;2.2;2.3;2.4;2.5;2.6;2.7;2.8;2.9;3;3.1;3.2;3.3;3.4;3.5;3.6;3.7;3.8;3.9;4;4.1;4.2;4.3;4.4;4.5;4.6;4.7;4.8;4.9;5;5.1;5.2;5.3;5.4;5.5;5.6;5.7;5.8;5.9;6;6.1;6.2",
+                                    "ydata": "0;0.0998334166468282;0.198669330795061;0.29552020666134;0.389418342308651;0.479425538604203;0.564642473395035;0.644217687237691;0.717356090899523;0.783326909627483;0.841470984807897;0.891207360061435;0.932039085967226;0.963558185417193;0.98544972998846;0.997494986604054;0.999573603041505;0.991664810452469;0.973847630878195;0.946300087687414;0.909297426825682;0.863209366648874;0.80849640381959;0.74570521217672;0.675463180551151;0.598472144103957;0.515501371821464;0.42737988023383;0.334988150155905;0.239249329213982;0.141120008059867;0.0415806624332905;-0.0583741434275801;-0.157745694143249;-0.255541102026832;-0.35078322768962;-0.442520443294852;-0.529836140908493;-0.611857890942719;-0.687766159183974;-0.756802495307928;-0.818277111064411;-0.871575772413588;-0.916165936749455;-0.951602073889516;-0.977530117665097;-0.993691003633465;-0.999923257564101;-0.996164608835841;-0.982452612624332;-0.958924274663138;-0.925814682327732;-0.883454655720153;-0.832267442223901;-0.772764487555987;-0.705540325570392;-0.631266637872321;-0.550685542597638;-0.464602179413757;-0.373876664830236;-0.279415498198926;-0.182162504272095;-0.0830894028174964"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_chart.py",
+                    "name": "test_add_chart",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 19,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_chart_to_sequence_call",
+                "status": "P",
+                "totTime": 0.000341,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_chart.py",
+                    "name": "test_add_chart_to_sequence_call",
+                    "version": "1.0"
+                },
+                "chart": {
+                    "chartType": "Line",
+                    "label": "sinewaves",
+                    "xLabel": "t",
+                    "xUnit": null,
+                    "yLabel": "sin(t)",
+                    "yUnit": null,
+                    "series": [
+                        {
+                            "dataType": "XYG",
+                            "name": "y = sin(x)",
+                            "xdata": "0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1;1.1;1.2;1.3;1.4;1.5;1.6;1.7;1.8;1.9;2;2.1;2.2;2.3;2.4;2.5;2.6;2.7;2.8;2.9;3;3.1;3.2;3.3;3.4;3.5;3.6;3.7;3.8;3.9;4;4.1;4.2;4.3;4.4;4.5;4.6;4.7;4.8;4.9;5;5.1;5.2;5.3;5.4;5.5;5.6;5.7;5.8;5.9;6;6.1;6.2",
+                            "ydata": "0;0.0998334166468282;0.198669330795061;0.29552020666134;0.389418342308651;0.479425538604203;0.564642473395035;0.644217687237691;0.717356090899523;0.783326909627483;0.841470984807897;0.891207360061435;0.932039085967226;0.963558185417193;0.98544972998846;0.997494986604054;0.999573603041505;0.991664810452469;0.973847630878195;0.946300087687414;0.909297426825682;0.863209366648874;0.80849640381959;0.74570521217672;0.675463180551151;0.598472144103957;0.515501371821464;0.42737988023383;0.334988150155905;0.239249329213982;0.141120008059867;0.0415806624332905;-0.0583741434275801;-0.157745694143249;-0.255541102026832;-0.35078322768962;-0.442520443294852;-0.529836140908493;-0.611857890942719;-0.687766159183974;-0.756802495307928;-0.818277111064411;-0.871575772413588;-0.916165936749455;-0.951602073889516;-0.977530117665097;-0.993691003633465;-0.999923257564101;-0.996164608835841;-0.982452612624332;-0.958924274663138;-0.925814682327732;-0.883454655720153;-0.832267442223901;-0.772764487555987;-0.705540325570392;-0.631266637872321;-0.550685542597638;-0.464602179413757;-0.373876664830236;-0.279415498198926;-0.182162504272095;-0.0830894028174964"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 20,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_to_numeric_test_step",
+                "status": "F",
+                "totTime": 0.000638,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 21,
+                        "group": "M",
+                        "stepType": "ET_MNLT",
+                        "name": "Numeric step",
+                        "status": "F",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "GELE",
+                                "name": "Mean",
+                                "status": "P",
+                                "unit": "V",
+                                "value": 3.27820900829137,
+                                "highLimit": 3.45,
+                                "lowLimit": 3.15
+                            },
+                            {
+                                "compOp": "LE",
+                                "name": "Standard deviation",
+                                "status": "F",
+                                "unit": "V",
+                                "value": 0.104354420113648,
+                                "highLimit": null,
+                                "lowLimit": 0.1
+                            },
+                            {
+                                "compOp": "LE",
+                                "name": "Max",
+                                "status": "P",
+                                "unit": "V",
+                                "value": 3.45947754272977,
+                                "highLimit": null,
+                                "lowLimit": 3.5
+                            },
+                            {
+                                "compOp": "GE",
+                                "name": "Min",
+                                "status": "F",
+                                "unit": "V",
+                                "value": 3.00274251542268,
+                                "highLimit": null,
+                                "lowLimit": 3.1
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_chart.py",
+                    "name": "test_add_to_numeric_test_step",
+                    "version": "1.0"
+                },
+                "chart": {
+                    "chartType": "Line",
+                    "label": "Voltage",
+                    "xLabel": "t",
+                    "xUnit": null,
+                    "yLabel": "V",
+                    "yUnit": null,
+                    "series": [
+                        {
+                            "dataType": "XYG",
+                            "name": "y = sin(x)",
+                            "xdata": "0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1;1.1;1.2;1.3;1.4;1.5;1.6;1.7;1.8;1.9;2;2.1;2.2;2.3;2.4;2.5;2.6;2.7;2.8;2.9;3;3.1;3.2;3.3;3.4;3.5;3.6;3.7;3.8;3.9;4;4.1;4.2;4.3;4.4;4.5;4.6;4.7;4.8;4.9",
+                            "ydata": "3.26891050367194;3.30577044641683;3.35126948483277;3.2475295117437;3.3993049784297;3.25487960662543;3.40111505854903;3.17207269851489;3.17986383064272;3.45947754272977;3.16607718197125;3.29629132866329;3.35729220694647;3.20861284528963;3.04797122809005;3.15523364364372;3.31406929512982;3.26054727590478;3.19372143878924;3.34632708593821;3.17863847687069;3.27114793228075;3.38204330990256;3.35143432156739;3.28186074937746;3.19779703430601;3.32841656905817;3.07732874904149;3.36494088631925;3.00274251542268;3.22899094111974;3.33469619357031;3.3424094617497;3.27556813921915;3.29393342521468;3.18901452687298;3.42447499196594;3.12606737566265;3.42056624538498;3.18041370364626;3.45781964742632;3.35368982382011;3.3066630298911;3.3591927144644;3.32729212970633;3.37863271797893;3.17833285537361;3.2726165910536;3.20585161835593;3.4315365454221"
+                        },
+                        {
+                            "dataType": "XYG",
+                            "name": "Mean min",
+                            "xdata": "0;4.9",
+                            "ydata": "3.15;3.15"
+                        },
+                        {
+                            "dataType": "XYG",
+                            "name": "Mean max",
+                            "xdata": "0;4.9",
+                            "ydata": "3.45;3.45"
+                        },
+                        {
+                            "dataType": "XYG",
+                            "name": "Min",
+                            "xdata": "0;4.9",
+                            "ydata": "3.1;3.1"
+                        },
+                        {
+                            "dataType": "XYG",
+                            "name": "Max",
+                            "xdata": "0;4.9",
+                            "ydata": "3.5;3.5"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 22,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_comment",
+                "status": "P",
+                "totTime": 0.000337,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_comment.py",
+                    "name": "test_add_comment",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 23,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_html_comment",
+                "status": "P",
+                "totTime": 0.000345,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_comment.py",
+                    "name": "test_add_html_comment",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 24,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_html_image",
+                "status": "P",
+                "totTime": 0.000247,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_comment.py",
+                    "name": "test_add_html_image",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 25,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_html_link",
+                "status": "P",
+                "totTime": 0.000239,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_comment.py",
+                    "name": "test_add_html_link",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 26,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_raise_exception",
+                "status": "F",
+                "errorMessage": "This is a test exception",
+                "totTime": 0.001815,
+                "causedUUTFailure": false,
+                "reportText": "<pre>def test_raise_exception():\n        \"\"\"An exception should result in the test failing, and the stack trace to be added to the step `reportText`,\n        and the exception name added as the `errorMessage`.\n        \"\"\"\n>       root()\n\ntests/test_exceptions.py:25: \n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \ntests/test_exceptions.py:18: in root\n    return node2()\ntests/test_exceptions.py:14: in node2\n    return node1()\ntests/test_exceptions.py:10: in node1\n    return leaf()\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n\n    def leaf():\n        errmsg = \"This is a test exception\"\n>       raise ValueError(errmsg)\nE       ValueError: This is a test exception\n\ntests/test_exceptions.py:6: ValueError</pre>",
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_exceptions.py",
+                    "name": "test_raise_exception",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 27,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_pytest_fail",
+                "status": "P",
+                "totTime": 0.000254,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_exceptions.py",
+                    "name": "test_pytest_fail",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 28,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_assert",
+                "status": "F",
+                "totTime": 0.000852,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_exceptions.py",
+                    "name": "test_assert",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 29,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_pytest_check",
+                "status": "F",
+                "totTime": 0.000315,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_exceptions.py",
+                    "name": "test_pytest_check",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 30,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_miscinfo",
+                "status": "P",
+                "totTime": 0.000355,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_miscinfo.py",
+                    "name": "test_add_miscinfo",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 31,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric[1.0-1.0-EQ-mm]",
+                "status": "P",
+                "totTime": 0.0005,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 32,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single EQUAL] compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "EQ",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.0,
+                                "highLimit": null,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_numeric[1.0-1.0-EQ-mm]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 33,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric[1.1-1.0-NE-mm]",
+                "status": "P",
+                "totTime": 0.000383,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 34,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single NOT_EQUAL] compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "NE",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.1,
+                                "highLimit": null,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_numeric[1.1-1.0-NE-mm]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 35,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric[2.0-1.0-GT-mm]",
+                "status": "P",
+                "totTime": 0.000354,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 36,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single GREATER_THAN] compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "GT",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 2.0,
+                                "highLimit": null,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_numeric[2.0-1.0-GT-mm]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 37,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric[1.0-1.0-GE-mm]",
+                "status": "P",
+                "totTime": 0.000473,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 38,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single GREATER_OR_EQUAL] compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "GE",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.0,
+                                "highLimit": null,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_numeric[1.0-1.0-GE-mm]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 39,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric[1.0-1.0-LT-mm]",
+                "status": "F",
+                "totTime": 0.000455,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 40,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single LESS_THAN] compare",
+                        "status": "F",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LT",
+                                "name": null,
+                                "status": "F",
+                                "unit": "mm",
+                                "value": 1.0,
+                                "highLimit": null,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_numeric[1.0-1.0-LT-mm]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 41,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric[1.0-1.0-LE-mm]",
+                "status": "P",
+                "totTime": 0.000366,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 42,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single LESS_OR_EQUAL] compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LE",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.0,
+                                "highLimit": null,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_numeric[1.0-1.0-LE-mm]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 43,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_multiple_numeric_high_limit_pass[names0-values0-limits0-operators0-units0]",
+                "status": "P",
+                "totTime": 0.00044,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 44,
+                        "group": "M",
+                        "stepType": "ET_MNLT",
+                        "name": "MultipleNumericLimitStep",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LT",
+                                "name": "First",
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.0,
+                                "highLimit": null,
+                                "lowLimit": 2.0
+                            },
+                            {
+                                "compOp": "LT",
+                                "name": "Second",
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 2.0,
+                                "highLimit": null,
+                                "lowLimit": 4.0
+                            },
+                            {
+                                "compOp": "LT",
+                                "name": "Third",
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 3.0,
+                                "highLimit": null,
+                                "lowLimit": 5.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_multiple_numeric_high_limit_pass[names0-values0-limits0-operators0-units0]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 45,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_multiple_numeric_high_limit_pass[names1-values1-limits1-operators1-units1]",
+                "status": "P",
+                "totTime": 0.000467,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 46,
+                        "group": "M",
+                        "stepType": "ET_MNLT",
+                        "name": "MultipleNumericLimitStep",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LE",
+                                "name": "First",
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 2.0,
+                                "highLimit": null,
+                                "lowLimit": 2.0
+                            },
+                            {
+                                "compOp": "LE",
+                                "name": "Second",
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 2.0,
+                                "highLimit": null,
+                                "lowLimit": 4.0
+                            },
+                            {
+                                "compOp": "LE",
+                                "name": "Third",
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 5.0,
+                                "highLimit": null,
+                                "lowLimit": 5.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_multiple_numeric_high_limit_pass[names1-values1-limits1-operators1-units1]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 47,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_log_value",
+                "status": "P",
+                "totTime": 0.000311,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 48,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "SingleNumericLimitStep[LOG]",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LOG",
+                                "name": null,
+                                "status": "P",
+                                "unit": "speed",
+                                "value": 1337.0,
+                                "highLimit": null,
+                                "lowLimit": null
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_log_value",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 49,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[1.5-1.0-2.0-GTLT-mm-True]",
+                "status": "P",
+                "totTime": 0.001301,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 50,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single GREATER_THAN_OR_LESS_THAN compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "GTLT",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.5,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[1.5-1.0-2.0-GTLT-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 51,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[1.0-1.0-2.0-GELE-mm-True]",
+                "status": "P",
+                "totTime": 0.000444,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 52,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single GREATER_EQUAL_OR_LESS_EQUAL compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "GELE",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.0,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[1.0-1.0-2.0-GELE-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 53,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[1.99-1.0-2.0-GELT-mm-True]",
+                "status": "P",
+                "totTime": 0.000459,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 54,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single GREATER_EQUAL_OR_LESS_THAN compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "GELT",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.99,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[1.99-1.0-2.0-GELT-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 55,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[2.0-1.0-2.0-GTLE-mm-True]",
+                "status": "P",
+                "totTime": 0.000413,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 56,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single GREATER_THAN_OR_LESS_EQUAL compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "GTLE",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 2.0,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[2.0-1.0-2.0-GTLE-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 57,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[0.9-1.0-2.0-LTGT-mm-True]",
+                "status": "P",
+                "totTime": 0.000395,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 58,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single LESS_THAN_OR_GREATER_THAN compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LTGT",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 0.9,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[0.9-1.0-2.0-LTGT-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 59,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[1.0-1.0-2.0-LEGE-mm-True]",
+                "status": "P",
+                "totTime": 0.000429,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 60,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single LESS_EQUAL_OR_GREATER_EQUAL compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LEGE",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 1.0,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[1.0-1.0-2.0-LEGE-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 61,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[2.1-1.0-2.0-LEGT-mm-True]",
+                "status": "P",
+                "totTime": 0.000408,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 62,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single LESS_EQUAL_OR_GREATER_THAN compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LEGT",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 2.1,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[2.1-1.0-2.0-LEGT-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 63,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_ternary_limit[2.0-1.0-2.0-LTGE-mm-True]",
+                "status": "P",
+                "totTime": 0.000421,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 64,
+                        "group": "M",
+                        "stepType": "ET_NLT",
+                        "name": "Single LESS_THAN_OR_GREATER_EQUAL compare",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "numericMeas": [
+                            {
+                                "compOp": "LTGE",
+                                "name": null,
+                                "status": "P",
+                                "unit": "mm",
+                                "value": 2.0,
+                                "highLimit": 2.0,
+                                "lowLimit": 1.0
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_numeric.py",
+                    "name": "test_single_ternary_limit[2.0-1.0-2.0-LTGE-mm-True]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 65,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_asdf",
+                "status": "S",
+                "totTime": 0.000443,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_somethingelse.py",
+                    "name": "test_asdf",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 66,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_log_value",
+                "status": "P",
+                "totTime": 0.000444,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 67,
+                        "group": "M",
+                        "stepType": "ET_SVT",
+                        "name": "Single string LOG",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "stringMeas": [
+                            {
+                                "compOp": "LOG",
+                                "name": null,
+                                "status": "P",
+                                "value": "1337",
+                                "limit": null
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_strings.py",
+                    "name": "test_log_value",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 68,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric_low_limit_pass[a-a-EQ]",
+                "status": "P",
+                "totTime": 0.000383,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 69,
+                        "group": "M",
+                        "stepType": "ET_SVT",
+                        "name": "SingleStringLimitStep[EQUAL]",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "stringMeas": [
+                            {
+                                "compOp": "EQ",
+                                "name": null,
+                                "status": "P",
+                                "value": "a",
+                                "limit": "a"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_strings.py",
+                    "name": "test_single_numeric_low_limit_pass[a-a-EQ]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 70,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_single_numeric_low_limit_pass[a-b-NE]",
+                "status": "P",
+                "totTime": 0.000352,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 71,
+                        "group": "M",
+                        "stepType": "ET_SVT",
+                        "name": "SingleStringLimitStep[NOT_EQUAL]",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "stringMeas": [
+                            {
+                                "compOp": "NE",
+                                "name": null,
+                                "status": "P",
+                                "value": "a",
+                                "limit": "b"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_strings.py",
+                    "name": "test_single_numeric_low_limit_pass[a-b-NE]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 72,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_multiple_string_limits[names0-values0-limits0-operators0]",
+                "status": "P",
+                "totTime": 0.000413,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 73,
+                        "group": "M",
+                        "stepType": "ET_MSVT",
+                        "name": "Multiple String Limit Step",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "stringMeas": [
+                            {
+                                "compOp": "EQ",
+                                "name": "First",
+                                "status": "P",
+                                "value": "a",
+                                "limit": "a"
+                            },
+                            {
+                                "compOp": "NE",
+                                "name": "Second",
+                                "status": "P",
+                                "value": "b",
+                                "limit": "a"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_strings.py",
+                    "name": "test_multiple_string_limits[names0-values0-limits0-operators0]",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 74,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_string_case_sensitive",
+                "status": "P",
+                "totTime": 0.000322,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 75,
+                        "group": "M",
+                        "stepType": "ET_SVT",
+                        "name": "Single string case sensitive",
+                        "status": "F",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "stringMeas": [
+                            {
+                                "compOp": "CASESENSIT",
+                                "name": null,
+                                "status": "F",
+                                "value": "a",
+                                "limit": "A"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_strings.py",
+                    "name": "test_string_case_sensitive",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 76,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_string_ignorecase",
+                "status": "P",
+                "totTime": 0.000298,
+                "causedUUTFailure": false,
+                "steps": [
+                    {
+                        "id": 77,
+                        "group": "M",
+                        "stepType": "ET_SVT",
+                        "name": "Single string case sensitive",
+                        "status": "P",
+                        "totTime": 0.0,
+                        "causedUUTFailure": false,
+                        "stringMeas": [
+                            {
+                                "compOp": "IGNORECASE",
+                                "name": null,
+                                "status": "P",
+                                "value": "a",
+                                "limit": "A"
+                            }
+                        ]
+                    }
+                ],
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_strings.py",
+                    "name": "test_string_ignorecase",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 78,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_add_subunit",
+                "status": "P",
+                "totTime": 0.000329,
+                "causedUUTFailure": false,
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_subunit.py",
+                    "name": "test_add_subunit",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 79,
+                "group": "S",
+                "stepType": "SequenceCall",
+                "name": "test_setup",
+                "status": "P",
+                "totTime": 0.000332,
+                "causedUUTFailure": false,
+                "reportText": "hello",
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_what.py",
+                    "name": "test_setup",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 80,
+                "group": "M",
+                "stepType": "SequenceCall",
+                "name": "test_main",
+                "status": "P",
+                "totTime": 0.000233,
+                "causedUUTFailure": false,
+                "reportText": "world",
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_what.py",
+                    "name": "test_main",
+                    "version": "1.0"
+                }
+            },
+            {
+                "id": 81,
+                "group": "C",
+                "stepType": "SequenceCall",
+                "name": "test_cleanup",
+                "status": "P",
+                "totTime": 0.000245,
+                "causedUUTFailure": false,
+                "reportText": "goodbye",
+                "seqCall": {
+                    "path": "Projects/WSJF/tests/test_what.py",
+                    "name": "test_cleanup",
+                    "version": "1.0"
+                }
+            }
+        ],
+        "seqCall": {
+            "path": "SomeTestName",
+            "name": "SomeTestName",
+            "version": "1.0"
+        }
+    },
+    "uut": {
+        "execTime": 0.074142,
+        "testSocketIndex": null,
+        "batchSN": null,
+        "comment": "This is a test comment</br><pre>Hello, World!</pre></br><img src='https://c.tenor.com/40BdfMplFhwAAAAC/tenor.gif' /></br><a href='https://asdf.com'>This is a test link</a>",
+        "errorCode": null,
+        "errorMessage": null,
+        "fixtureId": null,
+        "user": "someone",
+        "batchFailCount": null,
+        "batchLoopIndex": null,
+        "stepIdCausedUUTFailure": 8
+    },
+    "miscInfos": [
+        {
+            "description": "key1",
+            "text": "value1",
+            "numeric": 1
+        }
+    ],
+    "subUnits": [
+        {
+            "partType": "Dummy",
+            "pn": "partnumber_dummy",
+            "rev": "1.0",
+            "sn": "CAFED00D"
+        }
+    ],
+    "assets": [
+        {
+            "assetSN": "BADDCAFE",
+            "usageCount": 1,
+            "usageCountFormat": null
+        }
+    ],
+    "assetStats": [
+        {
+            "assetSN": "BADDCAFE",
+            "runningCount": 16,
+            "runningCountExceeded": -984,
+            "totalCount": 16,
+            "totalCountExceeded": -9984,
+            "isDaysSinceCalibrationUnknown": true,
+            "isDaysSinceMaintenanceUnknown": true
+        }
+    ],
+    "additionalData": [
+        {
+            "name": "reportdata",
+            "props": [
+                {
+                    "name": "hello",
+                    "type": "String",
+                    "flags": 0,
+                    "value": "world",
+                    "comment": "hello world"
+                },
+                {
+                    "name": "number",
+                    "type": "Number",
+                    "flags": 0,
+                    "value": "42",
+                    "comment": "number"
+                }
+            ]
+        }
+    ]
+}
