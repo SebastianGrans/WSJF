@@ -24,6 +24,13 @@ Before making a PR, run `ruff` and `pyright` and make sure they pass.
 uv run ruff check src/ tests/ examples/
 ```
 
+Also sort the imports:
+
+```bash
+uv run ruff check --select I --fix
+uv run ruff format
+```
+
 ```bash
 uv run pyright src/ tests/ examples/
 ```
