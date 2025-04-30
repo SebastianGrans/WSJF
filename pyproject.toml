@@ -46,6 +46,7 @@ ignore = [
     "FIX",
     "ERA",
     "N999", # WSJF is not a valid PEP 8 module name... 
+    "COM812", # Enforce trailing comma collides with formatter
 ]
 fixable = ["ALL"]
 
