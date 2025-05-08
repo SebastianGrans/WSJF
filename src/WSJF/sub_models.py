@@ -230,11 +230,14 @@ class Chart(BaseModel):
         min_length=0,
         max_length=20,
     )
-    yLabel: str = Field(
-        description="The name of the y-axis.",
-        min_length=1,
-        max_length=50,
-    )
+    yLabel: Annotated[
+        str,
+        Field(
+            description="The name of the y-axis.",
+            max_length=50,
+        ),
+        BeforeValidator(lambda value: "" if value is None else value),
+    ]
     yUnit: str | None = Field(
         default=None,
         description="The unit of the y-axis.",
