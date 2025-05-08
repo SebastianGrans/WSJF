@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from typing import Literal
+import math
+from typing import Annotated, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, BeforeValidator, Field
 
 from WSJF.enums import AdditionalDataPropertyType, ChartType, MeasurementStatusCode
 
@@ -320,6 +321,19 @@ class MiscInfo(BaseModel):
     )
 
 
+def nan_to_none(value: float | str | None) -> float | None:
+    """IEEE-754 defines `float("nan") != float("nan")`. They are always unequal!
+
+    Therefore, the string "NaN" or any variant thereof is deserialized as a
+    Python `None`. In turn, None gets serialized to the JSON `null`.
+
+    Related issue: https://github.com/pydantic/pydantic/issuse/10037
+    """
+    if value is None:
+        return value
+    return None if math.isnan(float(value)) else value
+
+
 class NumericMeasurement(BaseModel):
     """TODO: ADD DOCSTRING"""
 
@@ -354,9 +368,11 @@ class NumericMeasurement(BaseModel):
         min_length=0,
         max_length=20,
     )
-    value: float = Field(
-        description="The measured value.",
-    )
+    value: Annotated[
+        float | None,
+        Field(description="The measured value."),
+        BeforeValidator(nan_to_none),
+    ]
     highLimit: float | None = Field(
         default=None,
         description="The high limit. Used in less than comparisons.",
