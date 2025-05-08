@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 from datetime import datetime
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Annotated, Literal
 from uuid import UUID, uuid4
 
 import pytest_check as check
@@ -429,11 +429,10 @@ class _NonRootStep(BaseModel):
 class SingleNumericLimitStep(_NonRootStep, Step):
     """A step of type NumericLimit."""
 
-    stepType: StepType = Field(
-        default=StepType.NUMERIC_LIMIT_SINGLE,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-    )
+    stepType: Annotated[
+        Literal[StepType.NUMERIC_LIMIT_SINGLE],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.NUMERIC_LIMIT_SINGLE
     numericMeas: list[NumericMeasurement] = Field(
         default_factory=list,
         description="A list of numeric measurements belonging to this step.",
@@ -496,12 +495,10 @@ class SingleNumericLimitStep(_NonRootStep, Step):
 class MultipleNumericLimitStep(_NonRootStep, Step):
     """A step of type MultipleNumericLimit."""
 
-    stepType: StepType = Field(
-        default=StepType.NUMERIC_LIMIT_MULTIPLE,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-        frozen=True,
-    )
+    stepType: Annotated[
+        Literal[StepType.NUMERIC_LIMIT_MULTIPLE],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.NUMERIC_LIMIT_MULTIPLE
     numericMeas: list[NumericMeasurement] = Field(
         default_factory=list,
         description="A list of numeric measurements belonging to this step.",
@@ -567,12 +564,10 @@ class MultipleNumericLimitStep(_NonRootStep, Step):
 class SingleBooleanLimitStep(_NonRootStep, Step):
     """A step of type SingleBooleanLimit."""
 
-    stepType: StepType = Field(
-        default=StepType.BOOLEAN_VALUE_SINGLE,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-        frozen=True,
-    )
+    stepType: Annotated[
+        Literal[StepType.BOOLEAN_VALUE_SINGLE],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.BOOLEAN_VALUE_SINGLE
     booleanMeas: list[BooleanMeasurement] = Field(
         default_factory=list,
         description="A list of boolean measurements belonging to this step.",
@@ -598,12 +593,10 @@ class SingleBooleanLimitStep(_NonRootStep, Step):
 class MultipleBooleanLimitStep(_NonRootStep, Step):
     """A step of type MultipleBooleanLimit."""
 
-    stepType: StepType = Field(
-        default=StepType.BOOLEAN_VALUE_MULTIPLE,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-        frozen=True,
-    )
+    stepType: Annotated[
+        Literal[StepType.BOOLEAN_VALUE_MULTIPLE],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.BOOLEAN_VALUE_MULTIPLE
     booleanMeas: list[BooleanMeasurement] = Field(
         default_factory=list,
         description="A list of boolean measurements belonging to this step.",
@@ -629,12 +622,10 @@ class MultipleBooleanLimitStep(_NonRootStep, Step):
 class SingleStringLimitStep(_NonRootStep, Step):
     """A step of type SingleStringLimit."""
 
-    stepType: StepType = Field(
-        default=StepType.STRING_VALUE_SINGLE,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-        frozen=True,
-    )
+    stepType: Annotated[
+        Literal[StepType.STRING_VALUE_SINGLE],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.STRING_VALUE_SINGLE
     stringMeas: list[StringMeasurement] = Field(
         default_factory=list,
         description="A list of string measurements belonging to this step.",
@@ -680,12 +671,10 @@ class SingleStringLimitStep(_NonRootStep, Step):
 class MultipleStringLimitStep(_NonRootStep, Step):
     """A step of type MultipleStringLimit."""
 
-    stepType: StepType = Field(
-        default=StepType.STRING_VALUE_MULTIPLE,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-        frozen=True,
-    )
+    stepType: Annotated[
+        Literal[StepType.STRING_VALUE_MULTIPLE],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.STRING_VALUE_MULTIPLE
     stringMeas: list[StringMeasurement] = Field(
         default_factory=list,
         description="A list of string measurements belonging to this step.",
@@ -725,53 +714,59 @@ class MultipleStringLimitStep(_NonRootStep, Step):
 class ChartStep(_NonRootStep, Step):
     """A step of type Chart."""
 
-    stepType: StepType = Field(
-        default=StepType.CHART,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-        frozen=True,
-    )
+    stepType: Annotated[
+        Literal[StepType.CHART],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.CHART
 
 
 class AttachmentStep(_NonRootStep, Step):
     """A step of type Attachment."""
 
-    stepType: StepType = Field(
-        default=StepType.ATTACHMENT,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-        frozen=True,
-    )
+    stepType: Annotated[
+        Literal[StepType.ATTACHMENT],
+        Field(description="The step type, a textual description of the step.", init=False, frozen=True),
+    ] = StepType.ATTACHMENT
 
 
 class RootSequenceCallStep(Step):
     """The root step of the report."""
 
     _report: WATSReport = PrivateAttr()
-    stepType: StepType = Field(
-        default=StepType.SEQUENCE_CALL,
-        description="The step type, a textual description of the step.",
-        min_length=1,
-    )
-    # NOTE! The order of this union is important!
-    # Or maybe not?
-    # If you put Step first, a serialized SequenceCallStep will be deserialized as a Step
-    steps: list[
-        ChartStep
-        | MultipleBooleanLimitStep
-        | MultipleNumericLimitStep
-        | MultipleStringLimitStep
-        | SequenceCallStep
-        | SingleBooleanLimitStep
-        | SingleNumericLimitStep
-        | SingleStringLimitStep
-    ] = Field(
-        default_factory=list,
-        description="A list of sub steps for this step. Only for steps of type SequenceCall.",
-    )
-    seqCall: SequenceCall = Field(
-        description="The information about the sequence call.",
-    )
+    stepType: Annotated[
+        Literal[StepType.SEQUENCE_CALL],
+        Field(
+            description="The step type, a textual description of the step.",
+            init=False,
+            frozen=True,
+        ),
+    ] = StepType.SEQUENCE_CALL
+    # `steps` is defined as a Discriminated Union:
+    # https://docs.pydantic.dev/latest/concepts/unions/#discriminated-unions
+    steps: (
+        list[
+            Annotated[
+                SequenceCallStep
+                | ChartStep
+                | MultipleBooleanLimitStep
+                | MultipleNumericLimitStep
+                | MultipleStringLimitStep
+                | SingleBooleanLimitStep
+                | SingleNumericLimitStep
+                | SingleStringLimitStep,
+                Field(
+                    default_factory=list,
+                    description="A list of sub steps for this step. Only for steps of type SequenceCall.",
+                    discriminator="stepType",
+                ),
+            ]
+        ]
+        | None
+    ) = None
+    seqCall: Annotated[
+        SequenceCall | None,
+        Field(description="The information about the sequence call."),
+    ] = None
 
     def add_sequence_call(
         self,
