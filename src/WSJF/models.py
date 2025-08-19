@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import logging
 from datetime import datetime
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 from uuid import UUID, uuid4
 
 import pytest_check as check
-from pydantic import BaseModel, Field, PrivateAttr
+from pydantic import BaseModel, Field, PrivateAttr, SerializerFunctionWrapHandler, model_serializer
 
 from WSJF.compare import compare_binary, compare_case, compare_ternary
 from WSJF.enums import (
@@ -42,10 +42,12 @@ if TYPE_CHECKING:
 log = logging.getLogger(__name__)
 
 
-def _measurement_assertions[T: (
-    SingleMeasurementSteps,
-    MultipleMeasurementSteps,
-)](step: T, name: str | None = None) -> None:
+def _measurement_assertions[
+    T: (
+        SingleMeasurementSteps,
+        MultipleMeasurementSteps,
+    )
+](step: T, name: str | None = None) -> None:
     """Various assertions to check before adding a measurement.
 
     Measurements in SingleMeasurementSteps CAN NOT have a name.
@@ -71,10 +73,12 @@ def _measurement_assertions[T: (
             raise ValueError(errmsg)
 
 
-def _compare_binary_impl[T: (
-    SingleNumericLimitStep,
-    MultipleNumericLimitStep,
-)](step: T, value: float, limit: float, operator: BinaryCompOp, unit: str, name: str | None = None) -> bool:
+def _compare_binary_impl[
+    T: (
+        SingleNumericLimitStep,
+        MultipleNumericLimitStep,
+    )
+](step: T, value: float, limit: float, operator: BinaryCompOp, unit: str, name: str | None = None) -> bool:
     _measurement_assertions(step, name=name)
 
     result = compare_binary(value, limit, operator)
@@ -121,10 +125,12 @@ def _compare_binary_impl[T: (
     return result
 
 
-def _compare_ternary_impl[T: (
-    SingleNumericLimitStep,
-    MultipleNumericLimitStep,
-)](
+def _compare_ternary_impl[
+    T: (
+        SingleNumericLimitStep,
+        MultipleNumericLimitStep,
+    )
+](
     step: T,
     value: float,
     low_limit: float,
@@ -164,10 +170,12 @@ def _compare_ternary_impl[T: (
     return result
 
 
-def _string_compare_binary_impl[T: (
-    SingleStringLimitStep,
-    MultipleStringLimitStep,
-)](step: T, value: str, limit: str, operator: BinaryCompOp, name: str | None = None) -> bool:
+def _string_compare_binary_impl[
+    T: (
+        SingleStringLimitStep,
+        MultipleStringLimitStep,
+    )
+](step: T, value: str, limit: str, operator: BinaryCompOp, name: str | None = None) -> bool:
     _measurement_assertions(step, name=name)
     result = compare_binary(value, limit, operator)
     status = MeasurementStatusCode.PASSED if result else MeasurementStatusCode.FAILED
@@ -183,10 +191,12 @@ def _string_compare_binary_impl[T: (
     return result
 
 
-def _string_compare_case_impl[T: (
-    SingleStringLimitStep,
-    MultipleStringLimitStep,
-)](step: T, value: str, limit: str, operator: StringCaseOp, name: str | None = None) -> bool:
+def _string_compare_case_impl[
+    T: (
+        SingleStringLimitStep,
+        MultipleStringLimitStep,
+    )
+](step: T, value: str, limit: str, operator: StringCaseOp, name: str | None = None) -> bool:
     _measurement_assertions(step, name=None)
 
     result = compare_case(value, limit, operator)
@@ -203,10 +213,12 @@ def _string_compare_case_impl[T: (
     return result
 
 
-def _string_log_impl[T: (
-    SingleStringLimitStep,
-    MultipleStringLimitStep,
-)](step: T, value: str, name: str | None = None) -> None:
+def _string_log_impl[
+    T: (
+        SingleStringLimitStep,
+        MultipleStringLimitStep,
+    )
+](step: T, value: str, name: str | None = None) -> None:
     _measurement_assertions(step, name=name)
     measurement = StringMeasurement(
         value=value,
@@ -500,12 +512,23 @@ class MultipleNumericLimitStep(_NonRootStep, Step):
         default=StepType.NUMERIC_LIMIT_MULTIPLE,
         description="The step type, a textual description of the step.",
         min_length=1,
-        frozen=True,
     )
     numericMeas: list[NumericMeasurement] = Field(
         default_factory=list,
         description="A list of numeric measurements belonging to this step.",
     )
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, serializer: SerializerFunctionWrapHandler) -> Any: # noqa: ANN401
+        """Serialize the model."""
+        if len(self.numericMeas) == 1:
+            log.warning(
+                "Warning: MultipleNumericLimitStep has only one measurement, setting name of measurement to None."
+            )
+            self.numericMeas[0].name = None
+        self.stepType = StepType.NUMERIC_LIMIT_SINGLE
+
+        return serializer(self)
 
     @property
     def data(self) -> list[NumericMeasurement]:
@@ -602,12 +625,23 @@ class MultipleBooleanLimitStep(_NonRootStep, Step):
         default=StepType.BOOLEAN_VALUE_MULTIPLE,
         description="The step type, a textual description of the step.",
         min_length=1,
-        frozen=True,
     )
     booleanMeas: list[BooleanMeasurement] = Field(
         default_factory=list,
         description="A list of boolean measurements belonging to this step.",
     )
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, serializer: SerializerFunctionWrapHandler) -> Any: # noqa: ANN401
+        """Serialize the model."""
+        if len(self.booleanMeas) == 1:
+            log.warning(
+                "Warning: MultipleBooleanLimitStep has only one measurement, setting name of measurement to None."
+            )
+            self.booleanMeas[0].name = None
+        self.stepType = StepType.BOOLEAN_VALUE_SINGLE
+
+        return serializer(self)
 
     @property
     def data(self) -> list[BooleanMeasurement]:
@@ -684,12 +718,23 @@ class MultipleStringLimitStep(_NonRootStep, Step):
         default=StepType.STRING_VALUE_MULTIPLE,
         description="The step type, a textual description of the step.",
         min_length=1,
-        frozen=True,
     )
     stringMeas: list[StringMeasurement] = Field(
         default_factory=list,
         description="A list of string measurements belonging to this step.",
     )
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, serializer: SerializerFunctionWrapHandler) -> Any: # noqa: ANN401
+        """Serialize the model."""
+        if len(self.stringMeas) == 1:
+            log.warning(
+                "Warning: MultipleNumericLimitStep has only one measurement, setting name of measurement to None."
+            )
+            self.stringMeas[0].name = None
+        self.stepType = StepType.STRING_VALUE_SINGLE
+
+        return serializer(self)
 
     @property
     def data(self) -> list[StringMeasurement]:
